@@ -1,0 +1,6 @@
+[book]
+authors = ["Ihor Horobets"]
+language = "en"
+multilingual = false
+src = "src"
+title = "ТЕОРІЯ ТИПІВ І ФОРМАЛЬНЕ ДОВЕДЕННЯ"

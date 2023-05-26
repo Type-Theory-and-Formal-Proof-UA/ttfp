@@ -1,6 +1,11 @@
 [book]
-authors = ["Ihor Horobets"]
+authors = ["Kyiv Haskell community"]
 language = "en"
 multilingual = false
 src = "src"
 title = "ТЕОРІЯ ТИПІВ І ФОРМАЛЬНЕ ДОВЕДЕННЯ"
+
+[output.latex]
+latex = true    # default = true
+pdf = true      # default = false
+markdown = true # default = false

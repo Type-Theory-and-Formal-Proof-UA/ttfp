@@ -1,0 +1,228 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Вступ - ТЕОРІЯ ТИПІВ І ФОРМАЛЬНЕ ДОВЕДЕННЯ</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="foreword.html"><strong aria-hidden="true">1.</strong> Передслово</a></li><li class="chapter-item expanded "><a href="preface.html" class="active"><strong aria-hidden="true">2.</strong> Вступ</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">3.</strong> Chapter 1</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ТЕОРІЯ ТИПІВ І ФОРМАЛЬНЕ ДОВЕДЕННЯ</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p><strong>Мета та сфера застосування</strong></p>
+<p>Метою книги, по-перше, є введення в теорію типів, розвиваючуся наукову галузь на перехресті логіки, інформатики та математики. По-друге, книга пояснює, як теорія типів може використовуватися для верифікації математичних виразів і міркувань.</p>
+<p>Теорія типів дозволяє надати 'закодовану' версію - тобто повну формалізацію - багатьох математичних тем. Формальна система, що лежить в основі теорії типів, змушує користувача працювати дуже точно. Справжня сила теорії типів полягає в тому, що вірність формул формалізованих виразів означає логічну та математичну коректність оригінального змісту.</p>
+<p>Привабливою властивістю теорії типів є те, що стає можливим і доцільним виконувати кодування 'природним' способом, таким чином, що один слідує (і впізнає) шлях, яким ці предмети були представлені оригінально. Іншою важливою особливістю теорії типів є те, що докази розглядаються як об'єкти першого класу, у тому сенсі, що докази не залишаються мета-об'єктами, але кодуються як вирази (терміни) тієї ж форми, як і решта формалізації.</p>
+<p>Автори планують звернутися до широкої аудиторії, від студентів університетів до професіоналів. Виклад матеріалу є ніжним і поступовим, матеріал розвивається плавним темпом, з достатньою кількістю прикладів та коментарів, перехресних посилань та мотивацій. Теоретичні проблеми, важливі для логіки та комп'ютерних наук, чергуються з практичними застосуваннями в області фундаментальних математичних предметів.</p>
+<p><strong>Історія</strong></p>
+<p>Важливі дослідження в механізмах логіки були зроблені Ф.Л.Г. Фреге ще в кінці дев'ятнадцятого століття (Фреге, 1893). Формальна математика почалася з Б. Расселом в першому десятилітті двадцятого століття з публікації відомого &quot;Principia Mathematica&quot; (Принципи математики, див. Рассел, 1903). Інші внески зробив Д. Гільберт (Гільберт, 1927) у 1920-х роках. Важливий крок у описі основних механізмів за математичним способом мислення був зроблений А. Черчем у 1940-х роках (Черч, 1940). Він винайшов лямбда-калькулюс, абстрактний механізм для роботи з функціями, і ввів 'просту теорію типів' як мову для логіки вищого порядку.</p>
+<p>У кінці 1960-х років N.G. де Брейн розробив свою 'математичну мову', Automath (де Брейн, 1970), яку він і його група ретельно протестували, переклавши великий корпус математичних текстів на неї та перевіривши його за допомогою комп'ютерної програми. У той же період польська група Mizar (Mizar, 1989) розробила мову та програму для розробки та зберігання математичних теорій; однак їх зусилля не були так глибоко основані в теоретичній теорії типів.</p>
+<p>З приблизно 1980-х років був вибух робіт у галузі теорії типів на основі ранішої роботи в 1970-х роках J.-Y. Гірарда (Гірард, 1986) і P. Мартін-Льофа (Martin-Löf, 1980). Ми згадуємо надихаючу роботу H.P. Барендрегта, чий лямбда-куб та</p>
+<p>поняття Чистих систем типів на його основі зараз є стандартом у світі теорії типів (Барендрегт, 1981, 1992).</p>
+<p>Ця книга була побудована на основі як Automath, так і лямбда-куба, які були об'єднані в нову, стислу систему, яка має переваги обох поважних попередників.</p>
+<p><strong>Обгрунтування</strong></p>
+<p>Такі теми, як доведена правильність та повна формалізація, є важливими в багатьох областях сучасної науки. Теорія типів як всеосяжний формалізм стає все більш і більш стандартним критерієм того, що насправді означає формалізація логіко-математичного змісту, тим більше, що вона також включає суть того, що таке формальний доказ. Таким чином, теорія типів - це цінний засіб перетворення 'правильності' на механізоване питання, що має велике значення, особливо у розробці математичних доказів та правильному програмуванні.</p>
+<p>Існує багато розвитків, які базуються на внутрішній силі теорії типів. Ми згадуємо роботу над доказом правильності програми; над правильною конструкцією програми; над автоматизацією розуміння; над формалізацією та архівуванням математичних предметів, включаючи онлайн-консультуємі бібліотеки знань; над перевіркою доказів, (допомогою у) розробці та конструкції доказів. Більше про ці теми можна знайти в розділі 16, особливо в розділах 16.2 та 16.3.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="foreword.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="chapter_1.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="foreword.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="chapter_1.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

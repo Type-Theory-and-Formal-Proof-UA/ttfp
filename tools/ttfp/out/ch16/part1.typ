@@ -1,21 +1,27 @@
-// Chapter 16 — "Further perspectives" (original pp. 379–390).
 #import "/book.typ": *
 
-= Подальші перспективи
-
+// ─────────────────────────────────────────────────────────────────────────
+// Рисунок 16.1: блок-схема «Перевірка правильності засобами теорії типів».
+// Геометрію відтворено за оригіналом (сторінка 381 видання).
+// ─────────────────────────────────────────────────────────────────────────
 #let c16text(w, h, body) = box(width: w, height: h, inset: 0pt,
   align(center + horizon, body))
+
 #let c16diam(size, body) = box(width: size, height: size, inset: 0pt)[
   #place(center + horizon, polygon(fill: white, stroke: 0.6pt,
     (size / 2, 0pt), (size, size / 2), (size / 2, size), (0pt, size / 2)))
   #place(center + horizon, align(center, body))
 ]
+
 #let c16v(dx, dy, len, dashed: false) = place(dx: dx, dy: dy,
   line(start: (0pt, 0pt), end: (0pt, len),
     stroke: if dashed { (paint: black, thickness: 0.6pt, dash: "dashed") } else { 0.6pt }))
+
 #let c16h(dx, dy, len) = place(dx: dx, dy: dy,
   line(start: (0pt, 0pt), end: (len, 0pt), stroke: 0.6pt))
+
 #let c16captionline(t) = text(size: 8.5pt, t)
+
 
 == Корисні застосування #ld
 

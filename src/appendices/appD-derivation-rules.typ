@@ -55,14 +55,14 @@
 #rule(
   label: "(def)",
   prem: $Delta ; Gamma tack.r K : L quad Delta ; x : A tack.r M : N$,
-  conc: $Delta , x : A tack.r a(x) := M : N ; Gamma tack.r K : L$,
+  conc: $Delta , x : A triangle.r a(x) := M : N ; Gamma tack.r K : L$,
   side: [якщо $a in.not Delta$],
 )
 
 #rule(
   label: "(def-prim)",
   prem: $Delta ; Gamma tack.r K : L quad Delta ; x : A tack.r N : s$,
-  conc: $Delta , x : A tack.r a(x) := #dblbot : N ; Gamma tack.r K : L$,
+  conc: $Delta , x : A triangle.r a(x) := #dblbot : N ; Gamma tack.r K : L$,
   side: [якщо $a in.not Delta$],
 )
 
@@ -70,14 +70,14 @@
   label: "(inst)",
   prem: $Delta ; Gamma tack.r ast : square quad Delta ; Gamma tack.r U : A[x := U]$,
   conc: $Delta ; Gamma tack.r a(U) : N[x := U]$,
-  side: [якщо $x : A tack.r a(x) := M : N in Delta$],
+  side: [якщо $x : A triangle.r a(x) := M : N in Delta$],
 )
 
 #rule(
   label: "(inst-prim)",
   prem: $Delta ; Gamma tack.r ast : square quad Delta ; Gamma tack.r U : A[x := U]$,
   conc: $Delta ; Gamma tack.r a(U) : N[x := U]$,
-  side: [якщо $x : A tack.r a(x) := #dblbot : N in Delta$],
+  side: [якщо $x : A triangle.r a(x) := #dblbot : N in Delta$],
 )
 
 _Виведене правило:_
@@ -86,5 +86,5 @@ _Виведене правило:_
   label: "(par)",
   prem: $Delta ; x : A tack.r M : N$,
   conc: $Delta, D ; x : A tack.r a(x) : N$,
-  side: [якщо $D equiv x : A tack.r a(x) := M : N$ і $a in.not Delta$],
+  side: [якщо $D equiv x : A triangle.r a(x) := M : N$ і $a in.not Delta$],
 )

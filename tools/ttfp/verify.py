@@ -73,9 +73,22 @@ def orig_counts(src_text, chapter):
     counts = {}
     for macro, word in KINDS.items():
         pat = re.compile(
-            rf"(?m)^\s{{0,40}}(?:{word})\s+{chapter}\.(\d{{1,2}})\.(\d{{1,3}})\b"
+            rf"(?m)^\s{{0,40}}(?:{word})\s+{chapter}\.(\d{{1,2}})\.(\d{{1,3}})"
+            rf"(?=\s|$)(.*)$"
         )
-        counts[macro] = len({(m.group(1), m.group(2)) for m in pat.finditer(t)})
+        found = set()
+        for m in pat.finditer(t):
+            # A label at line start may be a wrapped cross-reference rather
+            # than a header: the dump breaks lines mid-sentence, so
+            # ``Lemma 14.11.4, hence ...`` and ``Lemma 14.3.2 (b) implies ...``
+            # look like headers.  A header opens a title in parentheses
+            # (``(Closure ...)``) or a formula (``∀x, y ...``); a reference
+            # resumes with lowercase prose or punctuation.
+            rest = re.sub(r"^\s*\((?:[a-z]|\d+)\)", "", m.group(3)).strip()
+            if rest and re.match(r"[a-z,;)\]]", rest):
+                continue
+            found.add((m.group(1), m.group(2)))
+        counts[macro] = len(found)
     ex = 0
     m = re.search(r"^\s*Exercises\s*$", t, re.M)
     if m:

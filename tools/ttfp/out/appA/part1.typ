@@ -16,23 +16,17 @@
   let body = if prem.len() == 0 {
     head
   } else {
-    let rows = ()
+    let cells = ()
     for p in prem {
-      rows.push(box(stroke: 0.5pt, inset: (x: 0.55em, y: 0.28em), p))
-      rows.push(line(length: 100%, stroke: 0.5pt))
+      cells.push(box(stroke: 0.5pt, inset: (x: 0.55em, y: 0.28em), p))
     }
-    rows.push(head)
-    grid(
-      columns: (1fr,),
-      stroke: none,
-      align: center,
-      row-gutter: 0.3em,
-      ..rows,
-    )
+    cells.push(line(length: 100%, stroke: 0.5pt))
+    let premcol = grid(columns: (auto,), stroke: none, align: center, row-gutter: 0.30em, ..cells)
+    grid(columns: (auto,), stroke: none, align: center, row-gutter: 0.30em, premcol, head)
   }
   align(center)[
     #grid(
-      columns: (2.6em, 1fr),
+      columns: (2.0em, auto),
       stroke: none,
       align: (right + horizon, center + horizon),
       column-gutter: 0.7em,

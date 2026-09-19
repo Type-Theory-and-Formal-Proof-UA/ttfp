@@ -94,6 +94,8 @@ $m_1$, і $m_2$ є найменшими елементами. (Див. тако�
       [(4)], [#flagpole(2)[$a_4 (S, w) := t_4 : "найменший елемент єдиний"$]],
     )
   ]],
+  kind: "ris",
+  supplement: [Рисунок],
   numbering: none,
   caption: [Рисунок 12.1. Перша спроба довести лему 12.1.2 у #ld],
 )
@@ -194,6 +196,8 @@ $eq"-refl" (S, x)$ для доведення рефлексивності (от�
       [(3)], [#flagpole(2)[$eq"-refl" (S, x) := lambda P : S -> ast_p . a_2 (S, x, P) : eq(S, x, x)$]],
     )
   ]],
+  kind: "ris",
+  supplement: [Рисунок],
   numbering: none,
   caption: [Рисунок 12.2. Означення рівності та властивість рефлексивності для рівності],
 )
@@ -250,6 +254,8 @@ $eq"-refl" (S, x)$ для доведення рефлексивності (от�
       [(3)], [#flagpole(2)[$eq"-refl" (S, x) := lambda P : S -> ast_p . a_2 (S, x, P) : x =_S x$]],
     )
   ]],
+  kind: "ris",
+  supplement: [Рисунок],
   numbering: none,
   caption: [Рисунок 12.3. Нотаційна домовленість для рівності та її вживання],
 )
@@ -299,6 +305,8 @@ $t_1 =_S t_2$, то можна замінити $t_1$ на $t_2$, не впли�
       [(3)], [#flagpole(5)[$eq"-subs"(S, P, x, y, u, v) := a_2 (S, P, x, y, u) v : P y$]],
     )
   ]],
+  kind: "ris",
+  supplement: [Рисунок],
   numbering: none,
   caption: [Рисунок 12.4. Підстановлюваність як властивість рівності],
 )
@@ -364,6 +372,8 @@ $x =_S y$) на предикаті $lambda z : S . Q(f z)$ перетворює 
       [], [#flagpole(0)[$† \u{2009}"параметри придушено"$]],
     )
   ]],
+  kind: "ris",
+  supplement: [Рисунок],
   numbering: none,
   caption: [Рисунок 12.5. Перше доведення властивості конгруентності для рівності],
 )
@@ -400,6 +410,8 @@ $Q_1 y$ конвертований до $f x =_T f y$ — бажаної рів�
       [(2)], [#flagpole(5)[$eq"-cong"_2 (S, T, f, x, y, u) :=\ eq"-subs"(S, Q_1 (S, T, f, x), x, y, u, eq"-refl" (T, f x)) : f x =_T f y$]],
     )
   ]],
+  kind: "ris",
+  supplement: [Рисунок],
   numbering: none,
   caption: [Рисунок 12.6. Друге доведення властивості конгруентності для рівності],
 )
@@ -458,6 +470,8 @@ $lt.eq x y$.
       [(5)], [#flagpole(2)[$"part-ord" (S, lt.eq) := "pre-ord" (S, lt.eq) and "antisymm"(S, lt.eq) : ast_p$]],
     )
   ]],
+  kind: "ris",
+  supplement: [Рисунок],
   numbering: none,
   caption: [Рисунок 12.7. Означення щодо часткових порядків],
 )
@@ -494,6 +508,8 @@ $lt.eq x y$.
       [(9)], [#flagpole(3)[$dots.h.c : forall m_1 , m_2 : S . ((forall n : S . (m_1 lt.eq_S n)) arrow.r.double (forall n : S . (m_2 lt.eq_S n)) arrow.r.double (m_1 =_S m_2))$]],
     )
   ]],
+  kind: "ris",
+  supplement: [Рисунок],
   numbering: none,
   caption: [Рисунок 12.8. Скелетне доведення першої частини леми 12.1.2],
 )
@@ -539,6 +555,8 @@ $lt.eq x y$.
       [], [#flagpole(0)[$† \u{2009}"параметри придушено"$]],
     )
   ]],
+  kind: "ris",
+  supplement: [Рисунок],
   numbering: none,
   caption: [Рисунок 12.9. Формальне доведення першої частини леми 12.1.2 у #ld],
 )
@@ -595,6 +613,8 @@ $Q_2 (S, x)$, підставленим замість $P$, тоді робить
       [(4)], [#flagpole(0)[$a_4 (S) := lambda x, y : S . lambda u : (x =_S y) . eq"-sym"(S, x, y, u) : forall x, y : S . (x =_S y arrow.r.double y =_S x)$]],
     )
   ]],
+  kind: "ris",
+  supplement: [Рисунок],
   numbering: none,
   caption: [Рисунок 12.10. Симетрія рівності випливає з рефлексивності та підстановлюваності],
 )
@@ -621,6 +641,8 @@ $arrow.r.double$ і $forall$.
       [(1)], [#flagpole(1)[$eq"-sym"^prime (S, x, y, u) :=\ eq"-subs"(S, lambda z : S . (z =_S x), x, y, u, eq"-refl" (S, x)) : y =_S x$]],
     )
   ]],
+  kind: "ris",
+  supplement: [Рисунок],
   numbering: none,
   caption: [Рисунок 12.11. Коротша версія ядра виведення з рисунка 12.10],
 )
@@ -656,6 +678,8 @@ $y$ у $x =_S y$, щоб отримати $x =_S z$ (тобто $(Q_3 (S, x)) z$
       [(3)], [#flagpole(0)[$a_3 (S) := lambda x, y, z : S . lambda u : (x =_S y) . lambda v : (y =_S z) . eq"-trans"(S, x, y, z, u, v) : forall x, y, z : S . (x =_S y arrow.r.double y =_S z arrow.r.double x =_S z)$]],
     )
   ]],
+  kind: "ris",
+  supplement: [Рисунок],
   numbering: none,
   caption: [Рисунок 12.12. Транзитивність рівності випливає з підстановлюваності],
 )
@@ -683,6 +707,8 @@ $y$ у $x =_S y$, щоб отримати $x =_S z$ (тобто $(Q_3 (S, x)) z$
       [(1)], [#flagpole(1)[$"Least"(S, lt.eq, m) := forall n : S . (m lt.eq n) : ast_p$]],
     )
   ]],
+  kind: "ris",
+  supplement: [Рисунок],
   numbering: none,
   caption: [Рисунок 12.13. Формальна версія означення 12.1.1],
 )
@@ -748,6 +774,8 @@ $lt.eq$».
       [(4)], [#flagpole(2)[$exists_1 (S, P) := exists_(gt.eq 1) (S, P) and exists_(lt.eq 1) (S, P) : ast_p$]],
     )
   ]],
+  kind: "ris",
+  supplement: [Рисунок],
   numbering: none,
   caption: [Рисунок 12.14. Різні квантори існування],
 )
@@ -787,11 +815,14 @@ $exists_(lt.eq 1) x : S . "Least"(S, lt.eq, x)$.
       align: (right + horizon, left + horizon),
       column-gutter: 0.9em,
       row-gutter: 0.5em,
-      [(10)], [#flagpole(0)[$a_(10) := a_9^("\\[Мал. 12.9\\]") : exists_(lt.eq 1) x : S . "Least"(S, lt.eq, x)$]],
+      [], [#flagpole(0)[$dots.v$]],
+      [(10)], [#flagpole(0)[$a_(10) := a_9^("[Рис. 12.9]") : exists_(lt.eq 1) x : S . "Least"(S, lt.eq, x)$]],
       [(d)], [#flagpole(1, boxed: true)[$w : exists_(gt.eq 1) x : S . "Least"(S, lt.eq, x)$]],
-      [(11)], [#flagpole(2)[$a_(11) (S, lt.eq, r, w) := and"-in"(exists_(gt.eq 1) dots, exists_(lt.eq 1) dots, w, a_(10)) : exists_1 x : S . "Least"(S, lt.eq, x)$]],
+      [(11)], [#flagpole(2)[$a_(11) (S, lt.eq, r, w) := and"-in"(exists_(gt.eq 1) dots.h.c, exists_(lt.eq 1) dots.h.c, w, a_(10)) : exists_1 x : S . "Least"(S, lt.eq, x)$]],
     )
   ]],
+  kind: "ris",
+  supplement: [Рисунок],
   numbering: none,
   caption: [Рисунок 12.15. Завершена формальна версія леми 12.1.2 та її доведення],
 )
@@ -896,6 +927,8 @@ $iota(S, P, u)$ (тобто: елемент $S$, для якого викону�
       [(2)], [#flagpole(3)[$iota"-prop"(S, P, u) := #dblbot : P (iota_(x : S)^u (P x))$]],
     )
   ]],
+  kind: "ris",
+  supplement: [Рисунок],
   numbering: none,
   caption: [Рисунок 12.16. Дескриптор $iota$],
 )
@@ -932,6 +965,8 @@ $iota(S, P, u)$ (тобто: елемент $S$, для якого викону�
       [], [#flagpole(0)[$† \u{2009}"параметри придушено"$]],
     )
   ]],
+  kind: "ris",
+  supplement: [Рисунок],
   numbering: none,
   caption: [Рисунок 12.17. Лема 12.7.1 та її доведення],
 )
@@ -979,12 +1014,14 @@ $exists_1 m : S . "Least"(S, lt.eq, m)$, що є наслідком припущ
       [(a)], [#flagpole(0, boxed: true)[$S : ast_s | lt.eq : S -> S -> ast_p | r : "part-ord" (S, lt.eq)$]],
       [(b)], [#flagpole(1, boxed: true)[$w : exists_(gt.eq 1) x : S . "Least"(S, lt.eq, x)$]],
       [(1)], [#flagpole(2)[
-        $"Min"(S, lt.eq, r, w) :=\ iota(S, lambda m : S . "Least"(S, lt.eq, m), a_(11)^("[Мал. 12.15]") (S, lt.eq, r, w)) : S$]],
+        $"Min"(S, lt.eq, r, w) :=\ iota(S, lambda m : S . "Least"(S, lt.eq, m), a_(11)^("[Рис. 12.15]") (S, lt.eq, r, w)) : S$]],
       [(2)], [#flagpole(2)[
-        $a_2 (S, lt.eq, r, w) := a_5^("[Мал. 12.17]") (S, lambda m : S . "Least"(S, lt.eq, m), a_(11)^("[Мал. 12.15]") (S, lt.eq, r, w))$ \
+        $a_2 (S, lt.eq, r, w) := a_5^("[Рис. 12.17]") (S, lambda m : S . "Least"(S, lt.eq, m), a_(11)^("[Рис. 12.15]") (S, lt.eq, r, w))$ \
         $quad : forall x : S . ("Least"(S, lt.eq, x) arrow.r.double (x =_S "Min"(S, lt.eq, r, w)))$]],
     )
   ]],
+  kind: "ris",
+  supplement: [Рисунок],
   numbering: none,
   caption: [Рисунок 12.18. Оператор мінімуму та лема з доведенням],
 )

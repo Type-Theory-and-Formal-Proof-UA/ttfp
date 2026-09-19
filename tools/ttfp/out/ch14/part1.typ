@@ -302,17 +302,17 @@ p-s-анігіляцією.
       [$(2)$], [$0 := #dblbot : ZZ$],
       [$(3)$], [$s := #dblbot : ZZ -> ZZ$],
       [$(4)$], [$"ax-int" 1 := #dblbot : "bijective"(ZZ, ZZ, s)$],
-      [$(5)$], [$"inj-suc" := dots.c "use" and "-el" 1 dots.c : "injective"(ZZ, ZZ, s)$],
-      [$(6)$], [$"surj-suc" := dots.c "use" and "-el" 2 dots.c : "surjective"(ZZ, ZZ, s)$],
+      [$(5)$], [$"inj-suc" := dots.c "вжийте" and "-el" 1 dots.c : "injective"(ZZ, ZZ, s)$],
+      [$(6)$], [$"surj-suc" := dots.c "вжийте" and "-el" 2 dots.c : "surjective"(ZZ, ZZ, s)$],
       [], [$#c14flag(0)[$y : ZZ$]$],
       [$(7)$], [#c14flag(1)[$a_7 (y) := "surj-suc" y : exists_(gt.eq 1) x : ZZ . (s x =_(ZZ) y)$]],
       [], [#c14flag(2)[$x_1, x_2 : ZZ | u : s x_1 =_(ZZ) y | v : s x_2 =_(ZZ) y$]],
       [$(8)$], [#c14flag(3)[$a_8 (dots.c) := "eq-sym"(ZZ, s x_2, y, v) : y =_(ZZ) s x_2$]],
       [$(9)$], [#c14flag(3)[$a_9 (dots.c) := "eq-trans"(ZZ, s x_1, y, s x_2, u, a_8 (dots.c)) : s x_1 =_(ZZ) s x_2$]],
       [$(10)$], [#c14flag(3)[$a_(10) (dots.c) := "inj-suc" x_1 x_2 a_9 (dots.c) : x_1 =_(ZZ) x_2$]],
-      [$(11)$], [#c14flag(1)[$a_(11) (y) := dots.c "use" arrow.r.double "-in and" forall "-in" dots.c : exists_(lt.eq 1) x : ZZ . (s x =_(ZZ) y)$]],
-      [$(12)$], [#c14flag(1)[$a_(12) (y) := dots.c "use" and "-in on" a_7 (y) "and" a_(11) (y) dots.c : exists_1 x : ZZ . (s x =_(ZZ) y)$]],
-      [$(13)$], [$a_(13) := dots.c "use" forall "-in" dots.c : forall y : ZZ . exists_1 x : ZZ . (s x =_(ZZ) y)$],
+      [$(11)$], [#c14flag(1)[$a_(11) (y) := dots.c "вжийте" arrow.r.double "-in і" forall "-in" dots.c : exists_(lt.eq 1) x : ZZ . (s x =_(ZZ) y)$]],
+      [$(12)$], [#c14flag(1)[$a_(12) (y) := dots.c "вжийте" and "-in на" a_7 (y) "та" a_(11) (y) dots.c : exists_1 x : ZZ . (s x =_(ZZ) y)$]],
+      [$(13)$], [$a_(13) := dots.c "вжийте" forall "-in" dots.c : forall y : ZZ . exists_1 x : ZZ . (s x =_(ZZ) y)$],
       [$(14)$], [$p := lambda y : ZZ . iota(ZZ, lambda x : ZZ . (s x =_(ZZ) y), a_(12) (y)) : ZZ -> ZZ$],
       [], [$#c14flag(0)[$y : ZZ$]$],
       [$(15)$], [#c14flag(1)[$"s-p-ann"(y) := iota$-prop$(ZZ, lambda x : ZZ . (s x =_(ZZ) y), a_(12) (y)) : s(p y) =_(ZZ) y$]],
@@ -423,7 +423,7 @@ $ZZ$, яка задовольняє nat-cond (вправа 14.3).
       [$(2)$], [$NN := lambda x : ZZ . Pi P : ZZ -> ast_p . ("nat-cond"(P) arrow.r.double P x) : ZZ -> ast_p$],
       [$(3)$], [$"zero-prop" := dots.c ["впр. 14.2 (a)"] dots.c : 0 epsilon NN$],
       [$(4)$], [$"clos-prop" := dots.c ["впр. 14.2 (b)"] dots.c : forall x : ZZ . (x epsilon NN arrow.r.double s x epsilon NN)$],
-      [$(5)$], [$a_5 := dots.c "use" and "-in" dots.c : "nat-cond"(NN)$],
+      [$(5)$], [$a_5 := dots.c "вжийте" and "-in" dots.c : "nat-cond"(NN)$],
       [$(6)$], [$"nat-smallest" := dots.c ["впр. 14.3"] dots.c : Pi Q : ZZ -> ast_p . ("nat-cond"(Q) arrow.r.double (NN subset.eq Q))$],
     )
   ],
@@ -458,7 +458,7 @@ Margaris (1961) і Visser та Iemhoff (2009): додати одну додат�
       columns: (auto, 1fr),
       column-gutter: 0.8em,
       align: (right + horizon, left + horizon),
-      [$(1)$], [$"ax-int" 3 := #dblbot : not (p 0 epsilon NN)$],
+      [], [$"ax-int" 3 := #dblbot : not (p 0 epsilon NN)$],
     )
   ],
   caption: [Рисунок 14.6. Третя аксіома для натуральних чисел],
@@ -569,25 +569,25 @@ $forall x : ZZ . (Q x arrow.r.double Q(s x))$ (рядок (11)). Це дає н�
       [], [$P : ZZ -> ast_p$],
       [$(1)$], [$Q^dagger := lambda z : ZZ . (z epsilon NN and P z) : ZZ -> ast_p$],
       [], [$#c14flag(0)[$u : P 0 and forall x : ZZ . (x epsilon NN arrow.r.double (P x arrow.r.double P(s x)))$]$],
-      [$(2)$], [#c14flag(1)[$a_2 := dots.c "use" and "-el" 1 "on" u dots.c : P 0$]],
-      [$(3)$], [#c14flag(1)[$a_3 := dots.c "use" and "-el" 2 "on" u dots.c : forall x : ZZ . (x epsilon NN arrow.r.double (P x arrow.r.double P(s x)))$]],
-      [$(4)$], [#c14flag(1)[$a_4 := dots.c "use" and "-in on zero-prop and" a_2 dots.c : Q 0$]],
+      [$(2)$], [#c14flag(1)[$a_2 := dots.c "вжийте" and "-el" 1 "на" u dots.c : P 0$]],
+      [$(3)$], [#c14flag(1)[$a_3 := dots.c "вжийте" and "-el" 2 "на" u dots.c : forall x : ZZ . (x epsilon NN arrow.r.double (P x arrow.r.double P(s x)))$]],
+      [$(4)$], [#c14flag(1)[$a_4 := dots.c "вжийте" and "-in на" "zero-prop" "та" a_2 dots.c : Q 0$]],
       [], [#c14flag(2)[$y : ZZ | v : Q y$]],
-      [$(5)$], [#c14flag(3)[$a_5 := dots.c "use" and "-el" 1 "on" v dots.c : y epsilon NN$]],
-      [$(6)$], [#c14flag(3)[$a_6 := dots.c "use" and "-el" 2 "on" v dots.c : P y$]],
+      [$(5)$], [#c14flag(3)[$a_5 := dots.c "вжийте" and "-el" 1 "на" v dots.c : y epsilon NN$]],
+      [$(6)$], [#c14flag(3)[$a_6 := dots.c "вжийте" and "-el" 2 "на" v dots.c : P y$]],
       [$(7)$], [#c14flag(3)[$a_7 := "clos-prop" y a_5 : s y epsilon NN$]],
       [$(8)$], [#c14flag(3)[$a_8 := a_3 y a_5 : P y arrow.r.double P(s y)$]],
       [$(9)$], [#c14flag(3)[$a_9 := a_8 a_6 : P(s y)$]],
-      [$(10)$], [#c14flag(3)[$a_(10) := dots.c "use" and "-in on" a_7 "and" a_9 dots.c : Q(s y)$]],
-      [$(11)$], [#c14flag(2)[$a_(11) := dots.c "use" arrow.r.double "-in and" forall "-in" dots.c : forall y : ZZ . (Q y arrow.r.double Q(s y))$]],
-      [$(12)$], [#c14flag(1)[$a_(12) := dots.c "use" and "-in on" a_4 "and" a_(11) dots.c : "nat-cond"(Q)$]],
+      [$(10)$], [#c14flag(3)[$a_(10) := dots.c "вжийте" and "-in до" a_7 "і" a_9 dots.c : Q(s y)$]],
+      [$(11)$], [#c14flag(2)[$a_(11) := dots.c "вжийте" arrow.r.double "-in і" forall "-in" dots.c : forall y : ZZ . (Q y arrow.r.double Q(s y))$]],
+      [$(12)$], [#c14flag(1)[$a_(12) := dots.c "вжийте" and "-in на" a_4 "та" a_(11) dots.c : "nat-cond"(Q)$]],
       [], [#c14flag(2)[$x : ZZ | w : x epsilon NN$]],
       [$(13)$], [#c14flag(3)[$a_(13) := w Q a_(12) : Q x$]],
-      [$(14)$], [#c14flag(3)[$a_(14) := dots.c "use" and "-el" 2 "on" a_(13) dots.c : P x$]],
-      [$(15)$], [#c14flag(2)[$a_(15) := dots.c "use" arrow.r.double "-in and" forall "-in" dots.c : forall x : ZZ . (x epsilon NN arrow.r.double P x)$]],
-      [$(16)$], [#c14flag(1)[$"nat-ind"(P) := dots.c "use" arrow.r.double "-in on" a_(15) dots.c :$]],
+      [$(14)$], [#c14flag(3)[$a_(14) := dots.c "вжийте" and "-el" 2 "на" a_(13) dots.c : P x$]],
+      [$(15)$], [#c14flag(2)[$a_(15) := dots.c "вжийте" arrow.r.double "-in і" forall "-in" dots.c : forall x : ZZ . (x epsilon NN arrow.r.double P x)$]],
+      [$(16)$], [#c14flag(1)[$"nat-ind"(P) := dots.c "вжийте" arrow.r.double "-in на" a_(15) dots.c :$]],
       [], [#c14flag(2)[$(P 0 and forall x : ZZ . (x epsilon NN arrow.r.double (P x arrow.r.double P(s x)))) arrow.r.double forall x : ZZ . (x epsilon NN arrow.r.double P x)$]],
-      [], [$#text(size: 9pt)[$dagger$ parameters suppressed]$],
+      [], [$#text(size: 9pt)[$dagger$ параметри пригнічено]$],
     )
   ],
   caption: [Рисунок 14.8. Індукція над натуральними числами],
@@ -791,7 +791,7 @@ $+_2 (2)$, нам треба $+_2 (1)$. Нарешті, нам треба обч
 
 Теорема для $ZZ$ звучить так:
 
-#theorem(name: "Теорема про рекурсію для $ZZ$")[
+#theorem(name: [Теорема про рекурсію для $ZZ$])[
   Нехай $A$ — тип, $a : A$ і нехай $f_1, f_2 : A -> A$.
 
   Тоді існує точно одна функція $g : ZZ -> A$ така, що
@@ -871,7 +871,7 @@ $f_1$ і функцію попередника $p$ за $f_2$. Тоді теор
 $s$ є бієкцією згідно з ax-int 1, а функція $p$ — обернена до функції $s$. Те, що
 ми таким чином отримуємо, — це обмежена версія теореми про рекурсію для $ZZ$:
 
-#theorem(name: "Теорема про рекурсію для $ZZ$, з бієкцією")[
+#theorem(name: [Теорема про рекурсію для $ZZ$, з бієкцією])[
   Нехай $A$ — тип, $a : A$ і $f : A -> A$ — бієкція.
 
   Тоді існує точно одна функція $g : ZZ -> A$ така, що
@@ -910,9 +910,9 @@ plus$(m)$ $(s(n)) = s($"plus$(m)$ $n)$. За допомогою домовлен
       [$(1)$], [$a_1 := "ax-int" 1 : "bijective"(ZZ, ZZ, s)$],
       [], [$#c14flag(0)[$m : ZZ$]$],
       [$(2)$], [#c14flag(1)[$"rec-add-prop"(m) := lambda g : ZZ -> ZZ . (g 0 =_(ZZ) m and forall x : ZZ . (g(s x) =_(ZZ) s(g x))) : (ZZ -> ZZ) -> ast_p$]],
-      [$(3)$], [#c14flag(1)[$"rec-add-lem"(m) := dots.c "use Theorem 14.4.5" dots.c : exists_1 g : ZZ -> ZZ . ("rec-add-prop"(m) g)$]],
+      [$(3)$], [#c14flag(1)[$"rec-add-lem"(m) := dots.c "скористайтеся теоремою 14.4.5" dots.c : exists_1 g : ZZ -> ZZ . ("rec-add-prop"(m) g)$]],
       [$(4)$], [#c14flag(1)[$"plus"(m) := iota(ZZ -> ZZ, "rec-add-prop"(m), "rec-add-lem"(m)) : ZZ -> ZZ$]],
-      [], [$#c14flag(1)[$"Позначення" : +_m "for" "plus"(m)$]$],
+      [], [$#c14flag(1)[$"Позначення" : +_m "замість" "plus"(m)$]$],
     )
   ],
   caption: [Рисунок 14.11. Додавання $+_m : ZZ -> ZZ$ у #ld],
@@ -933,7 +933,7 @@ plus$(m)$ $(s(n)) = s($"plus$(m)$ $n)$. За допомогою домовлен
       row-gutter: 0.45em,
       align: (right + horizon, left + horizon),
       [$(1)$], [$+ := lambda x : ZZ . lambda y : ZZ . (+ x y) : ZZ -> ZZ -> ZZ$],
-      [], [$"Позначення" : x + y "for" + x y$],
+      [], [$"Позначення" : x + y "замість" + x y$],
       [], [$#c14flag(0)[$x : ZZ$]$],
       [$(2)$], [#c14flag(1)[$"plus-i"(x) := dots.c : x + 0 =_(ZZ) x$]],
       [], [$#c14flag(1)[$y : ZZ$]$],
@@ -992,8 +992,12 @@ plus$(m)$ $(s(n)) = s($"plus$(m)$ $n)$. За допомогою домовлен
 Стиснута версія доведення звучить так:
 
 #align(center)[
+  $(1) quad (2) quad (3) quad (4) quad (5) quad (6)$ \
   $1 + 2 = 1 + s 1 = s(1 + 1) = s(1 + s 0) = s(s(1 + 0)) = s(s(1)) = 3.$
 ]
+
+(Числа $(1)$–$(6)$ над відповідними знаками рівності вказують на рядки доведення з
+рисунка 14.13.)
 
 Рядки (1), (3) і (6) уживають рефлексивності рівності разом з означеннями в
 рядках (i)–(iii), з чого випливає, що

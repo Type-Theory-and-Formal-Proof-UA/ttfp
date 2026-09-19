@@ -86,3 +86,35 @@ as translation progresses; keep translations consistent across chapters.
 | injection | ін'єкція |
 | surjection | сюр'єкція |
 | bijection | бієкція |
+| annihilation (s-p-, p-s-) | анігіляція |
+| closure under | замкненість відносно |
+| cancellation law | закон скорочення |
+| tripartition | тричастинність |
+| distributivity | дистрибутивність |
+| common divisor | спільний дільник |
+| coprime | взаємно прості |
+| lower bound | нижня межа |
+| well-founded recursion | обґрунтована рекурсія |
+| irrelevance of proof | незалежність від доведення |
+| predecessor | попередник |
+| successor | наступник |
+| symmetric induction | симетрична індукція |
+| Leibniz equality | рівність за Лейбніцом |
+| ramified theory of types | розгалужена теорія типів |
+| axiom of reducibility | аксіома звідності |
+| full set (full-set) | повна множина |
+| embedding | вкладення |
+| foreknowledge | передзнання |
+| impredicativity | непредикативність |
+| logical framework | логічна рамка |
+| term refinement | уточнення терма |
+| tactic | тактика |
+| kernel | ядро |
+| didactics | дидактика |
+| machine learning | машинне навчання |
+| greatest element | найбільший елемент |
+| least element | найменший елемент |
+| maximum of a subset | максимум підмножини |
+| multiple | кратне |
+| uniqueness | єдиність |
+| beta-delta-convertible | βΔ-конвертуються |

@@ -13,31 +13,41 @@
   } else {
     box[#concl #h(1.2em) #text(size: 9.5pt)[#seealso]]
   }
-  let body = if prem.len() == 0 {
-    head
-  } else {
-    let cells = ()
-    for p in prem {
-      cells.push(box(stroke: 0.5pt, inset: (x: 0.55em, y: 0.28em), p))
-    }
-    cells.push(line(length: 100%, stroke: 0.5pt))
-    let premcol = grid(columns: (auto,), stroke: none, align: center, row-gutter: 0.30em, ..cells)
-    grid(columns: (auto,), stroke: none, align: center, row-gutter: 0.30em, premcol, head)
-  }
+  let boxed(p) = box(stroke: 0.5pt, inset: (x: 0.55em, y: 0.28em), p)
+  let nprem = prem.len()
   align(center)[
-    #grid(
-      columns: (2.0em, auto),
-      stroke: none,
-      align: (right + horizon, center + horizon),
-      column-gutter: 0.7em,
-      [$ (#n) $],
-      body,
-    )
+    #if nprem == 0 {
+      grid(
+        columns: (2.2em, auto),
+        stroke: none,
+        align: (right + horizon, center + horizon),
+        column-gutter: 0.7em,
+        [$ (#n) $],
+        head,
+      )
+    } else {
+      let cells = ()
+      cells.push(grid.cell(rowspan: nprem + 1, align: right + bottom)[$(#n)$])
+      for p in prem {
+        cells.push(grid.cell(colspan: 2, align: center)[#boxed(p)])
+      }
+      cells.push(grid.cell(align: center)[#head])
+      if seealso == none { cells.push([]) } else {
+        cells.push(grid.cell(align: left + bottom)[#text(size: 9.5pt)[#seealso]])
+      }
+      grid(
+        columns: (2.2em, auto, auto),
+        stroke: none,
+        column-gutter: 0.7em,
+        row-gutter: 0.22em,
+        ..cells,
+      )
+    }
   ]
   if nota != none {
     align(center)[#nota]
   }
-  v(0.4em)
+  v(0.55em)
 }
 
 // Рядок прапорцевого виведення з відступом (за потреби — у рамці).

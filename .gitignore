@@ -1,6 +1,10 @@
 .DS_Store
 
-# Source PDF (copyrighted, reference-only — do not publish)
+# ВНИМАНИЕ: исходный текст книги защищён авторским правом.
+# PDF и извлечённый из него текст (tools/ttfp/raw/, tools/ttfp/src/,
+# tools/ttfp/out/*/src-part*.txt) хранятся только для справки при переводе
+# и НЕ должны попадать в репозиторий и публиковаться. В git идёт лишь
+# инструментарий перевода и сам перевод — он лежит в src/.
 nederpelt_geuvers__type_theory_and_formal_proof_an_introduction.pdf
 
 # Typst build output and cache
@@ -17,3 +21,9 @@ tools/ttfp/src/
 tools/ttfp/out/*/src-part*.txt
 tools/ttfp/out/*/*.log
 tools/ttfp/state.json
+
+# Черновые пробы переводящих агентов: они пишут временные файлы рядом с
+# рабочими. Рабочий файл части — part<N>.typ, всё прочее (_probe*, *.bak)
+# это мусор, ему в репозитории не место.
+tools/ttfp/out/*/_*
+tools/ttfp/out/*/*.bak

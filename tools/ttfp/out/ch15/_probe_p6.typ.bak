@@ -1,5 +1,0 @@
-#import "/book.typ": *
-
-== Probe5
-
-$ arrow.b arrow.r.dashed arrow.r.squiggly arrow.r.long.squiggly arrow.r.tail arrow.l.dashed arrow.r.long.dashed arrow.b.dashed arrow.r.double.long arrow.r.long.bar arrow.r.bar arrow.r.double $

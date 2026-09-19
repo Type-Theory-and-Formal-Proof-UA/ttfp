@@ -1119,7 +1119,7 @@ $A_i$. Аксіому вибору не можна вилучити в спос�
 ]
 
 #exercise[
-  Нехай $S : ast_s, x, y : S tack.r eq"-alt"(S, x, y) := Pi P : S -> ast_p . (P x arrow.r.double P y) : ast_p$
+  Нехай $S : ast_s, x, y : S triangle.r eq"-alt"(S, x, y) := Pi P : S -> ast_p . (P x arrow.r.double P y) : ast_p$
   — означення.
 
   #enum(

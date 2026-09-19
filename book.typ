@@ -11,22 +11,41 @@
 // Current chapter number (the nearest level-1 heading), as an integer.
 #let chapter-num() = counter(heading).get().first()
 
+// Current section number: the level-2 part of "chapter.section".  The source
+// book numbers every statement as chapter.section.n, resetting n at each new
+// section (Remark 11.3.1, 11.3.2, then 11.4.1 again) -- so a flat chapter-wide
+// counter would print numbers that none of the text's cross-references match.
+#let section-num() = {
+  let h = counter(heading).get()
+  if h.len() > 1 { h.at(1) } else { 0 }
+}
+
 // Shared counter for every "statement" kind (definition, theorem, lemma, …),
 // mirroring the source book's convention of numbering these jointly within
-// a chapter. Reset to 0 by the level-1 heading show rule in book-template.
+// a section. Reset by the level-1 and level-2 heading show rules.
 #let statement-counter = counter("statement")
 
-// Builds a labelled, numbered block: kind + "chapter.n" (+ optional name).
-// Usage: #definition(name: "Редекс")[ ...body... ]
-#let statement(kind: "Твердження") = (name: none, body) => {
-  statement-counter.step()
+// Builds a labelled, numbered block: kind + "chapter.section.n" (+ optional
+// name).  Usage: #definition(name: "Редекс")[ ...body... ]
+//
+// `label:` overrides the auto-number with a literal one (appendix B restates
+// the arithmetical lemmas with the numbers they carry in chapter 14, so there
+// the printed number is content, not a fresh count).  `label: []` prints no
+// number at all, for the entries the source book itself leaves unnumbered and
+// identifies only by the figure they come from.
+#let statement(kind: "Твердження") = (name: none, label: auto, body) => {
+  if label == auto { statement-counter.step() }
   block(above: 1.2em, below: 1.2em, breakable: true)[
     #context {
-      let n = statement-counter.get().first()
+      let num = if label == auto {
+        let n = statement-counter.get().first()
+        [#chapter-num().#section-num().#n]
+      } else { label }
+      let labelled = if label == auto or label != [] { [#num] } else { [] }
       let head = if name == none {
-        [*#kind #chapter-num().#n.*]
+        if labelled == [] { [*#kind.*] } else { [*#kind #labelled.*] }
       } else {
-        [*#kind #chapter-num().#n* (#name).]
+        [*#kind #labelled* (#name).]
       }
       head
     }
@@ -135,7 +154,12 @@
     block(text(size: 24pt, weight: "bold", it))
     v(1.5cm)
   }
-  show heading.where(level: 2): set text(size: 15pt)
+  // Every level-2 section restarts the statement counter: the source book
+  // numbers statements per section (14.8.1 … 14.8.11, then 14.9.1 again).
+  show heading.where(level: 2): it => {
+    statement-counter.update(0)
+    text(size: 15pt, it)
+  }
   show heading.where(level: 3): set text(size: 12.5pt)
 
   body

@@ -53,7 +53,7 @@ $ V inter C = emptyset, quad ast != square, quad ast, square in.not V union C. $
 
 #definition(name: "Описові означення в λD0; середовище")[
   (1) (Описове) означення в #ld0 має вигляд
-  $ x : overline(A) tack.r a(overline(x)) := M : N, $
+  $ x : overline(A) triangle.r a(overline(x)) := M : N, $
   де всі $x_i in V$, $a in C$, а всі $A_i, M, N in E_(#ld)$.
 
   (2) Середовище $Delta$ — це скінченний (порожній або непорожній) список означень.
@@ -65,7 +65,7 @@ $ V inter C = emptyset, quad ast != square, quad ast, square in.not V union C. $
 Щодо означення ми розрізняємо такі його елементи:
 
 #definition(name: "Елементи означення")[
-  Нехай $D equiv x : overline(A) tack.r a(overline(x)) := M : N$ — означення. Тоді:
+  Нехай $D equiv x : overline(A) triangle.r a(overline(x)) := M : N$ — означення. Тоді:
 
   − $x : overline(A)$ — це *контекст* означення $D$.
 
@@ -177,7 +177,7 @@ $Delta$ та списком $Gamma$:
 
 #remark[
   Ми не розглядаємо рекурсивних означень. Тому означувана константа $a$ в
-  означенні $x : overline(A) tack.r a(overline(x)) := M : N$ є єдиним входженням
+  означенні $x : overline(A) triangle.r a(overline(x)) := M : N$ є єдиним входженням
   $a$ у це означення; отже, $a$ не зустрічається в $M$ (а також не зустрічається в
   жодному з типів $A_i$ з $overline(A)$, ні в $N$).
 
@@ -198,7 +198,7 @@ $Delta$ та списком $Gamma$:
 
 Тож розгляньмо «нове» означення
 
-$ D equiv x : overline(A) tack.r a(overline(x)) := M : N, $
+$ D equiv x : overline(A) triangle.r a(overline(x)) := M : N, $
 
 яке ми бажаємо додати до $Delta$ в кінці.
 
@@ -214,7 +214,7 @@ $ D equiv x : overline(A) tack.r a(overline(x)) := M : N, $
 Це приводить до такого правила:
 
 #definition(name: "Правило виведення для додавання означення до середовища")[
-  Нехай $a$ — свіже ім'я щодо $Delta$, а $D equiv x : overline(A) tack.r
+  Нехай $a$ — свіже ім'я щодо $Delta$, а $D equiv x : overline(A) triangle.r
   a(overline(x)) := M : N$.
 
   #table(
@@ -258,7 +258,7 @@ $(S times S) -> ast$ на $(R times R) -> ast$, бо змінну $S$ у цьо�
 
 Розгляньмо означення вигляду
 
-$ D equiv x_1 : A_1, dots.h.c, x_n : A_n tack.r a(x_1, dots.h.c, x_n) := M : N. $
+$ D equiv x_1 : A_1, dots.h.c, x_n : A_n triangle.r a(x_1, dots.h.c, x_n) := M : N. $
 
 Припустімо тепер, що ми хочемо інстанціювати список параметрів
 $(x_1, dots.h.c, x_n)$, замінивши кожну $x_i$ відповідно виразами $U_i$. Які
@@ -383,7 +383,7 @@ $ Delta ; Gamma tack.r a(overline(U)) : N[overline(x) := overline(U)]. $
 
 #definition(name: "Правило виведення для інстанціації, 1")[
   Нехай $a$ — константа з непорожнім списком параметрів, і нехай $D in Delta$, де
-  $D equiv x : overline(A) tack.r a(overline(x)) := M : N$. Тоді:
+  $D equiv x : overline(A) triangle.r a(overline(x)) := M : N$. Тоді:
 
   #table(
     columns: (auto, auto),
@@ -426,7 +426,7 @@ $ Delta ; Gamma tack.r a(overline(U)) : N[overline(x) := overline(U)]. $
   Тоді текст означення 9.4.4 набрав би вигляду:
 
   Нехай $a$ — константа з порожнім списком параметрів, і нехай $D in Delta$, де
-  $D equiv emptyset tack.r a() := M : N$. Тоді:
+  $D equiv emptyset triangle.r a() := M : N$. Тоді:
 
   #table(
     columns: (auto, auto, auto),
@@ -465,7 +465,7 @@ $ Delta ; Gamma tack.r a(overline(U)) : N[overline(x) := overline(U)]. $
   $ Delta ; Gamma tack.r ast : square. $
 
   Завважмо, що, оскільки розглядуване означення
-  ($D equiv emptyset tack.r a() := M : N$) є елементом цього $Delta$, правильна
+  ($D equiv emptyset triangle.r a() := M : N$) є елементом цього $Delta$, правильна
   побудованість $Delta$ одразу означає, що $D$ правильно побудоване.
 
   Отже, тепер ми маємо засновок, який забезпечує правильну побудованість у
@@ -476,7 +476,7 @@ $ Delta ; Gamma tack.r a(overline(U)) : N[overline(x) := overline(U)]. $
 
 #definition(name: "Правило виведення для інстанціації, 2")[
   Нехай $a$ — константа з порожнім списком параметрів, і нехай $D in Delta$, де
-  $D equiv emptyset tack.r a() := M : N$. Тоді:
+  $D equiv emptyset triangle.r a() := M : N$. Тоді:
 
   #table(
     columns: (auto, auto),
@@ -501,7 +501,7 @@ $ Delta ; Gamma tack.r a(overline(U)) : N[overline(x) := overline(U)]. $
 
 #definition(name: "Правило виведення для інстанціації")[
   Нехай $a$ — константа, і нехай $D in Delta$, де
-  $D equiv x : overline(A) tack.r a(overline(x)) := M : N$. Тоді:
+  $D equiv x : overline(A) triangle.r a(overline(x)) := M : N$. Тоді:
 
   #table(
     columns: (auto, auto),
@@ -592,7 +592,7 @@ $K$, то $a(overline(x))$ можна замінити на $K$ (і навпак
 
 Якщо ми маємо означення
 
-$ D equiv Gamma tack.r a(overline(x)) := M : N, $
+$ D equiv Gamma triangle.r a(overline(x)) := M : N, $
 
 де $D in Delta$ для деякого правильно побудованого $Delta$, то має бути дозволено
 замінити $a(overline(U))$ на $M[overline(x) := overline(U)]$.
@@ -618,7 +618,7 @@ $forall x, y in NN (x lt.eq y or y lt.eq x)$ мають той самий сен
 середовища $Delta$, у якому міститься означення.
 
 #definition(name: "Однокрокове розгортання означення; однокрокова δ-редукція, ⟶Δ")[
-  Якщо $Gamma tack.r a(overline(x)) := M : N$ є елементом середовища $Delta$, то:
+  Якщо $Gamma triangle.r a(overline(x)) := M : N$ є елементом середовища $Delta$, то:
 
   (1) (Базис) $a(overline(U)) arrow.r.long_delta^Delta M[overline(x) := overline(U)]$,
 
@@ -716,7 +716,7 @@ $=^Delta_delta$:
   Нехай $Delta$ — середовище.
 
   (1) Константа $a$ є *розгортуваною* щодо $Delta$, якщо $a$ зв'язана в $Delta$ з
-      описовим означенням, скажімо: $x : overline(A) tack.r a(overline(x)) := M : N$.
+      описовим означенням, скажімо: $x : overline(A) triangle.r a(overline(x)) := M : N$.
 
   (2) $K$ *перебуває в δ-нормальній формі* (або: *перебуває в δ-н.ф.*) щодо
       $Delta$, якщо в $K$ не зустрічається жодної константи, розгортуваної щодо
@@ -1077,7 +1077,7 @@ $Delta equiv emptyset$, віддзеркалюючи порожній конте
             [$Delta ; x : overline(A) tack.r M : N$],
           )],
           [#line(length: 100%, stroke: 0.5pt)],
-          [$Delta, x : overline(A) tack.r a(overline(x)) := M : N ; Gamma tack.r K : L$],
+          [$Delta, x : overline(A) triangle.r a(overline(x)) := M : N ; Gamma tack.r K : L$],
         )
       ],
       [якщо $a in.not Delta$],
@@ -1095,7 +1095,7 @@ $Delta equiv emptyset$, віддзеркалюючи порожній конте
           [$Delta ; Gamma tack.r a(overline(U)) : N[overline(x) := overline(U)]$],
         )
       ],
-      [якщо $x : overline(A) tack.r a(overline(x)) := M : N in Delta$],
+      [якщо $x : overline(A) triangle.r a(overline(x)) := M : N in Delta$],
     )
   ],
   caption: [Рисунок 9.3. Правила виведення для #ld0],
@@ -1112,7 +1112,7 @@ $Delta equiv emptyset$, віддзеркалюючи порожній конте
 
 − Правило (def) дає змогу послабити середовище $Delta$ судження
   $Delta ; Gamma tack.r K : L$, додавши новий елемент у кінець $Delta$ (а саме
-  означення $x : overline(A) tack.r a(overline(x)) := M : N$).
+  означення $x : overline(A) triangle.r a(overline(x)) := M : N$).
 
 Це означає, що і (weak), і (def) можна вважати правилами послаблення (пор.
 підрозділ 4.3): одне — для контекстів, друге — для середовищ.
@@ -1144,7 +1144,7 @@ $Delta equiv emptyset$, віддзеркалюючи порожній конте
 Відповідник цієї можливості для середовища $Delta$, здається, відсутній. Він
 виглядав би приблизно так: «Останнє означення $D in Delta$ саме є вивідним щодо
 “легальних” $Delta$ і $Gamma$». Це, звісно, нездійсненне, бо означення
-$D equiv x : overline(A) tack.r a(overline(x)) := M : N$ не є твердженням, а отже,
+$D equiv x : overline(A) triangle.r a(overline(x)) := M : N$ не є твердженням, а отже,
 не вписується у формат того, що ми дозволяємо за «$tack.r$».
 
 Можна, однак, видобути з цього означення два прийнятні твердження, а саме
@@ -1159,7 +1159,7 @@ $a(overline(x)) : N$ та $M : N$. Обидва інтуїтивно є «пра
 
 #lemma[
   Припустімо, що $Delta ; x : overline(A) tack.r M : N$. Нехай
-  $D equiv x : overline(A) tack.r a(overline(x)) := M : N$. Тоді:
+  $D equiv x : overline(A) triangle.r a(overline(x)) := M : N$. Тоді:
 
   (1) $Delta, D ; x : overline(A) tack.r M : N$, і
 
@@ -1201,7 +1201,7 @@ $a(overline(x)) : N$ та $M : N$. Обидва інтуїтивно є «пра
           [$Delta, D ; x : overline(A) tack.r a(overline(x)) : N$],
         )
       ],
-      [якщо $D equiv x : overline(A) tack.r a(overline(x)) := M : N$ і $a in.not Delta$],
+      [якщо $D equiv x : overline(A) triangle.r a(overline(x)) := M : N$ і $a in.not Delta$],
     )
   ],
   caption: [Рисунок 9.4. Похідне правило (par) для #ld0],
@@ -1295,8 +1295,8 @@ Automath (і в #ld) книга складається з виразів, под
 
 #exercise[
   Розгляньте такі два означення, $D_i$ і $D_j$:
-  $ x : A tack.r a(x) := K : L, $
-  $ y : B tack.r b(y) := M : N. $
+  $ x : A triangle.r a(x) := K : L, $
+  $ y : B triangle.r b(y) := M : N. $
 
   Нехай $Delta ; Gamma tack.r U : V$, і припустімо, що $D_i$ та $D_j$ є елементами
   списку $Delta$, де $D_i$ передує $D_j$.
@@ -1328,9 +1328,9 @@ Automath (і в #ld) книга складається з виразів, под
   задля зручності, вживаємо деякі добре знані формати, як-от $Sigma$- та
   інфіксні позначення:
 
-  $ D_1 equiv f : NN -> RR, n : NN tack.r a_1 (f, n) := sum_(i=0)^n (f i) : RR, $
+  $ D_1 equiv f : NN -> RR, n : NN triangle.r a_1 (f, n) := sum_(i=0)^n (f i) : RR, $
 
-  $ D_2 equiv f : NN -> RR, d : RR tack.r a_2 (f, d) := forall n : NN (f (n+1) - f n = d) : ast_p, $
+  $ D_2 equiv f : NN -> RR, d : RR triangle.r a_2 (f, d) := forall n : NN (f (n+1) - f n = d) : ast_p, $
 
   $ D_3 equiv f : NN -> RR, d : RR, u : a_2 (f, d), n : NN tack.r $
   $ quad a_3 (f, d, u, n) := "formalprf"_3 : f n = f 0 + n dot d, $
@@ -1342,7 +1342,7 @@ Automath (і в #ld) книга складається з виразів, под
   $ quad a_5 (f, d, u, n) := "formalprf"_5 : $
   $ quad quad a_1 (f, n) = (n + 1) dot f 0 + 1/2 dot n dot (n + 1) dot d, $
 
-  $ D_6 equiv emptyset tack.r a_6 := "formalprf"_6 : sum_(i=0)^100 (i) = 5050. $
+  $ D_6 equiv emptyset triangle.r a_6 := "formalprf"_6 : sum_(i=0)^100 (i) = 5050. $
 
   Припустімо, що $"formalprf"_3$ до $"formalprf"_6$ — це метатерми, які стоять
   замість справжніх термів доведень.

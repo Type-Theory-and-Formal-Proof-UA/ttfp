@@ -27,12 +27,31 @@ FIRST_CONTENT_PAGE = 29  # raw 0-based index of the chapter-opening page of
 RAW = os.path.join(TT, "raw")
 
 CTRL_MAP = {
-    "\x10": "⊢",   # turnstile, mangled by the original PDF's font
-    "\x05": "⊢",
+    "\x10": "⊢",   # turnstile: judgements, "Γ ⊢ M : N"
+    "\x05": "▷",   # the definition-format separator, "Γ ▷ a(x) := M : N".
+    #   The book introduces it explicitly ("We introduce the symbol '▷' here
+    #   as a separator between the context and the rest", section 8.5) and it
+    #   is NOT the turnstile: a definition and a judgement are different
+    #   things.  Mapping both to ⊢ silently turns every definition in
+    #   chapters 8-12 into a judgement.
     "\x04": "□",   # the sort □
     "\x03": "→",
     "\x07": "→",
+    "\x02": "⟶",   # zero-or-more-step reduction arrow (ch09)
+    "\x06": "↦",   # maplet: the "translates to" arrow in a convention
+    "\x19": "⟨",   # left angle bracket: opens a pair <a, q>
+    "\x1a": "⟩",   # right angle bracket: closes it
+    "\x01": "",    # figure/rule art (book-level dump only)
+    "\x08": "",    # figure art
+    "\x1b": "",    # figure art
+    "\x18": "",    # figure art (X/XXXX marks in a ch09 figure)
 }
+
+# Every control character below 0x20 that the extraction actually produces
+# must appear in CTRL_MAP; an unmapped one is dropped by clean_pages, which
+# loses a symbol without a trace.  Asserted at import so the next glyph the
+# PDF mangles fails loudly instead of quietly deleting text.
+EXPECTED_CTRL = set(CTRL_MAP)
 
 
 def clean_pages(pages, en_title):
@@ -40,6 +59,7 @@ def clean_pages(pages, en_title):
     out = []
     num_pat = re.compile(r"^\s*\d{1,3}\s*$")
     title_tail = en_title.split(":")[0].strip()
+    seen_ctrl = set()
     for p in pages:
         lines = p.splitlines()
         # the first non-empty line of a page is the running head (or a section
@@ -54,9 +74,20 @@ def clean_pages(pages, en_title):
                 continue
             if title_tail and title_tail in ln and len(s) < len(title_tail) + 30:
                 continue
+            for c in ln:
+                if ord(c) < 32 and c != "\t":
+                    seen_ctrl.add(c)
             ln = "".join(CTRL_MAP.get(c, "" if ord(c) < 32 else c) for c in ln)
             if ln.strip():
                 out.append(ln.rstrip())
+    unmapped = seen_ctrl - EXPECTED_CTRL
+    if unmapped:
+        raise SystemExit(
+            "prepare: unmapped control character(s) in the extracted text: "
+            + ", ".join(f"U+{ord(c):04X}" for c in sorted(unmapped))
+            + " -- add them to CTRL_MAP (a dropped one loses a symbol "
+              "silently; see chapter 8's definition separator)."
+        )
     return out
 
 

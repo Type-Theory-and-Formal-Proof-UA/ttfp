@@ -1,7 +1,10 @@
 // Appendix A — "Logic in λD" (original pp. 391–396).
 #import "/book.typ": *
 
-#set heading(numbering: "A.1")
+#set heading(numbering: (..n) => {
+  let p = n.pos()
+  if p.len() == 1 { "A" } else { "A." + p.slice(1).map(str).join(".") }
+})
 #counter(heading).update(0)
 
 = Логіка в #ld

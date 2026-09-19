@@ -1,6 +1,12 @@
 // Appendix C — "Two complete example proofs in λD" (original pp. 403–408).
 #import "/book.typ": *
 
+#set heading(numbering: (..n) => {
+  let p = n.pos()
+  if p.len() == 1 { "C" } else { "C." + p.slice(1).map(str).join(".") }
+})
+#counter(heading).update(0)
+
 = Два повних приклади доведень у #ld
 
 #let fl(depth, boxed: false, body) = {

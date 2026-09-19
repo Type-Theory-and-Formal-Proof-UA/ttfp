@@ -13,8 +13,8 @@
 
 #exercise[
   Розгляньте такі два означення, $D_i$ і $D_j$:
-  $ x : A tack.r a(x) := K : L, $
-  $ y : B tack.r b(y) := M : N. $
+  $ x : A triangle.r a(x) := K : L, $
+  $ y : B triangle.r b(y) := M : N. $
 
   Нехай $Delta ; Gamma tack.r U : V$, і припустімо, що $D_i$ та $D_j$ є елементами
   списку $Delta$, де $D_i$ передує $D_j$.
@@ -46,9 +46,9 @@
   задля зручності, вживаємо деякі добре знані формати, як-от $Sigma$- та
   інфіксні позначення:
 
-  $ D_1 equiv f : NN -> RR, n : NN tack.r a_1 (f, n) := sum_(i=0)^n (f i) : RR, $
+  $ D_1 equiv f : NN -> RR, n : NN triangle.r a_1 (f, n) := sum_(i=0)^n (f i) : RR, $
 
-  $ D_2 equiv f : NN -> RR, d : RR tack.r a_2 (f, d) := forall n : NN (f (n+1) - f n = d) : ast_p, $
+  $ D_2 equiv f : NN -> RR, d : RR triangle.r a_2 (f, d) := forall n : NN (f (n+1) - f n = d) : ast_p, $
 
   $ D_3 equiv f : NN -> RR, d : RR, u : a_2 (f, d), n : NN tack.r $
   $ quad a_3 (f, d, u, n) := "formalprf"_3 : f n = f 0 + n dot d, $
@@ -60,7 +60,7 @@
   $ quad a_5 (f, d, u, n) := "formalprf"_5 : $
   $ quad quad a_1 (f, n) = (n + 1) dot f 0 + 1/2 dot n dot (n + 1) dot d, $
 
-  $ D_6 equiv emptyset tack.r a_6 := "formalprf"_6 : sum_(i=0)^100 (i) = 5050. $
+  $ D_6 equiv emptyset triangle.r a_6 := "formalprf"_6 : sum_(i=0)^100 (i) = 5050. $
 
   Припустімо, що $"formalprf"_3$ до $"formalprf"_6$ — це метатерми, які стоять
   замість справжніх термів доведень.

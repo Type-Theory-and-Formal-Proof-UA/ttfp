@@ -21,7 +21,7 @@
    {
     "part": 1,
     "source": "tools/ttfp/out/ch01/src-part1.txt",
-    "words": 7914,
+    "words": 7915,
     "sections": [
      {
       "num": "1.1",
@@ -68,7 +68,7 @@
    {
     "part": 2,
     "source": "tools/ttfp/out/ch01/src-part2.txt",
-    "words": 4983,
+    "words": 4986,
     "sections": [
      {
       "num": "1.9",
@@ -300,7 +300,7 @@
    {
     "part": 1,
     "source": "tools/ttfp/out/ch04/src-part1.txt",
-    "words": 6511,
+    "words": 6512,
     "sections": [
      {
       "num": "4.1",
@@ -378,7 +378,7 @@
    {
     "part": 1,
     "source": "tools/ttfp/out/ch05/src-part1.txt",
-    "words": 7818,
+    "words": 7821,
     "sections": [
      {
       "num": "5.1",
@@ -439,7 +439,7 @@
    {
     "part": 1,
     "source": "tools/ttfp/out/ch06/src-part1.txt",
-    "words": 5403,
+    "words": 5404,
     "sections": [
      {
       "num": "6.1",
@@ -666,7 +666,7 @@
    {
     "part": 1,
     "source": "tools/ttfp/out/ch09/src-part1.txt",
-    "words": 8261,
+    "words": 8264,
     "sections": [
      {
       "num": "9.1",
@@ -756,7 +756,7 @@
    {
     "part": 1,
     "source": "tools/ttfp/out/ch10/src-part1.txt",
-    "words": 5712,
+    "words": 5719,
     "sections": [
      {
       "num": "10.1",
@@ -927,7 +927,7 @@
    {
     "part": 1,
     "source": "tools/ttfp/out/ch12/src-part1.txt",
-    "words": 8821,
+    "words": 8822,
     "sections": [
      {
       "num": "12.1",
@@ -1001,7 +1001,7 @@
    {
     "part": 1,
     "source": "tools/ttfp/out/ch13/src-part1.txt",
-    "words": 8128,
+    "words": 8132,
     "sections": [
      {
       "num": "13.1",
@@ -1043,7 +1043,7 @@
    {
     "part": 2,
     "source": "tools/ttfp/out/ch13/src-part2.txt",
-    "words": 2994,
+    "words": 2996,
     "sections": [
      {
       "num": "13.8",
@@ -1084,7 +1084,7 @@
    {
     "part": 1,
     "source": "tools/ttfp/out/ch14/src-part1.txt",
-    "words": 8688,
+    "words": 8689,
     "sections": [
      {
       "num": "14.1",
@@ -1410,7 +1410,7 @@
    {
     "part": 1,
     "source": "tools/ttfp/out/appD/src-part1.txt",
-    "words": 351,
+    "words": 352,
     "sections": [
      {
       "num": null,

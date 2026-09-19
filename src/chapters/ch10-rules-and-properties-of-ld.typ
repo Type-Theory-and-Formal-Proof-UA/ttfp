@@ -138,7 +138,7 @@
 для звичайних описових означень (пор. означення 9.1.2).
 
 #definition(name: "Примітивне означення, означення, середовище")[
-  (1) Примітивне означення має вигляд $ x : A tack.r a(x) := #dblbot : N. $
+  (1) Примітивне означення має вигляд $ x : A triangle.r a(x) := #dblbot : N. $
 
   (2) Означення буває або описовим, або примітивним.
 
@@ -206,7 +206,7 @@ $N$ щодо середовища $Delta$ та контексту $x : A$.
 #rule(
   label: $("def-prim")$,
   prem: $Delta ; Gamma tack.r K : L quad Delta ; x : A tack.r N : s$,
-  conc: $Delta , x : A tack.r a(x) := #dblbot : N ; Gamma tack.r K : L$,
+  conc: $Delta , x : A triangle.r a(x) := #dblbot : N ; Gamma tack.r K : L$,
   side: [якщо $a in.not Delta$],
 )
 
@@ -219,7 +219,7 @@ $N$ щодо середовища $Delta$ та контексту $x : A$.
   label: $("inst-prim")$,
   prem: $Delta ; Gamma tack.r ast : square quad Delta ; Gamma tack.r U : A[x := U]$,
   conc: $Delta ; Gamma tack.r a(U) : N[x := U]$,
-  side: [якщо $x : A tack.r a(x) := #dblbot : N in Delta$],
+  side: [якщо $x : A triangle.r a(x) := #dblbot : N in Delta$],
 )
 
 Оскільки ці нові правила (def-prim) та (inst-prim) для примітивних означень такі
@@ -249,13 +249,13 @@ $N$ щодо середовища $Delta$ та контексту $x : A$.
         label: $("inst")$,
         prem: $Delta ; Gamma tack.r ast : square quad Delta ; Gamma tack.r U : A[x := U]$,
         conc: $Delta ; Gamma tack.r a(U) : N[x := U]$,
-        side: [якщо $x : A tack.r a(x) := #box(stroke: 0.5pt, inset: 2pt)[$M : N$] in Delta$],
+        side: [якщо $x : A triangle.r a(x) := #box(stroke: 0.5pt, inset: 2pt)[$M : N$] in Delta$],
       ),
       rule(
         label: $("inst-prim")$,
         prem: $Delta ; Gamma tack.r ast : square quad Delta ; Gamma tack.r U : A[x := U]$,
         conc: $Delta ; Gamma tack.r a(U) : N[x := U]$,
-        side: [якщо $x : A tack.r a(x) := #box(stroke: 0.5pt, inset: 2pt)[$#dblbot : N$] in Delta$],
+        side: [якщо $x : A triangle.r a(x) := #box(stroke: 0.5pt, inset: 2pt)[$#dblbot : N$] in Delta$],
       ),
     )
   ],
@@ -305,7 +305,7 @@ tack.r K : L$ у #ld».
 Наведене нижче означення є розширенням означення 9.1.3.
 
 #definition(name: [Елементи означення в #ld])[
-  Нехай $D equiv Gamma tack.r a(x) := K slash dblbot : L$ — означення.
+  Нехай $D equiv Gamma triangle.r a(x) := K slash dblbot : L$ — означення.
   Тоді:
 
   − $Gamma$ — це *контекст* означення $D$.
@@ -321,10 +321,10 @@ tack.r K : L$ у #ld».
 
   − $L$ — це *тип* означення $D$.
 
-  Якщо $D equiv Gamma tack.r a(x) := K : L$, то означення називається описовим,
+  Якщо $D equiv Gamma triangle.r a(x) := K : L$, то означення називається описовим,
   або власне означенням, а $a$ — власне константою.
 
-  Якщо $D equiv Gamma tack.r a(x) := #dblbot : L$, то означення називається
+  Якщо $D equiv Gamma triangle.r a(x) := #dblbot : L$, то означення називається
   примітивним означенням, а $a$ — примітивною константою.
 ]
 
@@ -332,7 +332,7 @@ tack.r K : L$ у #ld».
 
 #lemma(name: "Лема про вільні змінні та константи")[
   Нехай $Delta ; Gamma tack.r M : N$, де $Delta equiv Delta_1, D, Delta_2$ із
-  $D equiv x : A tack.r a(x) := K slash dblbot : L$, а $Gamma equiv y : B$. Тоді:
+  $D equiv x : A triangle.r a(x) := K slash dblbot : L$, а $Gamma equiv y : B$. Тоді:
 
   (1) Для всіх $i$: $F V (A_i) subset.eq {x_1, dots.h.c, x_(i-1)}$;
       $F V (K), F V (L) subset.eq {x}$.
@@ -382,7 +382,7 @@ tack.r K : L$ у #ld».
 Про легальні середовища можна сказати більше:
 
 #lemma(name: "Лема про легальне середовище")[
-  Якщо $D equiv x : A tack.r a(x) := M slash dblbot : N$ зустрічається в
+  Якщо $D equiv x : A triangle.r a(x) := M slash dblbot : N$ зустрічається в
   легальному $Delta$, скажімо $Delta equiv Delta_1, D, Delta_2$, то:
 
   (1) кожне $A_i$ легальне щодо $Delta_1$ та $x_1 : A_1, dots.h.c, x_(i-1) : A_(i-1)$;
@@ -396,7 +396,7 @@ tack.r K : L$ у #ld».
   (1) (Початок для контекстів) Якщо $Delta ; Gamma$ — легальна комбінація і
       $(x : A) in Gamma$, то маємо $Delta ; Gamma tack.r x : A$.
 
-  (2) (Початок для середовищ) Нехай $D equiv x : A tack.r a(x) := M : N$. Якщо
+  (2) (Початок для середовищ) Нехай $D equiv x : A triangle.r a(x) := M : N$. Якщо
       $Delta$ легальне і $D in Delta$, то і (1a) $Delta ; x : A tack.r M : N$, і
       (1b) $Delta ; x : A tack.r a(x) : N$.
 ]
@@ -407,7 +407,7 @@ tack.r K : L$ у #ld».
       $Delta_1 ; Gamma_1 tack.r M : N$, то $Delta_2 ; Gamma_2 tack.r M : N$.
 
   (2) (Стискання середовищ) Якщо $Delta_1, D, Delta_2 ; Gamma tack.r M : N$, де
-      означення $D$ — це $Gamma' tack.r a(x) := K slash dblbot : L$, і $a$ не
+      означення $D$ — це $Gamma' triangle.r a(x) := K slash dblbot : L$, і $a$ не
       зустрічається ні в $Delta_2$, ні в $Gamma$, ні в $M$, ні в $N$, то
       $Delta_1, Delta_2 ; Gamma tack.r M : N$.
 
@@ -438,7 +438,7 @@ tack.r K : L$ у #ld».
       $Delta ; Gamma, x : A tack.r B : s_2$.
 
   (5) Якщо $Delta ; Gamma tack.r a(U) : C$, то константа $a$ мусить бути
-      означуваною константою в означенні $D equiv x : A tack.r a(x) := M slash dblbot : N$
+      означуваною константою в означенні $D equiv x : A triangle.r a(x) := M slash dblbot : N$
       з $Delta$, а $C =^(Delta)_(beta) N[x := U]$; до того ж:
 
       − якщо $|Gamma| = n > 0$, то існує $B$ таке, що $Delta ; Gamma tack.r U : B$
@@ -579,9 +579,9 @@ $N_2 darrow N_3$ (пор. теорему 1.9.8):
 розрізнення описових означень, які розглядалися в попередньому розділі, та
 примітивних.
 
-Описове означення $Delta ; Gamma tack.r a(x) := M : N$ має тіло $M$, що відкриває
+Описове означення $Delta ; Gamma triangle.r a(x) := M : N$ має тіло $M$, що відкриває
 можливість розгорнути інстанціацію $a(U)$ у $M[x := U]$. У примітивному ж
-означенні $Delta ; Gamma tack.r a(x) := #dblbot : N$ таке розгортання неможливе (і
+означенні $Delta ; Gamma triangle.r a(x) := #dblbot : N$ таке розгортання неможливе (і
 не передбачене).
 
 Ми навели кілька прикладів аксіом і примітивних понять, щоб наголосити, що такі
@@ -678,16 +678,16 @@ Jutting et al. (1994). Описані там алгоритми та довед�
 
   (a) Покажіть, що наведене нижче примітивне означення спричиняє
       суперечливість, бо воно уможливлює виведення суперечності в #ld:
-      $ A, B : ast_p tack.r k(A, B) := #dblbot : (A arrow.r.double B) arrow.r.double A. $
+      $ A, B : ast_p triangle.r k(A, B) := #dblbot : (A arrow.r.double B) arrow.r.double A. $
 
   (b) Покажіть, що наведена нижче пара примітивних означень спричиняє
       суперечливість:
-      $ emptyset tack.r iota^"DN" := #dblbot : forall A : ast_p . (not not A arrow.r.double A), $
-      $ emptyset tack.r "neg-imp" := #dblbot : forall A : ast_p . (A arrow.r.double not A). $
+      $ emptyset triangle.r iota^"DN" := #dblbot : forall A : ast_p . (not not A arrow.r.double A), $
+      $ emptyset triangle.r "neg-imp" := #dblbot : forall A : ast_p . (A arrow.r.double not A). $
 
   (c) Покажіть, що наведене нижче означення, яке нагадує аксіому індукції,
       спричиняє суперечливість:
-      $ P : NN -> ast_p tack.r "ind-s"(P) := forall n : NN . (P n arrow.r.double P (s n)) arrow.r.double forall n : NN . P n. $
+      $ P : NN -> ast_p triangle.r "ind-s"(P) := forall n : NN . (P n arrow.r.double P (s n)) arrow.r.double forall n : NN . P n. $
 ]
 
 #exercise[

@@ -547,7 +547,7 @@ Structure (van Dalen, 1994) і досі добре вводить у предм�
 
 #exercise[
   Нехай $Gamma equiv S : ast, P : S -> ast$ і
-  $D_4 equiv Gamma tack.r forall(S, P) := Pi x : S . P x : ast$.
+  $D_4 equiv Gamma triangle.r forall(S, P) := Pi x : S . P x : ast$.
   Дайте повне виведення в #ld0 для $D_4 ; Gamma tack.r forall(S, P) : ast$.
 ]
 
@@ -557,8 +557,8 @@ Structure (van Dalen, 1994) і досі добре вводить у предм�
 ]
 
 #exercise[
-  Нехай $D_1 equiv emptyset tack.r N := bot #h(-0.1em) bot : ast$ і
-  $D_2 equiv emptyset tack.r s := bot #h(-0.1em) bot : N -> N$ (пор. приклад 10.2.2).
+  Нехай $D_1 equiv emptyset triangle.r N := bot #h(-0.1em) bot : ast$ і
+  $D_2 equiv emptyset triangle.r s := bot #h(-0.1em) bot : N -> N$ (пор. приклад 10.2.2).
 
   #enum(
     numbering: "(a)",

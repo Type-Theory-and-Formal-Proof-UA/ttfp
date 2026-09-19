@@ -1,6 +1,12 @@
 // Appendix D — "Derivation rules for λD" (original pp. 409–410).
 #import "/book.typ": *
 
+#set heading(numbering: (..n) => {
+  let p = n.pos()
+  if p.len() == 1 { "D" } else { "D." + p.slice(1).map(str).join(".") }
+})
+#counter(heading).update(0)
+
 = Правила виведення для #ld
 
 // ⊥⊥ — у друкованому оригіналі означник примітивного означення набрано двома

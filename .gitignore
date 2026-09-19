@@ -1,0 +1,11 @@
+.DS_Store
+
+# Source PDF (copyrighted, reference-only — do not publish)
+nederpelt_geuvers__type_theory_and_formal_proof_an_introduction.pdf
+
+# Typst build output and cache
+*.pdf
+.typst-cache/
+
+# GHC/Haskell leftovers from an earlier experiment in this repo
+dist-newstyle/

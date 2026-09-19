@@ -249,9 +249,9 @@ $and$ замість $arrow.r.double$ (з'ясуйте, чому):
         ([(3)], 2, [$union(S, V, W) := {x : S | x epsilon V or x epsilon W } : upright("ps")(S)$]),
         ([(4)], 2, [$inter(S, V, W) := {x : S | x epsilon V and x epsilon W } : upright("ps")(S)$]),
         ([(5)], 2, [$without(S, V, W) := {x : S | x epsilon V and not(x epsilon W)} : upright("ps")(S)$]),
-        ([], 2, [Позначення: $V = W$, $V union W$, $V inter W$, $V \ W$ відповідно]),
-        ([(6)], 1, [$("c")(S, V) := {x : S | not(x epsilon V)} : upright("ps")(S)$]),
-        ([], 1, [Позначення: $V^c$ замість $("c")(S, V)$]),
+        ([], 2, [Позначення: $V = W$, $V union W$, $V inter W$, $V  without  W$ відповідно]),
+        ([(6)], 1, [$upright("c")(S, V) := {x : S | not(x epsilon V)} : upright("ps")(S)$]),
+        ([], 1, [Позначення: $V^c$ замість $upright("c")(S, V)$]),
       )),
     )
   ]],
@@ -303,20 +303,20 @@ $epsilon$, а рядок (2) — його правилом вилучення.
 простої теоретико-множинної теореми в #ld (див. рисунок 13.4). Ми доводимо таке:
 
 #align(center)[
-  Для всіх підмножин $V$ і $W$ з $S$: якщо $V subset.eq W^c$, то $V \ W = V$.
+  Для всіх підмножин $V$ і $W$ з $S$: якщо $V subset.eq W^c$, то $V  without  W = V$.
 ]
 
 Оскільки доведення — це легка вправа з логіки та з механізмом означень #ld, ми лише
 зробимо кілька зауважень про спосіб побудови термів доведення.
 
 Ми починаємо на рисунку 13.4 (рядки (1)–(4)) з першої частини доведення, показуючи, що
-ми завжди маємо включення $V \ W subset.eq V$ (незалежно від того, чи
+ми завжди маємо включення $V  without  W subset.eq V$ (незалежно від того, чи
 $V subset.eq W^c$). У рядку (1) ми використовуємо, що
-$(x epsilon V \ W) =_(beta)^(Delta) (x epsilon V and not(x epsilon W))$. Альтернатива
+$(x epsilon V  without  W) =_(beta)^(Delta) (x epsilon V and not(x epsilon W))$. Альтернатива
 до терма доведення $v$ у рядку (1) — терм доведення, заснований на $epsilon"-el"$"
 (побудуйте його самі).
 
-Друга частина доведення (рядки (5)–(10)), яка доводить $V subset.eq V \ W$, трохи
+Друга частина доведення (рядки (5)–(10)), яка доводить $V subset.eq V  without  W$, трохи
 складніша. Тепер нам потрібно, щоб $V subset.eq W^c$. Рядки (11) і (12) завершують
 доведення.
 
@@ -328,12 +328,12 @@ $(x epsilon V \ W) =_(beta)^(Delta) (x epsilon V and not(x epsilon W))$. Аль�
 підказка може вести до кількох розв'язків; наприклад, логічну підказку
 … ужити $arrow.r.double$-in на $a_2$ … у рядку (3) можна заповнити як
 
-− $arrow.r.double"-in"(x epsilon V \ W, x epsilon V, lambda v : (x epsilon V \ W) . a_2)$
+− $arrow.r.double"-in"(x epsilon V  without  W, x epsilon V, lambda v : (x epsilon V  without  W) . a_2)$
   (у стилі натурального виведення),
 
 або безпосередньо як
 
-− $lambda v : (x epsilon V \ W) . a_2$ (у теоретико-типовому стилі).
+− $lambda v : (x epsilon V  without  W) . a_2$ (у теоретико-типовому стилі).
 
 #figure(
   align(center)[#text(size: 9.5pt)[
@@ -346,22 +346,22 @@ $(x epsilon V \ W) =_(beta)^(Delta) (x epsilon V and not(x epsilon W))$. Аль�
       ..ch13rows((
         ([], 0, [$S : ast_s$ | $V, W : upright("ps")(S)$]),
         ([], 1, [$x : S$]),
-        ([], 2, [$v : (x epsilon V \ W)$]),
+        ([], 2, [$v : (x epsilon V  without  W)$]),
         ([(1)], 3, [$a_1^† := v$ (або: ужити $epsilon"-el"$") $: x epsilon V and not(x epsilon W)$]),
         ([(2)], 3, [$a_2 := dots "ужити" and"-el"_1 "на" a_1 dots : x epsilon V$]),
-        ([(3)], 2, [$a_3 := dots "ужити" arrow.r.double"-in на" a_2 dots : x epsilon V \ W arrow.r.double x epsilon V$]),
-        ([(4)], 1, [$a_4 (S, V, W) := dots "ужити" forall"-in" "на" a_3 dots : V \ W subset.eq V$]),
+        ([(3)], 2, [$a_3 := dots "ужити" arrow.r.double"-in на" a_2 dots : x epsilon V  without  W arrow.r.double x epsilon V$]),
+        ([(4)], 1, [$a_4 (S, V, W) := dots "ужити" forall"-in" "на" a_3 dots : V  without  W subset.eq V$]),
         ([], 1, [$u : V subset.eq W^c$]),
         ([], 2, [$x : S$]),
         ([], 3, [$v : x epsilon V$]),
         ([(5)], 4, [$a_5 := u x v : x epsilon W^c$]),
         ([(6)], 4, [$a_6 := a_5 : not(x epsilon W)$]),
         ([(7)], 4, [$a_7 := dots "ужити" and"-in на" v "і" a_6 dots : x epsilon V and not(x epsilon W)$]),
-        ([(8)], 4, [$a_8 := a_7 : x epsilon V \ W$]),
-        ([(9)], 3, [$a_9 := dots "ужити" arrow.r.double"-in на" a_8 dots : (x epsilon V) arrow.r.double (x epsilon V \ W)$]),
-        ([(10)], 2, [$a_(10) (S, V, W, u) := dots "ужити" forall"-in" "на" a_9 dots : V subset.eq V \ W$]),
-        ([(11)], 1, [$a_(11) (S, V, W, u) := dots "ужити" and"-in на" a_4 (S, V, W) "і" a_(10) (S, V, W, u) dots : V \ W = V$]),
-        ([(12)], 0, [$a_(12) (S, V, W) := dots "ужити" arrow.r.double"-in на" a_(11) dots : (V subset.eq W^c) arrow.r.double (V \ W = V)$]),
+        ([(8)], 4, [$a_8 := a_7 : x epsilon V  without  W$]),
+        ([(9)], 3, [$a_9 := dots "ужити" arrow.r.double"-in на" a_8 dots : (x epsilon V) arrow.r.double (x epsilon V  without  W)$]),
+        ([(10)], 2, [$a_(10) (S, V, W, u) := dots "ужити" forall"-in" "на" a_9 dots : V subset.eq V  without  W$]),
+        ([(11)], 1, [$a_(11) (S, V, W, u) := dots "ужити" and"-in на" a_4 (S, V, W) "і" a_(10) (S, V, W, u) dots : V  without  W = V$]),
+        ([(12)], 0, [$a_(12) (S, V, W) := dots "ужити" arrow.r.double"-in на" a_(11) dots : (V subset.eq W^c) arrow.r.double (V  without  W = V)$]),
         ([], 0, [$†$ #text(size: 8pt)[параметри придушено]]),
       )),
     )
@@ -388,8 +388,8 @@ $(x epsilon V \ W) =_(beta)^(Delta) (x epsilon V and not(x epsilon W))$. Аль�
   приклад: на рисунку 13.4 ми бачимо в рядку (11) посилання на два об'єкти доведення:
   $a_4$ і $a_(10)$. Зауважте, що список параметрів $a_4$ на один елемент коротший за
   список параметрів $a_(10)$; це відповідає тому, що ми помічали раніше: доведення
-  $V \ W subset.eq V$ не залежить від припущення $V subset.eq W^c$, а доведення
-  $V subset.eq V \ W$ — залежить.
+  $V  without  W subset.eq V$ не залежить від припущення $V subset.eq W^c$, а доведення
+  $V subset.eq V  without  W$ — залежить.
 ]
 
 Розмірковуючи про поняття, уведені в цьому підрозділі, залишається одне питання: ми
@@ -727,7 +727,7 @@ $y$, пов'язаних з $x$. Ми скорочуємо $upright("class")(S, 
 відношення між $S$ і $T$.) Очевидне подання такого відношення має тип
 $S -> T -> ast_p$.
 
-#example(name: "Приклади")[
+#example[
   Припустімо, що ми маємо $NN$ і $ZZ$ як типи. Розгляньмо відношення $R$ між $NN$ і $ZZ$,
   яке виконується між $n : NN$ і $x : ZZ$, якщо $n = x^2 + 1$. Отже, ми маємо $R 5 2$,
   $R 5 (minus 2)$ і $not(R 5 x)$ для будь-якого іншого $x : ZZ$. Це відношення можна

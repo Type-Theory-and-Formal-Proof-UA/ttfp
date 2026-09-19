@@ -63,3 +63,26 @@ as translation progresses; keep translations consistent across chapters.
 | specialisation | спеціалізація |
 | flag pole | древко прапорця |
 | divisibility (m ∣ n) | подільність |
+| subset | підмножина |
+| proper subset | власна підмножина |
+| empty set | порожня множина |
+| universe | універсум |
+| power set / set of subsets (ps) | множина підмножин |
+| union | об'єднання |
+| intersection | перетин |
+| difference (of sets) | різниця |
+| complement | доповнення |
+| relation | відношення |
+| domain | область визначення |
+| range / image | область значень |
+| inverse relation | обернене відношення |
+| composition (of relations) | композиція |
+| reflexive | рефлексивність |
+| symmetric | симетричність |
+| transitive | транзитивність |
+| equivalence relation | відношення еквівалентності |
+| partial order | частковий порядок |
+| mapping / function | відображення |
+| injection | ін'єкція |
+| surjection | сюр'єкція |
+| bijection | бієкція |

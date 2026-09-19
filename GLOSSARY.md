@@ -40,3 +40,26 @@ as translation progresses; keep translations consistent across chapters.
 | predicate logic | логіка предикатів |
 | constructive logic | конструктивна логіка |
 | classical logic | класична логіка |
+| computable function | обчислювана функція |
+| computability | обчислюваність |
+| decidability | розв'язність |
+| undecidable | нерозв'язний |
+| incompleteness theorem | теорема про неповноту |
+| Turing machine | машина Тюринга |
+| Church–Turing thesis | теза Тюринга–Черча |
+| primitive recursion | примітивна рекурсія |
+| well-founded relation | обґрунтоване відношення |
+| quotient set | фактор-множина |
+| equivalence class | клас еквівалентності |
+| greatest common divisor | найбільший спільний дільник |
+| Euclidean algorithm | алгоритм Евкліда |
+| divisor | дільник |
+| remainder | остача |
+| lower bound | нижня межа |
+| minimum of a subset | мінімум підмножини |
+| proof hole | прогалина |
+| descriptor (ι) | дескриптор |
+| linear combination | лінійна комбінація |
+| specialisation | спеціалізація |
+| flag pole | древко прапорця |
+| divisibility (m ∣ n) | подільність |

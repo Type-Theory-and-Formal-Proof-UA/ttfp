@@ -44,6 +44,7 @@
 #let notation-item = statement(kind: "Позначення")
 #let convention = statement(kind: "Домовленість")
 #let exercise = statement(kind: "Вправа")
+#let axiom = statement(kind: "Аксіома")
 
 // Placeholder marker for a section whose translation has not been written
 // yet. Drop `#todo-section` right under a heading; remove it once the
@@ -53,6 +54,37 @@
 // A proof block, closed with a QED square instead of a numbered label.
 #let proof(body) = block(above: 1em, below: 1.2em, breakable: true)[
   _Доведення._ #body #h(1fr) $square$
+]
+
+// ---------------------------------------------------------------------------
+// Derivation rules
+// ---------------------------------------------------------------------------
+// Renders a rule in premiss-conclusion format (premisses above a horizontal
+// line, rule label in the left margin, side condition in the right margin):
+//
+//   #rule(label: "appl", prem: $Gamma tack.r M : Pi x : A . B$,
+//         conc: $Gamma tack.r M N : B[x := N]$)
+//
+// Use `#stack` for a multi-premiss rule and `prem: none` for an axiom.
+#let stack(..rules) = {
+  let r = rules.pos()
+  math.display($#r.join($space space space space$)$)
+}
+#let rule(label: none, prem: none, conc: none, side: none) = block(
+  above: 1.1em,
+  below: 1.1em,
+  breakable: false,
+)[
+  #grid(
+    columns: (4.5em, 1fr, auto),
+    align: (left + horizon, center + horizon, right + horizon),
+    column-gutter: 0.6em,
+    text(size: 9pt, if label == none { [~] } else { label }),
+    if prem == none { [#none] } else { prem },
+    if side == none { [#none] } else { text(size: 9pt, side) },
+    [], line(length: 100%, stroke: 0.5pt), [],
+    [], conc, [],
+  )
 ]
 
 // ---------------------------------------------------------------------------

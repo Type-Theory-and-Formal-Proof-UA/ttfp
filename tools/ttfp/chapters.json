@@ -1,0 +1,22 @@
+{
+ "ch01": {"chapter": 1, "en_title": "Untyped lambda calculus", "file": "src/chapters/ch01-untyped-lambda-calculus.typ"},
+ "ch02": {"chapter": 2, "en_title": "Simply typed lambda calculus", "file": "src/chapters/ch02-simply-typed-lambda-calculus.typ"},
+ "ch03": {"chapter": 3, "en_title": "Second order typed lambda calculus", "file": "src/chapters/ch03-second-order-typed-lambda-calculus.typ"},
+ "ch04": {"chapter": 4, "en_title": "Types dependent on types", "file": "src/chapters/ch04-types-dependent-on-types.typ"},
+ "ch05": {"chapter": 5, "en_title": "Types dependent on terms", "file": "src/chapters/ch05-types-dependent-on-terms.typ"},
+ "ch06": {"chapter": 6, "en_title": "The Calculus of Constructions", "file": "src/chapters/ch06-calculus-of-constructions.typ"},
+ "ch07": {"chapter": 7, "en_title": "The encoding of logical notions in λC", "file": "src/chapters/ch07-encoding-logical-notions.typ"},
+ "ch08": {"chapter": 8, "en_title": "Definitions", "file": "src/chapters/ch08-definitions.typ"},
+ "ch09": {"chapter": 9, "en_title": "Extension of λC with definitions", "file": "src/chapters/ch09-extension-of-lc-with-definitions.typ"},
+ "ch10": {"chapter": 10, "en_title": "Rules and properties of λD", "file": "src/chapters/ch10-rules-and-properties-of-ld.typ"},
+ "ch11": {"chapter": 11, "en_title": "Flag-style natural deduction in λD", "file": "src/chapters/ch11-flag-style-natural-deduction.typ"},
+ "ch12": {"chapter": 12, "en_title": "Mathematics in λD: a first attempt", "file": "src/chapters/ch12-mathematics-in-ld-first-attempt.typ"},
+ "ch13": {"chapter": 13, "en_title": "Sets and subsets", "file": "src/chapters/ch13-sets-and-subsets.typ"},
+ "ch14": {"chapter": 14, "en_title": "Numbers and arithmetic in λD", "file": "src/chapters/ch14-numbers-and-arithmetic.typ"},
+ "ch15": {"chapter": 15, "en_title": "An elaborated example", "file": "src/chapters/ch15-elaborated-example.typ"},
+ "ch16": {"chapter": 16, "en_title": "Further perspectives", "file": "src/chapters/ch16-further-perspectives.typ"},
+ "appA": {"chapter": 0, "prefix": "A", "en_title": "Logic in λD", "file": "src/appendices/appA-logic-in-ld.typ"},
+ "appB": {"chapter": 0, "prefix": "B", "en_title": "Arithmetical axioms, definitions and lemmas", "file": "src/appendices/appB-arithmetical-axioms.typ"},
+ "appC": {"chapter": 0, "prefix": "C", "en_title": "Two complete example proofs in λD", "file": "src/appendices/appC-two-example-proofs.typ"},
+ "appD": {"chapter": 0, "prefix": "D", "en_title": "Derivation rules for λD", "file": "src/appendices/appD-derivation-rules.typ"}
+}

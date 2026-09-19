@@ -1,0 +1,2 @@
+#import "/book.typ": *
+x

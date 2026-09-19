@@ -1,0 +1,1424 @@
+{
+ "ch01": {
+  "file": "src/chapters/ch01-untyped-lambda-calculus.typ",
+  "chapter": "1",
+  "scaffold_headings": [
+   "Поведінка функцій «вхід–вихід»",
+   "Сутність функцій",
+   "Лямбда-терми",
+   "Вільні та зв'язані змінні",
+   "Альфа-конверсія",
+   "Підстановка",
+   "Лямбда-терми за модулем α-еквівалентності",
+   "Бета-редукція",
+   "Нормальні форми та конфлюентність",
+   "Теорема про нерухому точку",
+   "Висновки",
+   "Додаткова література",
+   "Вправи"
+  ],
+  "parts": [
+   {
+    "part": 1,
+    "source": "tools/ttfp/out/ch01/src-part1.txt",
+    "words": 7914,
+    "sections": [
+     {
+      "num": "1.1",
+      "en": "Input–output behaviour of functions",
+      "uk": "Поведінка функцій «вхід–вихід»"
+     },
+     {
+      "num": "1.2",
+      "en": "The essence of functions",
+      "uk": "Сутність функцій"
+     },
+     {
+      "num": "1.3",
+      "en": "Lambda-terms",
+      "uk": "Лямбда-терми"
+     },
+     {
+      "num": "1.4",
+      "en": "Free and bound variables",
+      "uk": "Вільні та зв'язані змінні"
+     },
+     {
+      "num": "1.5",
+      "en": "Alpha conversion",
+      "uk": "Альфа-конверсія"
+     },
+     {
+      "num": "1.6",
+      "en": "Substitution",
+      "uk": "Підстановка"
+     },
+     {
+      "num": "1.7",
+      "en": "Lambda-terms modulo α-equivalence",
+      "uk": "Лямбда-терми за модулем α-еквівалентності"
+     },
+     {
+      "num": "1.8",
+      "en": "Beta reduction",
+      "uk": "Бета-редукція"
+     }
+    ]
+   },
+   {
+    "part": 2,
+    "source": "tools/ttfp/out/ch01/src-part2.txt",
+    "words": 4983,
+    "sections": [
+     {
+      "num": "1.9",
+      "en": "Normal forms and conﬂuence",
+      "uk": "Нормальні форми та конфлюентність"
+     },
+     {
+      "num": "1.10",
+      "en": "Fixed Point Theorem",
+      "uk": "Теорема про нерухому точку"
+     },
+     {
+      "num": "1.11",
+      "en": "Conclusions",
+      "uk": "Висновки"
+     },
+     {
+      "num": "1.12",
+      "en": "Further reading",
+      "uk": "Додаткова література"
+     },
+     {
+      "num": null,
+      "en": "Exercises",
+      "uk": "Вправи"
+     }
+    ]
+   }
+  ]
+ },
+ "ch02": {
+  "file": "src/chapters/ch02-simply-typed-lambda-calculus.typ",
+  "chapter": "2",
+  "scaffold_headings": [
+   "Додавання типів",
+   "Прості типи",
+   "Черчева та Каррі типізація",
+   "Правила виведення для черчевого #lto",
+   "Різні формати виведення в #lto",
+   "Типи задач, що розв'язуються в теорії типів",
+   "Коректна типізованість у #lto",
+   "Перевірка типів у #lto",
+   "Пошук термів у #lto",
+   "Загальні властивості #lto",
+   "Редукція та #lto",
+   "Наслідки",
+   "Висновки",
+   "Додаткова література",
+   "Вправи"
+  ],
+  "parts": [
+   {
+    "part": 1,
+    "source": "tools/ttfp/out/ch02/src-part1.txt",
+    "words": 8582,
+    "sections": [
+     {
+      "num": "2.1",
+      "en": "Adding types",
+      "uk": "Додавання типів"
+     },
+     {
+      "num": "2.2",
+      "en": "Simple types",
+      "uk": "Прості типи"
+     },
+     {
+      "num": "2.3",
+      "en": "Church-typing and Curry-typing",
+      "uk": "Черчева та Каррі типізація"
+     },
+     {
+      "num": "2.4",
+      "en": "Derivation rules for Church’s λ→",
+      "uk": "Правила виведення для черчевого #lto"
+     },
+     {
+      "num": "2.5",
+      "en": "Diﬀerent formats for a derivation in λ→",
+      "uk": "Різні формати виведення в #lto"
+     },
+     {
+      "num": "2.6",
+      "en": "Kinds of problems to be solved in type theory",
+      "uk": "Типи задач, що розв'язуються в теорії типів"
+     },
+     {
+      "num": "2.7",
+      "en": "Well-typedness in λ→",
+      "uk": "Коректна типізованість у #lto"
+     },
+     {
+      "num": "2.8",
+      "en": "Type Checking in λ→",
+      "uk": "Перевірка типів у #lto"
+     },
+     {
+      "num": "2.9",
+      "en": "Term Finding in λ→",
+      "uk": "Пошук термів у #lto"
+     }
+    ]
+   },
+   {
+    "part": 2,
+    "source": "tools/ttfp/out/ch02/src-part2.txt",
+    "words": 6699,
+    "sections": [
+     {
+      "num": "2.10",
+      "en": "General properties of λ→",
+      "uk": "Загальні властивості #lto"
+     },
+     {
+      "num": "2.11",
+      "en": "Reduction and λ→",
+      "uk": "Редукція та #lto"
+     },
+     {
+      "num": "2.12",
+      "en": "Consequences",
+      "uk": "Наслідки"
+     },
+     {
+      "num": "2.13",
+      "en": "Conclusions",
+      "uk": "Висновки"
+     },
+     {
+      "num": "2.14",
+      "en": "Further reading",
+      "uk": "Додаткова література"
+     },
+     {
+      "num": null,
+      "en": "Exercises",
+      "uk": "Вправи"
+     }
+    ]
+   }
+  ]
+ },
+ "ch03": {
+  "file": "src/chapters/ch03-second-order-typed-lambda-calculus.typ",
+  "chapter": "3",
+  "scaffold_headings": [
+   "Типова абстракція та типове застосування",
+   "Π-типи",
+   "Правила абстракції та застосування другого порядку",
+   "Система #ltwo",
+   "Приклад виведення в #ltwo",
+   "Властивості #ltwo",
+   "Висновки",
+   "Додаткова література",
+   "Вправи"
+  ],
+  "parts": [
+   {
+    "part": 1,
+    "source": "tools/ttfp/out/ch03/src-part1.txt",
+    "words": 6999,
+    "sections": [
+     {
+      "num": "3.1",
+      "en": "Type-abstraction and type-application",
+      "uk": "Типова абстракція та типове застосування"
+     },
+     {
+      "num": "3.2",
+      "en": "Π-types",
+      "uk": "Π-типи"
+     },
+     {
+      "num": "3.3",
+      "en": "Second order abstraction and application rules",
+      "uk": "Правила абстракції та застосування другого порядку"
+     },
+     {
+      "num": "3.4",
+      "en": "The system λ2",
+      "uk": "Система #ltwo"
+     },
+     {
+      "num": "3.5",
+      "en": "Example of a derivation in λ2",
+      "uk": "Приклад виведення в #ltwo"
+     },
+     {
+      "num": "3.6",
+      "en": "Properties of λ2",
+      "uk": "Властивості #ltwo"
+     },
+     {
+      "num": "3.7",
+      "en": "Conclusions",
+      "uk": "Висновки"
+     },
+     {
+      "num": "3.8",
+      "en": "Further reading",
+      "uk": "Додаткова література"
+     },
+     {
+      "num": null,
+      "en": "Exercises",
+      "uk": "Вправи"
+     }
+    ]
+   }
+  ]
+ },
+ "ch04": {
+  "file": "src/chapters/ch04-types-dependent-on-types.typ",
+  "chapter": "4",
+  "scaffold_headings": [
+   "Конструктори типів",
+   "Правило сортів і правило змінної в #lomega",
+   "Правило ослаблення в #lomega",
+   "Правило утворення в #lomega",
+   "Правила застосування та абстракції в #lomega",
+   "Скорочені виведення",
+   "Правило конверсії",
+   "Властивості #lomega",
+   "Висновки",
+   "Додаткова література",
+   "Вправи"
+  ],
+  "parts": [
+   {
+    "part": 1,
+    "source": "tools/ttfp/out/ch04/src-part1.txt",
+    "words": 6511,
+    "sections": [
+     {
+      "num": "4.1",
+      "en": "Type constructors",
+      "uk": "Конструктори типів"
+     },
+     {
+      "num": "4.2",
+      "en": "Sort-rule and var-rule in λ ω",
+      "uk": "Правило сортів і правило змінної в #lomega"
+     },
+     {
+      "num": "4.3",
+      "en": "The weakening rule in λ ω",
+      "uk": "Правило ослаблення в #lomega"
+     },
+     {
+      "num": "4.4",
+      "en": "The formation rule in λ ω",
+      "uk": "Правило утворення в #lomega"
+     },
+     {
+      "num": "4.5",
+      "en": "Application and abstraction rules in λ ω",
+      "uk": "Правила застосування та абстракції в #lomega"
+     },
+     {
+      "num": "4.6",
+      "en": "Shortened derivations",
+      "uk": "Скорочені виведення"
+     },
+     {
+      "num": "4.7",
+      "en": "The conversion rule",
+      "uk": "Правило конверсії"
+     },
+     {
+      "num": "4.8",
+      "en": "Properties of λ ω",
+      "uk": "Властивості #lomega"
+     },
+     {
+      "num": "4.9",
+      "en": "Conclusions",
+      "uk": "Висновки"
+     },
+     {
+      "num": "4.10",
+      "en": "Further reading",
+      "uk": "Додаткова література"
+     },
+     {
+      "num": null,
+      "en": "Exercises",
+      "uk": "Вправи"
+     }
+    ]
+   }
+  ]
+ },
+ "ch05": {
+  "file": "src/chapters/ch05-types-dependent-on-terms.typ",
+  "chapter": "5",
+  "scaffold_headings": [
+   "Відсутнє розширення",
+   "Правила виведення #lp",
+   "Приклад виведення в #lp",
+   "Мінімальна логіка предикатів у #lp",
+   "Приклад логічного виведення в #lp",
+   "Висновки",
+   "Додаткова література",
+   "Вправи"
+  ],
+  "parts": [
+   {
+    "part": 1,
+    "source": "tools/ttfp/out/ch05/src-part1.txt",
+    "words": 7818,
+    "sections": [
+     {
+      "num": "5.1",
+      "en": "The missing extension",
+      "uk": "Відсутнє розширення"
+     },
+     {
+      "num": "5.2",
+      "en": "Derivation rules of λP",
+      "uk": "Правила виведення #lp"
+     },
+     {
+      "num": "5.3",
+      "en": "An example derivation in λP",
+      "uk": "Приклад виведення в #lp"
+     },
+     {
+      "num": "5.4",
+      "en": "Minimal predicate logic in λP",
+      "uk": "Мінімальна логіка предикатів у #lp"
+     },
+     {
+      "num": "5.5",
+      "en": "Example of a logical derivation in λP",
+      "uk": "Приклад логічного виведення в #lp"
+     },
+     {
+      "num": "5.6",
+      "en": "Conclusions",
+      "uk": "Висновки"
+     },
+     {
+      "num": "5.7",
+      "en": "Further reading",
+      "uk": "Додаткова література"
+     },
+     {
+      "num": null,
+      "en": "Exercises",
+      "uk": "Вправи"
+     }
+    ]
+   }
+  ]
+ },
+ "ch06": {
+  "file": "src/chapters/ch06-calculus-of-constructions.typ",
+  "chapter": "6",
+  "scaffold_headings": [
+   "Система #lc",
+   "λ-куб",
+   "Властивості #lc",
+   "Висновки",
+   "Додаткова література",
+   "Вправи"
+  ],
+  "parts": [
+   {
+    "part": 1,
+    "source": "tools/ttfp/out/ch06/src-part1.txt",
+    "words": 5403,
+    "sections": [
+     {
+      "num": "6.1",
+      "en": "The system λC",
+      "uk": "Система #lc"
+     },
+     {
+      "num": "6.2",
+      "en": "The λ-cube",
+      "uk": "λ-куб"
+     },
+     {
+      "num": "6.3",
+      "en": "Properties of λC",
+      "uk": "Властивості #lc"
+     },
+     {
+      "num": "6.4",
+      "en": "Conclusions",
+      "uk": "Висновки"
+     },
+     {
+      "num": "6.5",
+      "en": "Further reading",
+      "uk": "Додаткова література"
+     },
+     {
+      "num": null,
+      "en": "Exercises",
+      "uk": "Вправи"
+     }
+    ]
+   }
+  ]
+ },
+ "ch07": {
+  "file": "src/chapters/ch07-encoding-logical-notions.typ",
+  "chapter": "7",
+  "scaffold_headings": [
+   "Абсурдність і заперечення в теорії типів",
+   "Кон'юнкція та диз'юнкція в теорії типів",
+   "Приклад логіки висловлювань у #lc",
+   "Класична логіка в #lc",
+   "Логіка предикатів у #lc",
+   "Приклад логіки предикатів у #lc",
+   "Висновки",
+   "Додаткова література",
+   "Вправи"
+  ],
+  "parts": [
+   {
+    "part": 1,
+    "source": "tools/ttfp/out/ch07/src-part1.txt",
+    "words": 8105,
+    "sections": [
+     {
+      "num": "7.1",
+      "en": "Absurdity and negation in type theory",
+      "uk": "Абсурдність і заперечення в теорії типів"
+     },
+     {
+      "num": "7.2",
+      "en": "Conjunction and disjunction in type theory",
+      "uk": "Кон'юнкція та диз'юнкція в теорії типів"
+     },
+     {
+      "num": "7.3",
+      "en": "An example of propositional logic in λC",
+      "uk": "Приклад логіки висловлювань у #lc"
+     },
+     {
+      "num": "7.4",
+      "en": "Classical logic in λC",
+      "uk": "Класична логіка в #lc"
+     },
+     {
+      "num": "7.5",
+      "en": "Predicate logic in λC",
+      "uk": "Логіка предикатів у #lc"
+     },
+     {
+      "num": "7.6",
+      "en": "An example of predicate logic in λC",
+      "uk": "Приклад логіки предикатів у #lc"
+     },
+     {
+      "num": "7.7",
+      "en": "Conclusions",
+      "uk": "Висновки"
+     }
+    ]
+   },
+   {
+    "part": 2,
+    "source": "tools/ttfp/out/ch07/src-part2.txt",
+    "words": 1919,
+    "sections": [
+     {
+      "num": "7.8",
+      "en": "Further reading",
+      "uk": "Додаткова література"
+     },
+     {
+      "num": null,
+      "en": "Exercises",
+      "uk": "Вправи"
+     }
+    ]
+   }
+  ]
+ },
+ "ch08": {
+  "file": "src/chapters/ch08-definitions.typ",
+  "chapter": "8",
+  "scaffold_headings": [
+   "Природа означень",
+   "Індуктивні та рекурсивні означення",
+   "Формат означень",
+   "Інстанціації означень",
+   "Формальний формат означень",
+   "Означення, залежні від припущень",
+   "Надання імен доведенням",
+   "Загальне доведення та його спеціалізована версія",
+   "Математичні твердження як формальні означення",
+   "Висновки",
+   "Додаткова література",
+   "Вправи"
+  ],
+  "parts": [
+   {
+    "part": 1,
+    "source": "tools/ttfp/out/ch08/src-part1.txt",
+    "words": 8598,
+    "sections": [
+     {
+      "num": "8.1",
+      "en": "The nature of deﬁnitions",
+      "uk": "Природа означень"
+     },
+     {
+      "num": "8.2",
+      "en": "Inductive and recursive deﬁnitions",
+      "uk": "Індуктивні та рекурсивні означення"
+     },
+     {
+      "num": "8.3",
+      "en": "The format of deﬁnitions",
+      "uk": "Формат означень"
+     },
+     {
+      "num": "8.4",
+      "en": "Instantiations of deﬁnitions",
+      "uk": "Інстанціації означень"
+     },
+     {
+      "num": "8.5",
+      "en": "A formal format for deﬁnitions",
+      "uk": "Формальний формат означень"
+     },
+     {
+      "num": "8.6",
+      "en": "Deﬁnitions depending on assumptions",
+      "uk": "Означення, залежні від припущень"
+     },
+     {
+      "num": "8.7",
+      "en": "Giving names to proofs",
+      "uk": "Надання імен доведенням"
+     },
+     {
+      "num": "8.8",
+      "en": "A general proof and a specialised version",
+      "uk": "Загальне доведення та його спеціалізована версія"
+     },
+     {
+      "num": "8.9",
+      "en": "Mathematical statements as formal deﬁnitions",
+      "uk": "Математичні твердження як формальні означення"
+     },
+     {
+      "num": "8.10",
+      "en": "Conclusions",
+      "uk": "Висновки"
+     },
+     {
+      "num": "8.11",
+      "en": "Further reading",
+      "uk": "Додаткова література"
+     }
+    ]
+   },
+   {
+    "part": 2,
+    "source": "tools/ttfp/out/ch08/src-part2.txt",
+    "words": 876,
+    "sections": [
+     {
+      "num": null,
+      "en": "Exercises",
+      "uk": "Вправи"
+     }
+    ]
+   }
+  ]
+ },
+ "ch09": {
+  "file": "src/chapters/ch09-extension-of-lc-with-definitions.typ",
+  "chapter": "9",
+  "scaffold_headings": [
+   "Розширення #lc до системи #ld0",
+   "Судження, розширені означеннями",
+   "Правило додавання означення",
+   "Правило інстанціації означення",
+   "Розгортання означень і δ-конверсія",
+   "Приклади δ-конверсії",
+   "Правило конверсії, розширене #sym.arrow.r.long.double",
+   "Правила виведення для #ld0",
+   "Детальніший розгляд правил виведення #ld0",
+   "Висновки",
+   "Додаткова література",
+   "Вправи"
+  ],
+  "parts": [
+   {
+    "part": 1,
+    "source": "tools/ttfp/out/ch09/src-part1.txt",
+    "words": 8261,
+    "sections": [
+     {
+      "num": "9.1",
+      "en": "Extension of λC to the system λD0",
+      "uk": "Розширення #lc до системи #ld0"
+     },
+     {
+      "num": "9.2",
+      "en": "Judgements extended with deﬁnitions",
+      "uk": "Судження, розширені означеннями"
+     },
+     {
+      "num": "9.3",
+      "en": "The rule for adding a deﬁnition",
+      "uk": "Правило додавання означення"
+     },
+     {
+      "num": "9.4",
+      "en": "The rule for instantiating a deﬁnition",
+      "uk": "Правило інстанціації означення"
+     },
+     {
+      "num": "9.5",
+      "en": "Deﬁnition unfolding and δ-conversion",
+      "uk": "Розгортання означень і δ-конверсія"
+     },
+     {
+      "num": "9.6",
+      "en": "Examples of δ-conversion",
+      "uk": "Приклади δ-конверсії"
+     },
+     {
+      "num": "9.7",
+      "en": "The conversion rule extended with →",
+      "uk": "Правило конверсії, розширене #sym.arrow.r.long.double"
+     },
+     {
+      "num": "9.8",
+      "en": "The derivation rules for λD0",
+      "uk": "Правила виведення для #ld0"
+     },
+     {
+      "num": "9.9",
+      "en": "A closer look at the derivation rules of λD0",
+      "uk": "Детальніший розгляд правил виведення #ld0"
+     },
+     {
+      "num": "9.10",
+      "en": "Conclusions",
+      "uk": "Висновки"
+     },
+     {
+      "num": "9.11",
+      "en": "Further reading",
+      "uk": "Додаткова література"
+     }
+    ]
+   },
+   {
+    "part": 2,
+    "source": "tools/ttfp/out/ch09/src-part2.txt",
+    "words": 825,
+    "sections": [
+     {
+      "num": null,
+      "en": "Exercises",
+      "uk": "Вправи"
+     }
+    ]
+   }
+  ]
+ },
+ "ch10": {
+  "file": "src/chapters/ch10-rules-and-properties-of-ld.typ",
+  "chapter": "10",
+  "scaffold_headings": [
+   "Описові й примітивні означення",
+   "Аксіоми та аксіоматичні поняття",
+   "Правила для примітивних означень",
+   "Властивості #ld",
+   "Нормалізація та конфлюентність у #ld",
+   "Висновки",
+   "Додаткова література",
+   "Вправи"
+  ],
+  "parts": [
+   {
+    "part": 1,
+    "source": "tools/ttfp/out/ch10/src-part1.txt",
+    "words": 5712,
+    "sections": [
+     {
+      "num": "10.1",
+      "en": "Descriptive versus primitive deﬁnitions",
+      "uk": "Описові й примітивні означення"
+     },
+     {
+      "num": "10.2",
+      "en": "Axioms and axiomatic notions",
+      "uk": "Аксіоми та аксіоматичні поняття"
+     },
+     {
+      "num": "10.3",
+      "en": "Rules for primitive deﬁnitions",
+      "uk": "Правила для примітивних означень"
+     },
+     {
+      "num": "10.4",
+      "en": "Properties of λD",
+      "uk": "Властивості #ld"
+     },
+     {
+      "num": "10.5",
+      "en": "Normalisation and conﬂuence in λD",
+      "uk": "Нормалізація та конфлюентність у #ld"
+     },
+     {
+      "num": "10.6",
+      "en": "Conclusions",
+      "uk": "Висновки"
+     },
+     {
+      "num": "10.7",
+      "en": "Further reading",
+      "uk": "Додаткова література"
+     },
+     {
+      "num": null,
+      "en": "Exercises",
+      "uk": "Вправи"
+     }
+    ]
+   }
+  ]
+ },
+ "ch11": {
+  "file": "src/chapters/ch11-flag-style-natural-deduction.typ",
+  "chapter": "11",
+  "scaffold_headings": [
+   "Формальні виведення в #ld",
+   "Порівняння формального та прапорцевого #ld",
+   "Домовленості щодо прапорцевих доведень у #ld",
+   "Правила введення та вилучення",
+   "Правила для конструктивної логіки висловлювань",
+   "Приклади логічних виведень у #ld",
+   "Приховування незмінних списків параметрів",
+   "Правила для класичної логіки висловлювань",
+   "Альтернативні правила натурального виведення для #sym.or",
+   "Правила для конструктивної логіки предикатів",
+   "Правила для класичної логіки предикатів",
+   "Висновки",
+   "Додаткова література",
+   "Вправи"
+  ],
+  "parts": [
+   {
+    "part": 1,
+    "source": "tools/ttfp/out/ch11/src-part1.txt",
+    "words": 7935,
+    "sections": [
+     {
+      "num": "11.1",
+      "en": "Formal derivations in λD",
+      "uk": "Формальні виведення в #ld"
+     },
+     {
+      "num": "11.2",
+      "en": "Comparing formal and ﬂag-style λD",
+      "uk": "Порівняння формального та прапорцевого #ld"
+     },
+     {
+      "num": "11.3",
+      "en": "Conventions about ﬂag-style proofs in λD",
+      "uk": "Домовленості щодо прапорцевих доведень у #ld"
+     },
+     {
+      "num": "11.4",
+      "en": "Introduction and elimination rules",
+      "uk": "Правила введення та вилучення"
+     },
+     {
+      "num": "11.5",
+      "en": "Rules for constructive propositional logic",
+      "uk": "Правила для конструктивної логіки висловлювань"
+     },
+     {
+      "num": "11.6",
+      "en": "Examples of logical derivations in λD",
+      "uk": "Приклади логічних виведень у #ld"
+     },
+     {
+      "num": "11.7",
+      "en": "Suppressing unaltered parameter lists",
+      "uk": "Приховування незмінних списків параметрів"
+     },
+     {
+      "num": "11.8",
+      "en": "Rules for classical propositional logic",
+      "uk": "Правила для класичної логіки висловлювань"
+     },
+     {
+      "num": "11.9",
+      "en": "Alternative natural deduction rules for ∨",
+      "uk": "Альтернативні правила натурального виведення для #sym.or"
+     }
+    ]
+   },
+   {
+    "part": 2,
+    "source": "tools/ttfp/out/ch11/src-part2.txt",
+    "words": 4079,
+    "sections": [
+     {
+      "num": "11.10",
+      "en": "Rules for constructive predicate logic",
+      "uk": "Правила для конструктивної логіки предикатів"
+     },
+     {
+      "num": "11.11",
+      "en": "Rules for classical predicate logic",
+      "uk": "Правила для класичної логіки предикатів"
+     },
+     {
+      "num": "11.12",
+      "en": "Conclusions",
+      "uk": "Висновки"
+     },
+     {
+      "num": "11.13",
+      "en": "Further reading",
+      "uk": "Додаткова література"
+     },
+     {
+      "num": null,
+      "en": "Exercises",
+      "uk": "Вправи"
+     }
+    ]
+   }
+  ]
+ },
+ "ch12": {
+  "file": "src/chapters/ch12-mathematics-in-ld-first-attempt.typ",
+  "chapter": "12",
+  "scaffold_headings": [
+   "Приклад для початку",
+   "Рівність",
+   "Властивість конгруентності рівності",
+   "Порядки",
+   "Доведення про порядки",
+   "Єдине існування",
+   "Дескриптор ι",
+   "Висновки",
+   "Додаткова література",
+   "Вправи"
+  ],
+  "parts": [
+   {
+    "part": 1,
+    "source": "tools/ttfp/out/ch12/src-part1.txt",
+    "words": 8821,
+    "sections": [
+     {
+      "num": "12.1",
+      "en": "An example to start with",
+      "uk": "Приклад для початку"
+     },
+     {
+      "num": "12.2",
+      "en": "Equality",
+      "uk": "Рівність"
+     },
+     {
+      "num": "12.3",
+      "en": "The congruence property of equality",
+      "uk": "Властивість конгруентності рівності"
+     },
+     {
+      "num": "12.4",
+      "en": "Orders",
+      "uk": "Порядки"
+     },
+     {
+      "num": "12.5",
+      "en": "A proof about orders",
+      "uk": "Доведення про порядки"
+     },
+     {
+      "num": "12.6",
+      "en": "Unique existence",
+      "uk": "Єдине існування"
+     },
+     {
+      "num": "12.7",
+      "en": "The descriptor ι",
+      "uk": "Дескриптор ι"
+     },
+     {
+      "num": "12.8",
+      "en": "Conclusions",
+      "uk": "Висновки"
+     },
+     {
+      "num": "12.9",
+      "en": "Further reading",
+      "uk": "Додаткова література"
+     },
+     {
+      "num": null,
+      "en": "Exercises",
+      "uk": "Вправи"
+     }
+    ]
+   }
+  ]
+ },
+ "ch13": {
+  "file": "src/chapters/ch13-sets-and-subsets.typ",
+  "chapter": "13",
+  "scaffold_headings": [
+   "Робота з підмножинами в #ld",
+   "Основні теоретико-множинні поняття",
+   "Спеціальні підмножини",
+   "Відношення",
+   "Відображення",
+   "Представлення математичних понять",
+   "Висновки",
+   "Додаткова література",
+   "Вправи"
+  ],
+  "parts": [
+   {
+    "part": 1,
+    "source": "tools/ttfp/out/ch13/src-part1.txt",
+    "words": 8128,
+    "sections": [
+     {
+      "num": "13.1",
+      "en": "Dealing with subsets in λD",
+      "uk": "Робота з підмножинами в #ld"
+     },
+     {
+      "num": "13.2",
+      "en": "Basic set-theoretic notions",
+      "uk": "Основні теоретико-множинні поняття"
+     },
+     {
+      "num": "13.3",
+      "en": "Special subsets",
+      "uk": "Спеціальні підмножини"
+     },
+     {
+      "num": "13.4",
+      "en": "Relations",
+      "uk": "Відношення"
+     },
+     {
+      "num": "13.5",
+      "en": "Maps",
+      "uk": "Відображення"
+     },
+     {
+      "num": "13.6",
+      "en": "Representation of mathematical notions",
+      "uk": "Представлення математичних понять"
+     },
+     {
+      "num": "13.7",
+      "en": "Conclusions",
+      "uk": "Висновки"
+     }
+    ]
+   },
+   {
+    "part": 2,
+    "source": "tools/ttfp/out/ch13/src-part2.txt",
+    "words": 2994,
+    "sections": [
+     {
+      "num": "13.8",
+      "en": "Further reading",
+      "uk": "Додаткова література"
+     },
+     {
+      "num": null,
+      "en": "Exercises",
+      "uk": "Вправи"
+     }
+    ]
+   }
+  ]
+ },
+ "ch14": {
+  "file": "src/chapters/ch14-numbers-and-arithmetic.typ",
+  "chapter": "14",
+  "scaffold_headings": [
+   "Аксіоми Пеано для натуральних чисел",
+   "Аксіоматичне введення цілих чисел",
+   "Основні властивості «нового» $NN$",
+   "Додавання цілих чисел",
+   "Приклад базового обчислення в #ld",
+   "Арифметичні закони додавання",
+   "Замкненість відносно додавання для натуральних і від'ємних чисел",
+   "Віднімання цілих чисел",
+   "Протилежне ціле число",
+   "Відношення нерівності на $ZZ$",
+   "Множення цілих чисел",
+   "Подільність",
+   "Незалежність від доведення",
+   "Висновки",
+   "Додаткова література",
+   "Вправи"
+  ],
+  "parts": [
+   {
+    "part": 1,
+    "source": "tools/ttfp/out/ch14/src-part1.txt",
+    "words": 8688,
+    "sections": [
+     {
+      "num": "14.1",
+      "en": "The Peano axioms for natural numbers",
+      "uk": "Аксіоми Пеано для натуральних чисел"
+     },
+     {
+      "num": "14.2",
+      "en": "Introducing integers the axiomatic way",
+      "uk": "Аксіоматичне введення цілих чисел"
+     },
+     {
+      "num": "14.3",
+      "en": "Basic properties of the ‘new’ N",
+      "uk": "Основні властивості «нового» $NN$"
+     },
+     {
+      "num": "14.4",
+      "en": "Integer addition",
+      "uk": "Додавання цілих чисел"
+     },
+     {
+      "num": "14.5",
+      "en": "An example of a basic computation in λD",
+      "uk": "Приклад базового обчислення в #ld"
+     },
+     {
+      "num": "14.6",
+      "en": "Arithmetical laws for addition",
+      "uk": "Арифметичні закони додавання"
+     }
+    ]
+   },
+   {
+    "part": 2,
+    "source": "tools/ttfp/out/ch14/src-part2.txt",
+    "words": 8394,
+    "sections": [
+     {
+      "num": "14.7",
+      "en": "Closure under addition for natural and negative numbers",
+      "uk": "Замкненість відносно додавання для натуральних і від'ємних чисел"
+     },
+     {
+      "num": "14.8",
+      "en": "Integer subtraction",
+      "uk": "Віднімання цілих чисел"
+     },
+     {
+      "num": "14.9",
+      "en": "The opposite of an integer",
+      "uk": "Протилежне ціле число"
+     },
+     {
+      "num": "14.10",
+      "en": "Inequality relations on Z",
+      "uk": "Відношення нерівності на $ZZ$"
+     },
+     {
+      "num": "14.11",
+      "en": "Multiplication of integers",
+      "uk": "Множення цілих чисел"
+     },
+     {
+      "num": "14.12",
+      "en": "Divisibility",
+      "uk": "Подільність"
+     },
+     {
+      "num": "14.13",
+      "en": "Irrelevance of proof",
+      "uk": "Незалежність від доведення"
+     },
+     {
+      "num": "14.14",
+      "en": "Conclusions",
+      "uk": "Висновки"
+     }
+    ]
+   },
+   {
+    "part": 3,
+    "source": "tools/ttfp/out/ch14/src-part3.txt",
+    "words": 2162,
+    "sections": [
+     {
+      "num": "14.15",
+      "en": "Further reading",
+      "uk": "Додаткова література"
+     },
+     {
+      "num": null,
+      "en": "Exercises",
+      "uk": "Вправи"
+     }
+    ]
+   }
+  ]
+ },
+ "ch15": {
+  "file": "src/chapters/ch15-elaborated-example.typ",
+  "chapter": "15",
+  "scaffold_headings": [
+   "Формалізація доведення леми Безу",
+   "Підготовча робота",
+   "Частина I доведення леми Безу",
+   "Частина II доведення",
+   "Частина III доведення",
+   "Прогалини в доведенні леми Безу",
+   "Теорема про мінімум для $ZZ$",
+   "Теорема про ділення",
+   "Висновки",
+   "Додаткова література",
+   "Вправи"
+  ],
+  "parts": [
+   {
+    "part": 1,
+    "source": "tools/ttfp/out/ch15/src-part1.txt",
+    "words": 6877,
+    "sections": [
+     {
+      "num": "15.1",
+      "en": "Formalising a proof of Bézout’s Lemma",
+      "uk": "Формалізація доведення леми Безу"
+     },
+     {
+      "num": "15.2",
+      "en": "Preparatory work",
+      "uk": "Підготовча робота"
+     },
+     {
+      "num": "15.3",
+      "en": "Part I of the proof of Bézout’s Lemma",
+      "uk": "Частина I доведення леми Безу"
+     },
+     {
+      "num": "15.4",
+      "en": "Part II of the proof",
+      "uk": "Частина II доведення"
+     },
+     {
+      "num": "15.5",
+      "en": "Part III of the proof",
+      "uk": "Частина III доведення"
+     },
+     {
+      "num": "15.6",
+      "en": "The holes in the proof of Bézout’s Lemma",
+      "uk": "Прогалини в доведенні леми Безу"
+     }
+    ]
+   },
+   {
+    "part": 2,
+    "source": "tools/ttfp/out/ch15/src-part2.txt",
+    "words": 6189,
+    "sections": [
+     {
+      "num": "15.7",
+      "en": "The Minimum Theorem for Z",
+      "uk": "Теорема про мінімум для $ZZ$"
+     },
+     {
+      "num": "15.8",
+      "en": "The Division Theorem",
+      "uk": "Теорема про ділення"
+     },
+     {
+      "num": "15.9",
+      "en": "Conclusions",
+      "uk": "Висновки"
+     },
+     {
+      "num": "15.10",
+      "en": "Further reading",
+      "uk": "Додаткова література"
+     },
+     {
+      "num": null,
+      "en": "Exercises",
+      "uk": "Вправи"
+     }
+    ]
+   }
+  ]
+ },
+ "ch16": {
+  "file": "src/chapters/ch16-further-perspectives.typ",
+  "chapter": "16",
+  "scaffold_headings": [
+   "Корисні застосування #ld",
+   "Помічники доведень на основі теорії типів",
+   "Майбутнє галузі",
+   "Висновки",
+   "Додаткова література"
+  ],
+  "parts": [
+   {
+    "part": 1,
+    "source": "tools/ttfp/out/ch16/src-part1.txt",
+    "words": 4878,
+    "sections": [
+     {
+      "num": "16.1",
+      "en": "Useful applications of λD",
+      "uk": "Корисні застосування #ld"
+     },
+     {
+      "num": "16.2",
+      "en": "Proof assistants based on type theory",
+      "uk": "Помічники доведень на основі теорії типів"
+     },
+     {
+      "num": "16.3",
+      "en": "Future of the ﬁeld",
+      "uk": "Майбутнє галузі"
+     },
+     {
+      "num": "16.4",
+      "en": "Conclusions",
+      "uk": "Висновки"
+     },
+     {
+      "num": "16.5",
+      "en": "Further reading",
+      "uk": "Додаткова література"
+     }
+    ]
+   }
+  ]
+ },
+ "appA": {
+  "file": "src/appendices/appA-logic-in-ld.typ",
+  "chapter": "A",
+  "scaffold_headings": [
+   "Конструктивна логіка висловлювань",
+   "Класична логіка висловлювань",
+   "Конструктивна логіка предикатів",
+   "Класична логіка предикатів"
+  ],
+  "parts": [
+   {
+    "part": 1,
+    "source": "tools/ttfp/out/appA/src-part1.txt",
+    "words": 1135,
+    "sections": [
+     {
+      "num": "A.1",
+      "en": "Constructive propositional logic",
+      "uk": "Конструктивна логіка висловлювань"
+     },
+     {
+      "num": "A.2",
+      "en": "Classical propositional logic",
+      "uk": "Класична логіка висловлювань"
+     },
+     {
+      "num": "A.3",
+      "en": "Constructive predicate logic",
+      "uk": "Конструктивна логіка предикатів"
+     },
+     {
+      "num": "A.4",
+      "en": "Classical predicate logic",
+      "uk": "Класична логіка предикатів"
+     }
+    ]
+   }
+  ]
+ },
+ "appB": {
+  "file": "src/appendices/appB-arithmetical-axioms.typ",
+  "chapter": "B",
+  "scaffold_headings": [],
+  "parts": [
+   {
+    "part": 1,
+    "source": "tools/ttfp/out/appB/src-part1.txt",
+    "words": 2029,
+    "sections": [
+     {
+      "num": null,
+      "en": "Arithmetical axioms, definitions and lemmas",
+      "uk": null
+     }
+    ]
+   }
+  ]
+ },
+ "appC": {
+  "file": "src/appendices/appC-two-example-proofs.typ",
+  "chapter": "C",
+  "scaffold_headings": [
+   "Замкненість відносно додавання в $NN$",
+   "Теорема про мінімум"
+  ],
+  "parts": [
+   {
+    "part": 1,
+    "source": "tools/ttfp/out/appC/src-part1.txt",
+    "words": 1976,
+    "sections": [
+     {
+      "num": "C.1",
+      "en": "Closure under addition in N",
+      "uk": "Замкненість відносно додавання в $NN$"
+     },
+     {
+      "num": "C.2",
+      "en": "The Minimum Theorem",
+      "uk": "Теорема про мінімум"
+     }
+    ]
+   }
+  ]
+ },
+ "appD": {
+  "file": "src/appendices/appD-derivation-rules.typ",
+  "chapter": "D",
+  "scaffold_headings": [],
+  "parts": [
+   {
+    "part": 1,
+    "source": "tools/ttfp/out/appD/src-part1.txt",
+    "words": 351,
+    "sections": [
+     {
+      "num": null,
+      "en": "Derivation rules for λD",
+      "uk": null
+     }
+    ]
+   }
+  ]
+ }
+}

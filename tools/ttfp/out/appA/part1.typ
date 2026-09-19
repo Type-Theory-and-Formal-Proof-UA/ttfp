@@ -31,12 +31,9 @@
       for p in prem {
         cells.push(grid.cell(colspan: 2, align: center)[#boxed(p)])
       }
-      cells.push(grid.cell(align: center)[#head])
-      if seealso == none { cells.push([]) } else {
-        cells.push(grid.cell(align: left + bottom)[#text(size: 9.5pt)[#seealso]])
-      }
+      cells.push(grid.cell(colspan: 2, align: center)[#head])
       grid(
-        columns: (2.2em, auto, auto),
+        columns: (2.2em, auto),
         stroke: none,
         column-gutter: 0.7em,
         row-gutter: 0.22em,

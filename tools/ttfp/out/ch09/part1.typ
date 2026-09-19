@@ -37,7 +37,7 @@ $C$. Ми беремо символи $a, a_1, a_i, a.bar, b, dots.h.c$ як і�
 припускаємо, що змінні та константи походять із неперетинних множин, а $square$ і
 $ast$ — це спеціальні символи, які є різними і не належать ні $V$, ні $C$:
 
-$ V inter C = emptyset, quad ast != square, quad ast, square in.not V union C. $
+$ V inter C = emptyset, quad ast eq.not square, quad ast, square in.not V union C. $
 
 #definition(name: "Вирази λD0 і λD, EλD")[
   Множина $E_(#ld)$ виразів #ld0 (і #ld) означається так:

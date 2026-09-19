@@ -247,7 +247,7 @@ $"least"_ZZ$ з коротшим списком параметрів, для о�
       column-gutter: 0.8em,
       row-gutter: 0.45em,
       align: (right + horizon, left + horizon),
-      [], [$T : "ps"(ZZ) | u : T != emptyset_ZZ | v : exists x : ZZ . "lw-bnd"_ZZ (T, x)$],
+      [], [$T : "ps"(ZZ) | u : T eq.not emptyset_ZZ | v : exists x : ZZ . "lw-bnd"_ZZ (T, x)$],
       [$(1)$], [$"min-the"(T, u, v) := dots.c "див. рисунок 15.18, рядок" (29) dots.c :$],
       [], [$exists m : ZZ . "least"_ZZ (T, m)$],
       [$(2)$], [$"min-uni-the"(T, u, v) := a_4["Рис.15.1"] (ZZ, lt.eq, T, "прогалина №1", "min-the"(T, u, v)) :$],
@@ -431,7 +431,7 @@ $"ps"(ZZ)$ за правилом (inst).
 Цей крок доведення вимагає теореми про мінімум, як ми пояснили в попередніх
 підрозділах ($S^+$ має мінімум, бо це непорожня підмножина $ZZ$, обмежена знизу).
 Тож ми намагаємося скористатися рядком (3) рисунка 15.2 і означити $d$ як
-$"minimum"(S^+, ?1, ?2)$, де $?1$ мусить мати тип $S^+ != emptyset_ZZ$, а $?2$ —
+$"minimum"(S^+, ?1, ?2)$, де $?1$ мусить мати тип $S^+ eq.not emptyset_ZZ$, а $?2$ —
 тип $exists x : ZZ . "lw-bnd"_ZZ (S^+, x)$.
 
 Для першого об'єкта доведення, $?1$, достатньо подати додатний елемент $S$. Ця
@@ -466,7 +466,7 @@ $"minimum"(S^+, ?1, ?2)$, де $?1$ мусить мати тип $S^+ != emptyse
       [$(7)$], [#c15flag(1)[$a_7 := "ass" 1 : m epsilon NN^+$]],
       [$(8)$], [#c15flag(1)[$a_8 := dots.c "вжити" "∧-введ" "до" a_6 "і" a_7 dots.c : m epsilon S^+$]],
       [$(9)$], [#c15flag(1)[$a_9 := dots.c "вжити" "∃-введ" "до" m "і" a_8 dots.c : exists k : ZZ . (k epsilon S^+)$]],
-      [$(10)$], [#c15flag(1)[$a_(10) := a_(13)["Рис.13.8"] (ZZ, S^+) a_9 : S^+ != emptyset_ZZ$]],
+      [$(10)$], [#c15flag(1)[$a_(10) := a_(13)["Рис.13.8"] (ZZ, S^+) a_9 : S^+ eq.not emptyset_ZZ$]],
       [$(11)$], [#c15flag(1)[$a_(11) := "прогалина №3" : exists x : ZZ . "lw-bnd"_ZZ (S^+, x)$]],
       [$(12)$], [#c15flag(1)[$d := "minimum"(S^+, a_(10), a_(11)) : ZZ$]],
     )
@@ -976,7 +976,7 @@ $T$ з $ZZ$, доведення того, що $T$ непорожня, і при
       column-gutter: 0.8em,
       row-gutter: 0.45em,
       align: (right + horizon, left + horizon),
-      [], [$T : "ps"(ZZ) | u : T != emptyset_ZZ | v : exists x : ZZ . "lw-bnd"_ZZ (T, x)$],
+      [], [$T : "ps"(ZZ) | u : T eq.not emptyset_ZZ | v : exists x : ZZ . "lw-bnd"_ZZ (T, x)$],
       [$(1)$], [#c15flag(1)[$a_1^dagger := dots.c "вжити" a_6["Рис.13.8"] "до" u dots.c : exists n : ZZ . n epsilon T$]],
       [], [#c15flag(2)[$l : ZZ | "ass" 1 : "lw-bnd"_ZZ (T, l)$]],
       [], [#c15flag(3)[$n : ZZ | "ass" 2 : n epsilon T$]],
@@ -1235,7 +1235,7 @@ $T$ щодо оберненого відношення «$gt.eq$». Подібн
       [], [#c15flag(1)[$l : ZZ$]],
       [$(1)$], [#c15flag(2)[$"up-bnd"_ZZ (T, l) := "lw-bnd"(ZZ, gt.eq, T, l) : ast_p$]],
       [$(2)$], [#c15flag(2)[$"grtst"_ZZ (T, l) := "least"(ZZ, gt.eq, T, l) : ast_p$]],
-      [], [#c15flag(2)[$u : T != emptyset_ZZ | v : exists x : ZZ . "up-bnd"_ZZ (T, x)$]],
+      [], [#c15flag(2)[$u : T eq.not emptyset_ZZ | v : exists x : ZZ . "up-bnd"_ZZ (T, x)$]],
       [$(3)$], [#c15flag(3)[$"max-the"(T, u, v) := dots.c : exists m : ZZ . "grtst"_ZZ (T, m)$]],
       [$(4)$], [#c15flag(3)[$"max-uni-the"(T, u, v) := dots.c : exists^1 m : ZZ . "grtst"_ZZ (T, m)$]],
       [$(5)$], [#c15flag(3)[$"maximum"(T, u, v) := dots.c : ZZ$]],
@@ -1257,7 +1257,7 @@ $T$ щодо оберненого відношення «$gt.eq$». Подібн
 $D := {x : ZZ | (exists k : ZZ . (x = k dot d)) and x lt.eq m}$.
 
 Щодо формалізації див. рисунок 15.20. Ми також доводимо, що $D$ непорожня й
-обмежена зверху: показуємо, що $0 epsilon D$ (рядок (5)), отже $D != emptyset$
+обмежена зверху: показуємо, що $0 epsilon D$ (рядок (5)), отже $D eq.not emptyset$
 (рядок (7)), і що існує верхня межа $D$, а саме $m$ (рядки (9) і (10)).
 
 #figure(
@@ -1275,7 +1275,7 @@ $D := {x : ZZ | (exists k : ZZ . (x = k dot d)) and x lt.eq m}$.
       [$(4)$], [$a_4 := dots.c "вжити" and "-вил 1 до" u dots.c : 0 lt.eq m$],
       [$(5)$], [$a_5 := dots.c "вжити" and "-введ до" a_3 " і " a_4 dots.c : 0 epsilon D$],
       [$(6)$], [$a_6 := dots.c "вжити" exists "-введ до" a_5 dots.c : exists z : ZZ . (z epsilon D)$],
-      [$(7)$], [$a_7 := a_(12)["Рис. 13.8"] (ZZ, D, a_6) : D != emptyset_ZZ$],
+      [$(7)$], [$a_7 := a_(12)["Рис. 13.8"] (ZZ, D, a_6) : D eq.not emptyset_ZZ$],
       [], [#c15flag(1)[$x : ZZ | w : x epsilon D$]],
       [$(8)$], [#c15flag(2)[$a_8 := dots.c "вжити" and "-вил 2 до" w dots.c : x lt.eq m$]],
       [$(9)$], [#c15flag(1)[$a_9 := dots.c "вжити" arrow.r.double "-введ і" forall "-введ до" a_8 dots.c : "up-bnd"_ZZ (D, m)$]],

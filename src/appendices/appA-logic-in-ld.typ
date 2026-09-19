@@ -8,36 +8,31 @@
 
 #let dblbot = $bot #h(-0.12em) bot$
 #let ax(n, concl, prem: (), nota: none, seealso: none) = {
-  let head = if seealso == none {
-    concl
-  } else {
-    box[#concl #h(1.2em) #text(size: 9.5pt)[#seealso]]
+  let boxed(p) = box(stroke: 0.5pt, inset: (x: 0.55em, y: 0.28em), p)
+  let note = box(text(size: 9.5pt)[#(
+    if seealso == none { [] } else { seealso }
+  )])
+  let nprem = prem.len()
+  let cells = ()
+  cells.push(grid.cell(rowspan: if nprem > 0 { nprem + 1 } else { 1 }, align: right + bottom)[$(#n)$])
+  for p in prem {
+    cells.push(grid.cell(colspan: 2, align: center + horizon)[#boxed(p)])
   }
-  let body = if prem.len() == 0 {
-    head
-  } else {
-    let cells = ()
-    for p in prem {
-      cells.push(box(stroke: 0.5pt, inset: (x: 0.55em, y: 0.28em), p))
-    }
-    cells.push(line(length: 100%, stroke: 0.5pt))
-    let premcol = grid(columns: (auto,), stroke: none, align: center, row-gutter: 0.30em, ..cells)
-    grid(columns: (auto,), stroke: none, align: center, row-gutter: 0.30em, premcol, head)
-  }
+  cells.push(grid.cell(align: center + horizon)[#concl])
+  cells.push(grid.cell(align: left + horizon)[#note])
   align(center)[
     #grid(
-      columns: (2.0em, auto),
+      columns: (2.2em, auto, auto),
       stroke: none,
-      align: (right + horizon, center + horizon),
       column-gutter: 0.7em,
-      [$ (#n) $],
-      body,
+      row-gutter: 0.22em,
+      ..cells,
     )
   ]
   if nota != none {
     align(center)[#nota]
   }
-  v(0.4em)
+  v(0.55em)
 }
 #let ln(i, body, boxed: false) = align(left)[
   #box(inset: (left: i * 1.4em), if boxed {
@@ -62,7 +57,7 @@
   (2),
   [$arrow.r.double "-in"(A, B, u) := u : A arrow.r.double B$],
   prem: ($u : A -> B$,),
-  seealso: [(див. $ (2)^ast $)],
+  seealso: [(див. $(2)^ast$)],
 )
 
 #ax(
@@ -242,7 +237,7 @@
   (26),
   [$or "-in-alt"_1 (A, B, u) := a_10 ["рис." 11.18] (A, B, u) : A or B$],
   prem: ($A, B : ast_p$, $u : not A arrow.r.double B$),
-  seealso: [(див. $ (26)^ast $)],
+  seealso: [(див. $(26)^ast$)],
 )
 
 #ax(
@@ -293,7 +288,7 @@
   (31),
   [$forall "-in"(S, P, u) := u : forall x : S . P x$],
   prem: ($u : Pi x : S . P x$,),
-  seealso: [(див. $ (31)^ast $)],
+  seealso: [(див. $(31)^ast$)],
 )
 
 #ax(
@@ -336,7 +331,7 @@
   (35),
   [$exists "-el"(S, P, u, A, v) := u A v : A$],
   prem: ($u : exists x : S . P x | A : ast_p | v : forall x : S . (P x arrow.r.double A)$,),
-  seealso: [(див. $ (35)^ast $)],
+  seealso: [(див. $(35)^ast$)],
 )
 
 Стратегія $(35)^ast$ для $exists$-вилучення:

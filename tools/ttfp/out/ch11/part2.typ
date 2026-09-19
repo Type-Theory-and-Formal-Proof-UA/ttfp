@@ -528,7 +528,7 @@ Structure (van Dalen, 1994) і досі добре вводить у предм�
 
   #enum(
     numbering: "(a)",
-    [(Доведіть: $(and(bot, bot)) bot =_(beta)^(Delta) not(bot arrow.r.double not(bot))$.)],
+    [Доведіть: $(and(bot, bot)) bot =_(beta)^(Delta) not(bot arrow.r.double not(bot))$],
     [(Дайте $delta$-нормальну форму виразу
       $exists(S, lambda x : S . (P x or Q x))$.)],
   )

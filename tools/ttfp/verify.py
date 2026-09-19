@@ -172,6 +172,32 @@ def negation_check(src_text, txt):
     return warn, len(src), len(tr)
 
 
+def prose_words(seg):
+    """Words of prose in a source or translation segment, notation excluded.
+
+    Drops the lines of a formal derivation/figure -- the numbered proof terms
+    (``(23) a23 := ...``) and formula-only lines -- which are reproduced as
+    tables in the translation and have no prose counterpart.  Counting them
+    makes a fully translated section look like it lost text.
+    """
+    out = []
+    for ln in seg.splitlines():
+        s = ln.strip()
+        if not s:
+            continue
+        # a numbered line of a figure, or a line that is one long formula
+        if re.match(r"^\(\d{1,3}\)\s", s) or re.match(r"^a_\d+\s*:=", s):
+            continue
+        if re.match(r"^\$$", s) or re.match(r"^\[\(?\d{1,3}\)?\]", s):
+            continue
+        # a line that is mostly symbols and digits, not letters
+        letters = len(re.findall(r"[A-Za-zА-Яа-яЇїІіЄєҐґ]", s))
+        if letters < len(s) * 0.4:
+            continue
+        out.append(s)
+    return re.findall(r"\S+", " ".join(out))
+
+
 def check(key, part, man, secs_by_key):
     chapter = str(man[key]["chapter"]).lstrip("ABCD") or man[key]["chapter"]
     src = os.path.join(TT, "out", key, f"src-part{part}.txt")
@@ -217,16 +243,20 @@ def check(key, part, man, secs_by_key):
             tpos.append(m.start() if m else None)
         print("  section words (original -> translation):")
         for i, (s, a, b) in enumerate(section_spans(src_text, sec, chapter)):
-            ow = len(src_text[a:b].split()) if a is not None else 0
+            # Compare prose only.  A section may have a formal figure
+            # interleaved (39 numbered proof-term lines, in one case); that
+            # notation is reproduced as a table and has no prose counterpart,
+            # so counting it makes a complete section look short.
+            ow = len(prose_words(src_text[a:b] if a is not None else ""))
             tw_s = tpos[i]
             te = next((x for x in tpos[i + 1:] if x is not None), len(ttxt))
-            tw = len(ttxt[tw_s:te].split()) if tw_s is not None else 0
+            tw = len(prose_words(ttxt[tw_s:te] if tw_s is not None else ""))
             ratio = tw / ow if ow else 0
             flag = ""
             if ow and ratio < 0.7:
                 flag = "  <-- short?"
                 ok = False
-            elif ow and ratio > 1.6:
+            elif ow and ratio > 2.2:
                 flag = "  <-- long?"
             label = s["num"] or "вправи"
             print(f"    {label:7s} {ow:5d} -> {tw:5d} ({ratio:4.2f}){flag}")

@@ -8,38 +8,26 @@
 // горизонтальною рискою; висновок під нею; праворуч — «(див. (k)*)», якщо є;
 // окремим рядком під ним — «Позначення: ...», якщо є.
 #let ax(n, concl, prem: (), nota: none, seealso: none) = {
-  let head = if seealso == none {
-    concl
-  } else {
-    box[#concl #h(1.2em) #text(size: 9.5pt)[#seealso]]
-  }
   let boxed(p) = box(stroke: 0.5pt, inset: (x: 0.55em, y: 0.28em), p)
+  let note = box(text(size: 9.5pt)[#(
+    if seealso == none { [] } else { seealso }
+  )])
   let nprem = prem.len()
+  let cells = ()
+  cells.push(grid.cell(rowspan: if nprem > 0 { nprem + 1 } else { 1 }, align: right + bottom)[$(#n)$])
+  for p in prem {
+    cells.push(grid.cell(colspan: 2, align: center + horizon)[#boxed(p)])
+  }
+  cells.push(grid.cell(align: center + horizon)[#concl])
+  cells.push(grid.cell(align: left + horizon)[#note])
   align(center)[
-    #if nprem == 0 {
-      grid(
-        columns: (2.2em, auto),
-        stroke: none,
-        align: (right + horizon, center + horizon),
-        column-gutter: 0.7em,
-        [$ (#n) $],
-        head,
-      )
-    } else {
-      let cells = ()
-      cells.push(grid.cell(rowspan: nprem + 1, align: right + bottom)[$(#n)$])
-      for p in prem {
-        cells.push(grid.cell(colspan: 2, align: center)[#boxed(p)])
-      }
-      cells.push(grid.cell(colspan: 2, align: center)[#head])
-      grid(
-        columns: (2.2em, auto),
-        stroke: none,
-        column-gutter: 0.7em,
-        row-gutter: 0.22em,
-        ..cells,
-      )
-    }
+    #grid(
+      columns: (2.2em, auto, auto),
+      stroke: none,
+      column-gutter: 0.7em,
+      row-gutter: 0.22em,
+      ..cells,
+    )
   ]
   if nota != none {
     align(center)[#nota]
@@ -73,7 +61,7 @@
   (2),
   [$arrow.r.double "-in"(A, B, u) := u : A arrow.r.double B$],
   prem: ($u : A -> B$,),
-  seealso: [(див. $ (2)^ast $)],
+  seealso: [(див. $(2)^ast$)],
 )
 
 #ax(
@@ -253,7 +241,7 @@
   (26),
   [$or "-in-alt"_1 (A, B, u) := a_10 ["рис." 11.18] (A, B, u) : A or B$],
   prem: ($A, B : ast_p$, $u : not A arrow.r.double B$),
-  seealso: [(див. $ (26)^ast $)],
+  seealso: [(див. $(26)^ast$)],
 )
 
 #ax(
@@ -304,7 +292,7 @@
   (31),
   [$forall "-in"(S, P, u) := u : forall x : S . P x$],
   prem: ($u : Pi x : S . P x$,),
-  seealso: [(див. $ (31)^ast $)],
+  seealso: [(див. $(31)^ast$)],
 )
 
 #ax(
@@ -347,7 +335,7 @@
   (35),
   [$exists "-el"(S, P, u, A, v) := u A v : A$],
   prem: ($u : exists x : S . P x | A : ast_p | v : forall x : S . (P x arrow.r.double A)$,),
-  seealso: [(див. $ (35)^ast $)],
+  seealso: [(див. $(35)^ast$)],
 )
 
 Стратегія $(35)^ast$ для $exists$-вилучення:

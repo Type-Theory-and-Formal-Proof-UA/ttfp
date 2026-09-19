@@ -3,6 +3,10 @@
 
 = Правила виведення для #ld
 
+// ⊥⊥ — у друкованому оригіналі означник примітивного означення набрано двома
+// символами ⊥; відтворюємо це як у оригіналі (пор. розділ 10).
+#let dblbot = $bot #h(-0.12em) bot$
+
 #rule(
   label: "(sort)",
   prem: none,
@@ -18,7 +22,7 @@
 
 #rule(
   label: "(weak)",
-  prem: $Delta ; Gamma tack.r A : B$,
+  prem: $Delta ; Gamma tack.r A : B quad Delta ; Gamma tack.r C : s$,
   conc: $Delta ; Gamma, x : C tack.r A : B$,
   side: [якщо $x in.not Gamma$],
 )
@@ -58,7 +62,7 @@
 #rule(
   label: "(def-prim)",
   prem: $Delta ; Gamma tack.r K : L quad Delta ; x : A tack.r N : s$,
-  conc: $Delta , x : A tack.r a(x) := bot : N ; Gamma tack.r K : L$,
+  conc: $Delta , x : A tack.r a(x) := #dblbot : N ; Gamma tack.r K : L$,
   side: [якщо $a in.not Delta$],
 )
 
@@ -66,15 +70,17 @@
   label: "(inst)",
   prem: $Delta ; Gamma tack.r ast : square quad Delta ; Gamma tack.r U : A[x := U]$,
   conc: $Delta ; Gamma tack.r a(U) : N[x := U]$,
-  side: [якщо $x : A tack.r a(x) := M : N in.not Delta$],
+  side: [якщо $x : A tack.r a(x) := M : N in Delta$],
 )
 
 #rule(
   label: "(inst-prim)",
   prem: $Delta ; Gamma tack.r ast : square quad Delta ; Gamma tack.r U : A[x := U]$,
   conc: $Delta ; Gamma tack.r a(U) : N[x := U]$,
-  side: [якщо $x : A tack.r a(x) := bot : N in.not Delta$],
+  side: [якщо $x : A tack.r a(x) := #dblbot : N in Delta$],
 )
+
+_Виведене правило:_
 
 #rule(
   label: "(par)",
@@ -82,4 +88,3 @@
   conc: $Delta, D ; x : A tack.r a(x) : N$,
   side: [якщо $D equiv x : A tack.r a(x) := M : N$ і $a in.not Delta$],
 )
-_Виведене правило:_

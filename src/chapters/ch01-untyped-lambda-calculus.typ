@@ -246,7 +246,7 @@ $ Lambda = V | (Lambda Lambda) | (lambda V . Lambda) $
   #enum(
     [(Змінна) $F V (x) = {x}$,],
     [(Застосування) $F V (M N) = F V (M) union F V (N)$,],
-    [(Абстракція) $F V (lambda x . M) = F V (M) \\ {x}$.],
+    [(Абстракція) $F V (lambda x . M) = F V (M) without {x}$.],
   )
 ]
 
@@ -259,10 +259,10 @@ $ Lambda = V | (Lambda Lambda) | (lambda V . Lambda) $
         align: (right, left),
         inset: 0pt,
         column-gutter: 0.6em,
-        [$F V (lambda x . x y)$], [$= F V (x y) \\ {x}$],
-        [], [$= (F V (x) union F V (y)) \\ {x}$],
-        [], [$= ({x} union {y}) \\ {x}$],
-        [], [$= {x, y} \\ {x}$],
+        [$F V (lambda x . x y)$], [$= F V (x y) without {x}$],
+        [], [$= (F V (x) union F V (y)) without {x}$],
+        [], [$= ({x} union {y}) without {x}$],
+        [], [$= {x, y} without {x}$],
         [], [$= {y}$.],
       )
     ],

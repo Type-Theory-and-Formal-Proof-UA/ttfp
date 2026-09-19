@@ -2,7 +2,7 @@
 
 // Допоміжні засоби для прапорцевих виведень (пор. розділ 11 і рисунки цього
 // розділу): `#flagpole(depth, boxed: true, ...)` загортає `body` у `depth`
-// древків прапорців; `boxed` додає прямокутник оголошення-прапорця.
+// древків прапорців; `boxed` додає прямокутник декларації-прапорця.
 #let flagpole(depth, boxed: false, body) = {
   let b = if boxed { box(stroke: 0.5pt, inset: (x: 5pt, y: 3pt), body) } else { body }
   for _ in range(depth) {

@@ -238,7 +238,7 @@
 
 #ax(
   (26),
-  [$or "-in-alt"_1 (A, B, u) := a_10 ["рис." 11.18] (A, B, u) : A or B$],
+  [$or "-in-alt"_1 (A, B, u) := a_10 ["Рис." 11.18] (A, B, u) : A or B$],
   prem: ($A, B : ast_p$, $u : not A arrow.r.double B$),
   seealso: [(див. $(26)^ast$)],
 )
@@ -251,7 +251,7 @@
 
 #ax(
   (28),
-  [$or "-el-alt"_1 (A, B, u, v) := a_5 ["рис." 11.13] (A, B, u, v) : B$],
+  [$or "-el-alt"_1 (A, B, u, v) := a_5 ["Рис." 11.13] (A, B, u, v) : B$],
   prem: ($u : A or B$, $v : not A$),
 )
 
@@ -362,12 +362,12 @@
 
 #ax(
   (36),
-  [$exists "-in-alt"(S, P, u) := a_4 ["рис." 11.27] (S, P, u) : exists x : S . P x$],
+  [$exists "-in-alt"(S, P, u) := a_4 ["Рис." 11.27] (S, P, u) : exists x : S . P x$],
   prem: ($S : ast_s | P : S -> ast_p$, $u : not forall x : S . not (P x)$),
 )
 
 #ax(
   (37),
-  [$exists "-el-alt"(S, P, u) := a_2 ["рис." 11.25] (S, P, u) : not forall x : S . not (P x)$],
+  [$exists "-el-alt"(S, P, u) := a_2 ["Рис." 11.25] (S, P, u) : not forall x : S . not (P x)$],
   prem: ($u : exists x : S . P x$,),
 )

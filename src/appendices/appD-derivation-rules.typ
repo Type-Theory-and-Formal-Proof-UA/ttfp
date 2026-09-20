@@ -86,7 +86,7 @@
   side: [якщо $x : A triangle.r a(x) := #dblbot : N in Delta$],
 )
 
-_Виведене правило:_
+*Виведене правило:*
 
 #rule(
   label: "(par)",

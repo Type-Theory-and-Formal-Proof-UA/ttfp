@@ -58,6 +58,7 @@ as translation progresses; keep translations consistent across chapters.
 | lower bound | нижня межа |
 | minimum of a subset | мінімум підмножини |
 | proof hole | прогалина |
+| gap (a "considerable gap between…") | розрив |
 | descriptor (ι) | дескриптор |
 | linear combination | лінійна комбінація |
 | specialisation | спеціалізація |

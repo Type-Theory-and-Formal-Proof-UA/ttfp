@@ -28,7 +28,7 @@
 #axiom(label: [])[
   Для всіх $P : ZZ -> ast_p$,
   $[P 0 and forall x : ZZ . (P x arrow.r.double (P (s x) and P (p x)))] arrow.r.double forall x : ZZ . P x$
-  (ax-int 2, симетрична індукція над $ZZ$).
+  (ax-int 2, симетрична індукція для $ZZ$).
 ]
 
 #definition(label: [])[
@@ -54,7 +54,7 @@
 #lemma(label: [])[
   Для всіх $P : ZZ -> ast_p$,
   $[P 0 and forall x : ZZ . (x epsilon NN arrow.r.double (P x arrow.r.double P (s x)))] arrow.r.double forall x : ZZ . (x epsilon NN arrow.r.double P x)$
-  (nat-ind, індукція над $NN$).
+  (nat-ind, індукція для $NN$).
 ]
 
 #lemma(label: "14.3.1")[

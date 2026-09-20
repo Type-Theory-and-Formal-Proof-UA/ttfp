@@ -182,27 +182,27 @@
 
 #ax(
   (18),
-  [$arrow.r.double.long (A, B) := (A arrow.r.double B) and (B arrow.r.double A) : ast_p$],
+  [$arrow.l.r.double (A, B) := (A arrow.r.double B) and (B arrow.r.double A) : ast_p$],
   prem: ($A, B : ast_p$,),
-  nota: [Позначення: $A arrow.r.double.long B$ замість $arrow.r.double.long (A, B)$],
+  nota: [Позначення: $A arrow.l.r.double B$ замість $arrow.l.r.double (A, B)$],
 )
 
 #ax(
   (19),
-  [$arrow.r.double.long "-in"(A, B, u, v) := and "-in"(A arrow.r.double B, B arrow.r.double A, u, v) : A arrow.r.double.long B$],
+  [$arrow.l.r.double "-in"(A, B, u, v) := and "-in"(A arrow.r.double B, B arrow.r.double A, u, v) : A arrow.l.r.double B$],
   prem: ($u : A arrow.r.double B | v : B arrow.r.double A$,),
 )
 
 #ax(
   (20),
-  [$arrow.r.double.long "-el"_1 (A, B, u) := and "-el"_1 (A arrow.r.double B, B arrow.r.double A, u) : A arrow.r.double B$],
-  prem: ($u : A arrow.r.double.long B$,),
+  [$arrow.l.r.double "-el"_1 (A, B, u) := and "-el"_1 (A arrow.r.double B, B arrow.r.double A, u) : A arrow.r.double B$],
+  prem: ($u : A arrow.l.r.double B$,),
 )
 
 #ax(
   (21),
-  [$arrow.r.double.long "-el"_2 (A, B, u) := and "-el"_2 (A arrow.r.double B, B arrow.r.double A, u) : B arrow.r.double A$],
-  prem: ($u : A arrow.r.double.long B$,),
+  [$arrow.l.r.double "-el"_2 (A, B, u) := and "-el"_2 (A arrow.r.double B, B arrow.r.double A, u) : B arrow.r.double A$],
+  prem: ($u : A arrow.l.r.double B$,),
 )
 
 == Класична логіка висловлювань

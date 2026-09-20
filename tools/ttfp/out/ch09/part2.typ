@@ -1,8 +1,5 @@
 #import "/book.typ": *
 
-// Допоміжні позначення середовища/контексту цього розділу.
-#let vdashx = $tack.r$
-
 == Вправи
 
 #exercise[
@@ -16,7 +13,7 @@
   $ x : A triangle.r a(x) := K : L, $
   $ y : B triangle.r b(y) := M : N. $
 
-  Нехай $Delta ; Gamma tack.r U : V$, і припустімо, що $D_i$ та $D_j$ є елементами
+  Нехай $Delta ; Gamma tack.r U : V$ і припустімо, що $D_i$ та $D_j$ є елементами
   списку $Delta$, де $D_i$ передує $D_j$.
 
   (a) Опишіть точно, де константа $a$ може зустрічатися в $D_i$ та $D_j$.
@@ -42,21 +39,20 @@
 ]
 
 #exercise[
-  Розгляньте таке середовище $Delta$, що складається з шести означень, у якому ми,
-  задля зручності, вживаємо деякі добре знані формати, як-от $Sigma$- та
-  інфіксні позначення:
+  Розгляньте таке середовище $Delta$ із шести означень, у якому ми задля зручності
+  вживаємо деякі добре знані формати, як-от $Sigma$- та інфіксні позначення:
 
   $ D_1 equiv f : NN -> RR, n : NN triangle.r a_1 (f, n) := sum_(i=0)^n (f i) : RR, $
 
   $ D_2 equiv f : NN -> RR, d : RR triangle.r a_2 (f, d) := forall n : NN (f (n+1) - f n = d) : ast_p, $
 
-  $ D_3 equiv f : NN -> RR, d : RR, u : a_2 (f, d), n : NN tack.r $
+  $ D_3 equiv f : NN -> RR, d : RR, u : a_2 (f, d), n : NN triangle.r $
   $ quad a_3 (f, d, u, n) := "formalprf"_3 : f n = f 0 + n dot d, $
 
-  $ D_4 equiv f : NN -> RR, d : RR, u : a_2 (f, d), n : NN tack.r $
+  $ D_4 equiv f : NN -> RR, d : RR, u : a_2 (f, d), n : NN triangle.r $
   $ quad a_4 (f, d, u, n) := "formalprf"_4 : a_1 (f, n) = 1/2 dot (n+1) dot (f 0 + f n), $
 
-  $ D_5 equiv f : NN -> RR, d : RR, u : a_2 (f, d), n : NN tack.r $
+  $ D_5 equiv f : NN -> RR, d : RR, u : a_2 (f, d), n : NN triangle.r $
   $ quad a_5 (f, d, u, n) := "formalprf"_5 : $
   $ quad quad a_1 (f, n) = (n + 1) dot f 0 + 1/2 dot n dot (n + 1) dot d, $
 
@@ -79,9 +75,9 @@
   $Delta, D ; emptyset tack.r ast : square$. Розгляньте $D_1$ до $D_6$ як у
   вправі 9.6.
 
-  (a) За якої умови ви можете вивести, що $D_1$ правильне в середовищі $emptyset$?
+  (a) За якої умови можна вивести, що $D_1$ правильне в середовищі $emptyset$?
 
-  (b) Як ви доведете, що $D_2$ правильне в середовищі $D_1$?
+  (b) Як довести, що $D_2$ правильне в середовищі $D_1$?
 
   (c) Те саме питання для $D_3$ в середовищі $D_1, D_2$.
 ]

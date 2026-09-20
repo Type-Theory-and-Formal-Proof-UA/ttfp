@@ -226,7 +226,7 @@ van Dalen et al. (1978).
 
   (a) Покажіть, що таке твердження є безпосереднім наслідком $eq"-refl"$ (див.
       рисунок 12.2):
-      $ forall x : S . ((x epsilon V^c) arrow.r.double.long not (x epsilon V)). $
+      $ forall x : S . ((x epsilon V^c) arrow.l.r.double not (x epsilon V)). $
 
   (b) Доведіть у #ld: $(V subset.eq W) arrow.r.double (W^c subset.eq V^c)$.
 ]
@@ -275,7 +275,7 @@ van Dalen et al. (1978).
   (a) Доведіть у #ld: $"full-set"(S) = (emptyset_S)^c$.
 
   (b) Нехай $V$ — підмножина $S$. Доведіть:
-      $V eq.not "full-set"(S) arrow.r.double.long exists x : S . not (x epsilon V)$.
+      $V eq.not "full-set"(S) arrow.l.r.double exists x : S . not (x epsilon V)$.
 ]
 
 #exercise[
@@ -285,7 +285,7 @@ van Dalen et al. (1978).
     numbering: "(a)",
     [$(V inter W = V) arrow.r.double V subset.eq W$,],
     [$V without W = V inter W^c$,],
-    [$V subset.eq W arrow.r.double.long V without W = emptyset_S$ (див. рисунок 13.7).],
+    [$V subset.eq W arrow.l.r.double V without W = emptyset_S$ (див. рисунок 13.7).],
   )
 ]
 

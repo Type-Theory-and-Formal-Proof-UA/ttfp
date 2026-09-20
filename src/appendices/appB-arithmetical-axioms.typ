@@ -74,15 +74,15 @@
 ]
 
 #lemma(label: "14.3.2")[
-  (a) $forall x : ZZ . (upright("pos")(s x) arrow.r.double.long x epsilon NN)$, \
-  (b) $forall x : ZZ . (upright("pos")(s x) arrow.r.double.long (x = 0 or upright("pos")(x)))$, \
-  (c) $forall x : ZZ . (upright("neg")(p x) arrow.r.double.long (x = 0 or upright("neg")(x)))$.
+  (a) $forall x : ZZ . (upright("pos")(s x) arrow.l.r.double x epsilon NN)$, \
+  (b) $forall x : ZZ . (upright("pos")(s x) arrow.l.r.double (x = 0 or upright("pos")(x)))$, \
+  (c) $forall x : ZZ . (upright("neg")(p x) arrow.l.r.double (x = 0 or upright("neg")(x)))$.
 ]
 
 #lemma(label: "14.3.3")[
-  (a) $forall x : ZZ . (upright("pos")(x) arrow.r.double.long x eq.not 0 and not upright("neg")(x))$, \
-  (b) $forall x : ZZ . (upright("neg")(x) arrow.r.double.long x eq.not 0 and not upright("pos")(x))$, \
-  (c) $forall x : ZZ . (x = 0 arrow.r.double.long not upright("pos")(x) and not upright("neg")(x))$.
+  (a) $forall x : ZZ . (upright("pos")(x) arrow.l.r.double x eq.not 0 and not upright("neg")(x))$, \
+  (b) $forall x : ZZ . (upright("neg")(x) arrow.l.r.double x eq.not 0 and not upright("pos")(x))$, \
+  (c) $forall x : ZZ . (x = 0 arrow.l.r.double not upright("pos")(x) and not upright("neg")(x))$.
 ]
 
 #lemma(label: [])[
@@ -120,7 +120,7 @@
 ]
 
 #lemma(name: "Характеризація від'ємних чисел", label: [])[
-  $forall x : ZZ . (upright("neg")(x) arrow.r.double.long exists y : ZZ . (upright("pos")(y) and x + y = 0))$.
+  $forall x : ZZ . (upright("neg")(x) arrow.l.r.double exists y : ZZ . (upright("pos")(y) and x + y = 0))$.
 ]
 
 #lemma(name: "Замкненість для від'ємних цілих чисел", label: [])[
@@ -174,7 +174,7 @@
 ]
 
 #lemma(label: "14.8.11")[
-  $forall x, y : ZZ . (upright("pos")(x - y) arrow.r.double.long upright("neg")(y - x))$.
+  $forall x, y : ZZ . (upright("pos")(x - y) arrow.l.r.double upright("neg")(y - x))$.
 ]
 
 #lemma(label: "14.9.1")[
@@ -186,7 +186,7 @@
 #lemma(label: "14.9.2")[
   (a) $-0 = 0$, \
   (b) $forall x : ZZ . (-(-x) = x)$, \
-  (c) $forall x : ZZ . (x = 0 arrow.r.double.long -x = 0)$.
+  (c) $forall x : ZZ . (x = 0 arrow.l.r.double -x = 0)$.
 ]
 
 #lemma(label: "14.9.3")[
@@ -195,8 +195,8 @@
 ]
 
 #lemma(label: "14.9.4")[
-  (a) $forall x : ZZ . (upright("pos")(x) arrow.r.double.long upright("neg")(-x))$, \
-  (b) $forall x : ZZ . (upright("neg")(x) arrow.r.double.long upright("pos")(-x))$.
+  (a) $forall x : ZZ . (upright("pos")(x) arrow.l.r.double upright("neg")(-x))$, \
+  (b) $forall x : ZZ . (upright("neg")(x) arrow.l.r.double upright("pos")(-x))$.
 ]
 
 #lemma(label: "14.9.5")[
@@ -205,7 +205,7 @@
 ]
 
 #lemma(label: "14.9.6")[
-  $forall x : ZZ . (-x epsilon NN arrow.r.double.long (upright("neg")(x) or x = 0))$.
+  $forall x : ZZ . (-x epsilon NN arrow.l.r.double (upright("neg")(x) or x = 0))$.
 ]
 
 #lemma(label: "14.9.7")[
@@ -226,20 +226,20 @@
 #lemma(label: "14.10.1")[
   (a) $forall x : ZZ . (x lt.eq x)$, \
   (b) $forall x, y, z : ZZ . ((x lt.eq y and y lt.eq z) arrow.r.double (x lt.eq z))$, \
-  (c) $forall x, y, z : ZZ . ((x + z lt.eq y + z) arrow.r.double.long (x lt.eq y))$, \
+  (c) $forall x, y, z : ZZ . ((x + z lt.eq y + z) arrow.l.r.double (x lt.eq y))$, \
   (d) $forall x, y, z : ZZ . ((x lt y and y lt.eq z) arrow.r.double (x lt z))$, \
-  (e) $forall x, y, z : ZZ . ((x + z lt y + z) arrow.r.double.long (x lt y))$.
+  (e) $forall x, y, z : ZZ . ((x + z lt y + z) arrow.l.r.double (x lt y))$.
 ]
 
 #lemma(label: "14.10.2")[
-  (a) $forall x : ZZ . (upright("pos")(x) arrow.r.double.long x gt 0)$, \
-  (b) $forall x : ZZ . (upright("neg")(x) arrow.r.double.long x lt 0)$, \
+  (a) $forall x : ZZ . (upright("pos")(x) arrow.l.r.double x gt 0)$, \
+  (b) $forall x : ZZ . (upright("neg")(x) arrow.l.r.double x lt 0)$, \
   (c) $forall x : ZZ . (x lt 0 or x = 0 or x gt 0)$.
 ]
 
 #lemma(label: "14.10.3")[
-  (a) $forall x, y : ZZ . (x lt y arrow.r.double.long -y lt -x)$, \
-  (b) $forall x : ZZ . (x lt 0 arrow.r.double.long -x gt 0)$.
+  (a) $forall x, y : ZZ . (x lt y arrow.l.r.double -y lt -x)$, \
+  (b) $forall x : ZZ . (x lt 0 arrow.l.r.double -x gt 0)$.
 ]
 
 #lemma(label: [])[
@@ -295,7 +295,7 @@
 ]
 
 #lemma(label: "14.12.2")[
-  (a) $forall l, m : ZZ . (l divides m arrow.r.double.long -l divides m)$, \
+  (a) $forall l, m : ZZ . (l divides m arrow.l.r.double -l divides m)$, \
   (b) $forall m : ZZ . (1 divides m)$.
 ]
 

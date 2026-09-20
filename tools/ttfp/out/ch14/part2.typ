@@ -66,16 +66,16 @@ $NN$, а саме на тій гарній властивості, що $NN$ з�
       [], [$#c14flag(0)[$x : ZZ$]$],
       [$(1)$], [#c14flag(1)[$P^dagger := lambda y : ZZ . (x + y epsilon NN) : ZZ -> ast_p$]],
       [], [#c14flag(1)[$u : x epsilon NN$]],
-      [$(2)$], [#c14flag(2)[$a_2 := dots.c "вжийте" "plus-i" "та" "eq-sym" dots.c : x = x + 0$]],
-      [$(3)$], [#c14flag(2)[$a_3 := dots.c "вжийте" "eq-subs на" a_2 "та" u dots.c : P 0$]],
+      [$(2)$], [#c14flag(2)[$a_2 := dots.c "ужити" "plus-i" "та" "eq-sym" dots.c : x = x + 0$]],
+      [$(3)$], [#c14flag(2)[$a_3 := dots.c "ужити" "eq-subs на" a_2 "та" u dots.c : P 0$]],
       [], [#c14flag(3)[$y : ZZ | v : y epsilon NN$]],
       [], [#c14flag(4)[$w : P y$]],
       [$(4)$], [#c14flag(4)[$a_4 := "clos-prop" (x + y) w : s(x + y) epsilon NN$]],
-      [$(5)$], [#c14flag(4)[$a_5 := dots.c "вжийте" "plus-ii та eq-sym" dots.c : s(x + y) = x + s y$]],
-      [$(6)$], [#c14flag(4)[$a_6 := dots.c "вжийте" "eq-subs на" a_5 "та" a_4 dots.c : P(s y)$]],
-      [$(7)$], [#c14flag(3)[$a_7 := dots.c "вжийте" arrow.r.double "-in двічі та" forall "-in на" a_6 dots.c : forall y : ZZ . (y epsilon NN arrow.r.double (P y arrow.r.double P(s y)))$]],
-      [$(8)$], [#c14flag(2)[$a_8 := dots.c "вжийте" and "-in на" a_3 "та" a_7 ", і" arrow.r.double "-el на" "nat-ind"(P) dots.c : forall y : ZZ . (y epsilon NN arrow.r.double x + y epsilon NN)$]],
-      [$(9)$], [$a_9 := dots.c "вжийте" arrow.r.double "-in та" forall "-in на" a_8 dots.c : forall x : ZZ . (x epsilon NN arrow.r.double forall y : ZZ . (y epsilon NN arrow.r.double x + y epsilon NN))$],
+      [$(5)$], [#c14flag(4)[$a_5 := dots.c "ужити" "plus-ii та eq-sym" dots.c : s(x + y) = x + s y$]],
+      [$(6)$], [#c14flag(4)[$a_6 := dots.c "ужити" "eq-subs на" a_5 "та" a_4 dots.c : P(s y)$]],
+      [$(7)$], [#c14flag(3)[$a_7 := dots.c "ужити" arrow.r.double "-in двічі та" forall "-in на" a_6 dots.c : forall y : ZZ . (y epsilon NN arrow.r.double (P y arrow.r.double P(s y)))$]],
+      [$(8)$], [#c14flag(2)[$a_8 := dots.c "ужити" and "-in на" a_3 "та" a_7 ", і" arrow.r.double "-el на" "nat-ind"(P) dots.c : forall y : ZZ . (y epsilon NN arrow.r.double x + y epsilon NN)$]],
+      [$(9)$], [$a_9 := dots.c "ужити" arrow.r.double "-in та" forall "-in на" a_8 dots.c : forall x : ZZ . (x epsilon NN arrow.r.double forall y : ZZ . (y epsilon NN arrow.r.double x + y epsilon NN))$],
       [], [$x, y : ZZ | u : x epsilon NN | v : y epsilon NN$],
       [$(10)$], [#c14flag(1)[$"plus-clos-nat" := a_9 x u y v : x + y epsilon NN$]],
       [], [$#text(size: 9pt)[$dagger$ параметри пригнічено]$],
@@ -93,7 +93,7 @@ $NN$, а саме на тій гарній властивості, що $NN$ з�
 характеризацію від'ємних чисел:
 
 #lemma(name: "Характеризація від'ємних чисел")[
-  $forall x : ZZ . ("neg"(x) arrow.r.double.long exists y : ZZ . ("pos"(y) and x + y = 0)).$
+  $forall x : ZZ . ("neg"(x) arrow.l.r.double exists y : ZZ . ("pos"(y) and x + y = 0)).$
 ]
 
 Ми подаємо доведення нижче як додаткову вправу із симетричною індукцією для цілих
@@ -119,7 +119,7 @@ $NN$, а саме на тій гарній властивості, що $NN$ з�
         $"pos"(y)$ і $x + y = 0$, отже $s x + p y = 0$ за лемою 14.6.3 (b).
 
         Звідси випливає, що $p y eq.not 0$, бо інакше $s x = 0$, що суперечить
-        $"neg"(s x)$. Лема 14.3.2 (b) спричиняє (візьміть $p y$ за $x$), що з
+        $"neg"(s x)$. З леми 14.3.2 (b) випливає (візьміть $p y$ за $x$), що з
         $"pos"(y)$ і $p y eq.not 0$ ми можемо вивести $"pos"(p y)$.
 
         Отже, $p y$ — це свідок, який показує, що
@@ -184,8 +184,8 @@ $NN$, а саме на тій гарній властивості, що $NN$ з�
 для натуральних: кожна пара цілих чисел має різницю в $ZZ$, але не кожна пара
 натуральних чисел має різницю в $NN$.
 
-Різниця $x$ і $y$ в $ZZ$ — це єдине число, а саме таке число $z$, що коли до нього
-додати $y$, воно дає $x$:
+Різниця $x$ і $y$ в $ZZ$ — це єдине число, а саме таке число $z$, що, коли до
+нього додати $y$, дістанемо $x$:
 
 #align(center)[
   $x - y := iota_(z : ZZ) (z + y = x).$
@@ -235,8 +235,8 @@ $NN$, а саме на тій гарній властивості, що $NN$ з�
 
   Нехай $x$ і $y$ належать $ZZ$. Припустімо, що $z_1$ і $z_2$ у $ZZ$ такі, що
   $z_1 + y = x$ і $z_2 + y = x$. Очевидно, $z_1 + y = z_2 + y$, отже (за правим
-  скороченням, лема 14.6.5 (a)) $z_1 = z_2$. Це спричиняє єдиність такого $z$, що
-  $z + y = x$ (пор. підрозділ 12.6).
+  скороченням, лема 14.6.5 (a)) $z_1 = z_2$. Звідси випливає єдиність такого $z$,
+  що $z + y = x$ (пор. підрозділ 12.6).
 ]
 
 Відповідне #(ld)-доведення прямолінійне, але трохи заплутане через входження
@@ -389,7 +389,7 @@ plus-ii та plus-iii:
 наступному підрозділі:
 
 #lemma[
-  $forall x, y : ZZ . ("pos"(x - y) arrow.r.double.long "neg"(y - x)).$
+  $forall x, y : ZZ . ("pos"(x - y) arrow.l.r.double "neg"(y - x)).$
 ]
 
 #proof[
@@ -427,7 +427,7 @@ $0$. (Неважко показати, що таке число завжди і�
 (поєднання) додавання, віднімання та протилежних до цілих чисел. Ми обговоримо
 лише кілька з них у лемі 14.9.1, але корисна «бібліотека» арифметичних фактів мала
 б містити значно більше. (Див. знову вправи щодо деяких інших законів арифметики.)
-Доведення лише накидано; подробиці та #(ld)-версії доведень залишено читачеві.
+Доведення лише окреслено; подробиці та #(ld)-версії доведень залишено читачеві.
 
 #lemma[
   (a) $forall x : ZZ . ((-x) + x = 0)$, \
@@ -475,7 +475,7 @@ $0$. (Неважко показати, що таке число завжди і�
 
 У наступному розділі виявиться, що, працюючи з прикладом важливої математичної
 теореми («лема Безу»), ми потребуємо більше властивостей протилежного до цілого
-числа. Тому ми перелічуємо деякі фундаментальні властивості протилежних у
+числа. Тому ми перелічуємо деякі фундаментальні властивості протилежних чисел у
 наступних лемах.
 
 Неформальні доведення цих лем і формальні доведення в #ld залишено читачеві (пор.
@@ -486,7 +486,7 @@ $0$. (Неважко показати, що таке число завжди і�
 
   (b) $forall x : ZZ . (-(-x) = x)$, \
 
-  (c) $forall x : ZZ . (x = 0 arrow.r.double.long -x = 0)$.
+  (c) $forall x : ZZ . (x = 0 arrow.l.r.double -x = 0)$.
 ]
 
 #lemma[
@@ -499,9 +499,9 @@ $0$. (Неважко показати, що таке число завжди і�
 використовуємо лему 14.8.11.
 
 #lemma[
-  (a) $forall x : ZZ . ("pos"(x) arrow.r.double.long "neg"(-x))$, \
+  (a) $forall x : ZZ . ("pos"(x) arrow.l.r.double "neg"(-x))$, \
 
-  (b) $forall x : ZZ . ("neg"(x) arrow.r.double.long "pos"(-x))$.
+  (b) $forall x : ZZ . ("neg"(x) arrow.l.r.double "pos"(-x))$.
 ]
 
 #proof[
@@ -524,7 +524,7 @@ $0$. (Неважко показати, що таке число завжди і�
 того, щоб протилежне до $x$ було натуральним числом.
 
 #lemma[
-  $forall x : ZZ . (-x epsilon NN arrow.r.double.long ("neg"(x) or x = 0)).$
+  $forall x : ZZ . (-x epsilon NN arrow.l.r.double ("neg"(x) or x = 0)).$
 ]
 
 #proof[
@@ -558,7 +558,7 @@ $0$. (Неважко показати, що таке число завжди і�
   (b) $forall x : ZZ . ((x epsilon NN and -x epsilon NN) arrow.r.double x = 0)$.
 ]
 
-Зауважте, що це тягне за собою те, що $ZZ$ складається з усіх натуральних чисел
+Зауважте, що це означає, що $ZZ$ складається з усіх натуральних чисел
 разом з їхніми протилежними, де $-0$ — єдине протилежне до натурального числа, яке
 залишається натуральним числом; саме так, як ми й уявляли, коли закладали
 формалізацію цілих чисел у #ld.
@@ -600,11 +600,11 @@ $0$. (Неважко показати, що таке число завжди і�
 
   (b) $forall x, y, z : ZZ . ((x lt.eq y and y lt.eq z) arrow.r.double (x lt.eq z))$, \
 
-  (c) $forall x, y, z : ZZ . ((x + z lt.eq y + z) arrow.r.double.long (x lt.eq y))$, \
+  (c) $forall x, y, z : ZZ . ((x + z lt.eq y + z) arrow.l.r.double (x lt.eq y))$, \
 
   (d) $forall x, y, z : ZZ . ((x lt y and y lt.eq z) arrow.r.double (x lt z))$, \
 
-  (e) $forall x, y, z : ZZ . ((x + z lt y + z) arrow.r.double.long (x lt y))$.
+  (e) $forall x, y, z : ZZ . ((x + z lt y + z) arrow.l.r.double (x lt y))$.
 ]
 
 Щоб продемонструвати, як працюють нерівності в теперішній постановці, ми даємо
@@ -613,7 +613,7 @@ $0$. (Неважко показати, що таке число завжди і�
 
 #proof[
   *(a)* Нехай $x : ZZ$. Тоді $x lt.eq x$ тоді й лише тоді, коли $x - x epsilon NN$, а
-  лема 14.8.4 спричиняє, що $x - x = 0 epsilon NN$.
+  з леми 14.8.4 випливає, що $x - x = 0 epsilon NN$.
 
   *(b)* Нехай $x, y, z : ZZ$, причому $x lt.eq y$ і $y lt.eq z$. Це означає, що
   $y - x epsilon NN$ і $z - y epsilon NN$, отже за замкненістю $NN$ відносно
@@ -666,9 +666,9 @@ $lt.eq$ і $<$ (див. рисунок 14.19).
 Наступна лема є наслідком (вправа 14.27):
 
 #lemma[
-  (a) $forall x : ZZ . ("pos"(x) arrow.r.double.long x gt 0)$, \
+  (a) $forall x : ZZ . ("pos"(x) arrow.l.r.double x gt 0)$, \
 
-  (b) $forall x : ZZ . ("neg"(x) arrow.r.double.long x lt 0)$, \
+  (b) $forall x : ZZ . ("neg"(x) arrow.l.r.double x lt 0)$, \
 
   (c) $forall x : ZZ . (x lt 0 or x = 0 or x gt 0)$.
 ]
@@ -677,9 +677,9 @@ $lt.eq$ і $<$ (див. рисунок 14.19).
 цілих чисел:
 
 #lemma[
-  (a) $forall x, y : ZZ . (x lt y arrow.r.double.long -y lt -x)$, \
+  (a) $forall x, y : ZZ . (x lt y arrow.l.r.double -y lt -x)$, \
 
-  (b) $forall x : ZZ . (x lt 0 arrow.r.double.long -x gt 0)$.
+  (b) $forall x : ZZ . (x lt 0 arrow.l.r.double -x gt 0)$.
 ]
 
 Знову ж таки, ми даємо неформальні доведення, щоб продемонструвати, якими є
@@ -691,7 +691,7 @@ $lt.eq$ і $<$ (див. рисунок 14.19).
   $(-x - (-y) epsilon NN) and (-y eq.not -x)$. Тепер неважко показати, що
   $y - x = -x - (-y)$ (скористайтеся a3 з рисунка 14.17 і лемою 14.9.2 (b)).
 
-  Крім того, $x eq.not y arrow.r.double.long -y eq.not -x$.
+  Крім того, $x eq.not y arrow.l.r.double -y eq.not -x$.
 
   *(b)* Це простий наслідок частини (a).
 ]
@@ -718,7 +718,7 @@ $lt.eq$ і $<$ (див. рисунок 14.19).
       [], [$#c14flag(1)[$t : ZZ | w : t epsilon T$]$],
       [$(3)$], [#c14flag(2)[$a_3 (T, u, t, w) := u t w : t epsilon NN$]],
       [$(4)$], [#c14flag(2)[$a_4 (T, u, t, w) := dots.c "вжийте лему 14.8.5" dots.c : 0 lt.eq t$]],
-      [$(5)$], [#c14flag(1)[$a_5 (T, u) := dots.c "вжийте" arrow.r.double "-in та" forall "-in" dots.c : "lw-bnd"_ZZ (T, 0)$]],
+      [$(5)$], [#c14flag(1)[$a_5 (T, u) := dots.c "ужити" arrow.r.double "-in та" forall "-in" dots.c : "lw-bnd"_ZZ (T, 0)$]],
     )
   ],
   caption: [Рисунок 14.20. Число 0 є нижньою межею кожної підмножини $NN$],
@@ -883,15 +883,15 @@ $x dot (y + z) = (x dot y) + (x dot z)$.
   доведенні замкненості множення ви можете скористатися властивістю замкненості
   додавання).
 
-  *(b)* Нехай $x, y : ZZ$. Припустімо $x gt 0$ і $y gt 0$. Останнє спричиняє, що
+  *(b)* Нехай $x, y : ZZ$. Припустімо $x gt 0$ і $y gt 0$. З останнього випливає, що
   $p y epsilon NN$ за лемою 14.10.2 (a). Отже (скористайтеся лемою 14.10.1 (e)):
   $x dot y = x dot s(p y) = x dot (p y) + x gt x dot (p y) + 0 = x dot (p y)$.
   Оскільки і $x$, і $p y$ належать $NN$, за частиною (a) маємо $x dot p y epsilon NN$,
   отже $x dot p y gt.eq 0$. Скориставшись лемою 14.10.1 (d), ми отримуємо, що
   $x dot y gt 0$.
 
-  *(c)* Нехай $x, y : ZZ$. Припустімо $x gt 0$ і $y lt 0$. Тоді лема 14.10.3 (b)
-  спричиняє, що $-y gt 0$, отже $x dot (-y) gt 0$ за частиною (b). Але
+  *(c)* Нехай $x, y : ZZ$. Припустімо $x gt 0$ і $y lt 0$. Тоді з леми 14.10.3 (b)
+  випливає, що $-y gt 0$, отже $x dot (-y) gt 0$ за частиною (b). Але
   $x dot (-y) = -(x dot y)$ за лемою 14.11.4, отже $-(x dot y) gt 0$, тож
   $x dot y lt 0$ (скористайтеся знову лемою 14.10.3 (b)).
 
@@ -943,12 +943,12 @@ $x dot (y + z) = (x dot y) + (x dot z)$.
 Варто також вивести кілька базовіших лем про подільність, як-от такі:
 
 #lemma[
-  (a) $forall l, m : ZZ . (l divides m arrow.r.double.long -l divides m)$, \
+  (a) $forall l, m : ZZ . (l divides m arrow.l.r.double -l divides m)$, \
 
   (b) $forall m : ZZ . (1 divides m)$.
 ]
 
-Наступна лема спричиняє, що $divides$ є частковим порядком (див. рисунок 12.7) на
+Наступна лема означає, що $divides$ є частковим порядком (див. рисунок 12.7) на
 натуральних числах.
 
 #lemma[
@@ -1037,7 +1037,7 @@ $"gcd"(m, n, s, t)$ як ціле число, яке залежить від ц�
 $m$ і $n$, ми не хочемо, щоб $"gcd"(m, n, s_1, t_1)$ відрізнялося від
 $"gcd"(m, n, s, t)$. Єдине, що має значення для таких доведень $s$ і $t$, — це те,
 що вони існують. Має бути несуттєво, як саме ці доведення виглядають: треба мати
-свободу обміняти одне доведення на інше без зовнішніх ефектів. Для $"gcd"$ це так:
+свободу обміняти одне доведення на інше без зовнішніх наслідків. Для $"gcd"$ це так:
 $"gcd"(m, n, s_1, t_1) = "gcd"(m, n, s_2, t_2)$ для будь-яких $s_1, s_2 : m gt 0$ і
 $t_1, t_2 : n gt 0$.
 

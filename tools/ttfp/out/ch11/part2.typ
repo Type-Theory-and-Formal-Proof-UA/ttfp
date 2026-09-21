@@ -568,16 +568,16 @@ Structure (van Dalen, 1994) і досі є добрим вступом. Філо
 ]
 
 #exercise[
-  Нехай $D_arrow.r$ і $D_(arrow.r arrow.r)$ — означення $not$ і $or$ у
+  Нехай $D_not$ і $D_or$ — означення $not$ і $or$ у
   #(ld)-форматі, як подано в цьому розділі. Припустімо, що ми вже маємо виведення,
-  яке показує, що $D_arrow.r , D_(arrow.r arrow.r) ; emptyset tack.r ast : square$.
+  яке показує, що $D_not , D_or ; emptyset tack.r ast : square$.
 
   #enum(
     numbering: "(a)",
     [Дайте повне виведення в #ld судження
-      $D_arrow.r , D_(arrow.r arrow.r) ; emptyset tack.r Pi alpha : ast . or(alpha, not(alpha)) : ast$.],
+      $D_not , D_or ; emptyset tack.r Pi alpha : ast . or(alpha, not(alpha)) : ast$.],
     [Доведіть, що означення $"iET"$ (див. приклад 10.2.2) можна дописати до
-      $D_arrow.r , D_(arrow.r arrow.r)$; тобто отримане середовище знову легальне.],
+      $D_not , D_or$; тобто отримане середовище знову легальне.],
   )
 ]
 

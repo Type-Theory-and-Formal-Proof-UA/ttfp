@@ -147,7 +147,7 @@ $ (3 + 5) dot (7 - 3) arrow.r (3 + 5) dot 4 arrow.r 8 dot 4 arrow.r 32 . $
         inset: 0.25em,
         [$M equiv M_0$], [$dots.h.c$], [$M_(k-1)$], [$arrow.l.r_beta$], [$M_k equiv N$],
         [$arrow.bl.double$], [], [$arrow.br.double$], [], [],
-        [], [$italic("ind:")$], [$L'$], [], [],
+        [], [$italic("інд:")$], [$L'$], [], [],
       )
     ],
     caption: [Рисунок 1.7 Індукційний випадок: $k > 0$],
@@ -205,7 +205,7 @@ $ (3 + 5) dot (7 - 3) arrow.r (3 + 5) dot 4 arrow.r 8 dot 4 arrow.r 32 . $
             inset: 0.25em,
             [$M equiv M_0$], [$dots.h.c$], [$M_(k-1)$], [$arrow.l_beta$], [$M_k equiv N$],
             [$arrow.bl.double$], [], [$arrow.br.double$], [], [],
-            [], [$italic("ind:")$], [$L'$], [], [],
+            [], [$italic("інд:")$], [$L'$], [], [],
           )
         ],
         caption: [Рисунок 1.10 Підвипадок $M_k arrow.r_beta M_(k-1)$],

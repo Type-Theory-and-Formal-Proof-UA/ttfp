@@ -94,7 +94,7 @@
   (множини з тими самими елементами рівні) або аксіома порожньої множини (існує
   множина без елементів).
 
-Ці сутності всі є примітивними у відповідних теоріях. Зауважмо, що сутності в
+Усі ці сутності є примітивними у відповідних теоріях. Зауважмо, що сутності в
 цих прикладах різняться за своєю природою: це може бути множина ($NN$), елемент
 множини ($0$, $s$) або твердження про висловлювання, яке приймають як
 елементарне і яке тому слід прийняти без доведення (індукція,
@@ -159,7 +159,7 @@
     [$emptyset$], [$triangle.r$], [$NN$], [$defeq$], [#dblbot], [$: ast_s$],
     [$emptyset$], [$triangle.r$], [$0$], [$defeq$], [#dblbot], [$: NN$],
     [$emptyset$], [$triangle.r$], [$s$], [$defeq$], [#dblbot], [$: NN -> NN$],
-    [$P : NN -> ast_p$], [$triangle.r$], [$"ind"(P)$], [$defeq$], [#dblbot], [$: P 0 arrow.r.double (forall n : NN . (P n arrow.r.double P (s n)) arrow.r.double forall n : NN . P n$],
+    [$P : NN -> ast_p$], [$triangle.r$], [$"ind"(P)$], [$defeq$], [#dblbot], [$: P 0 arrow.r.double (forall n : NN . (P n arrow.r.double P (s n)) arrow.r.double forall n : NN . P n)$],
     [$emptyset$], [$triangle.r$], [$i_("ET")$], [$defeq$], [#dblbot], [$: Pi alpha : ast . (alpha or not (alpha))$],
   )
 ]
@@ -239,13 +239,13 @@ $N$ щодо середовища $Delta$ та контексту $x : A$.
       rule(
         label: $("def")$,
         prem: $Delta ; Gamma tack.r K : L quad Delta ; x : A tack.r #box(stroke: 0.5pt, inset: 2pt)[$M : N$]$,
-        conc: $Delta , x : A tack.r a(x) defeq #box(stroke: 0.5pt, inset: 2pt)[$M : N$] ; Gamma tack.r K : L$,
+        conc: $Delta , x : A triangle.r a(x) defeq #box(stroke: 0.5pt, inset: 2pt)[$M : N$] ; Gamma tack.r K : L$,
         side: [якщо $a in.not Delta$],
       ),
       rule(
         label: $("def-prim")$,
         prem: $Delta ; Gamma tack.r K : L quad Delta ; x : A tack.r #box(stroke: 0.5pt, inset: 2pt)[$N : s$]$,
-        conc: $Delta , x : A tack.r a(x) defeq #box(stroke: 0.5pt, inset: 2pt)[$#dblbot : N$] ; Gamma tack.r K : L$,
+        conc: $Delta , x : A triangle.r a(x) defeq #box(stroke: 0.5pt, inset: 2pt)[$#dblbot : N$] ; Gamma tack.r K : L$,
         side: [якщо $a in.not Delta$],
       ),
       rule(

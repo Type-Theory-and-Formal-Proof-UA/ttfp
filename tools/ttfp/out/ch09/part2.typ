@@ -85,9 +85,9 @@
 #exercise[
   Див. вправи 9.6 і 9.7.
 
-  (a) Нехай $Delta' equiv D_1, dots.h.c, D_5$. Припустімо, що $D_6$ правильне в
-      середовищі $Delta'$ і що
-      $Delta' ; emptyset tack.r (a_1 (lambda x : NN . x, 100) = (lambda x : NN . x)^5050) : ast_p$.
+  (a) Нехай $Delta equiv D_1, dots.h.c, D_5$. Припустімо, що $D_6$ правильне в
+      середовищі $Delta$ і що
+      $Delta ; emptyset tack.r (a_1 (lambda x : NN . x, 100) = (lambda x : NN . x)^5050) : ast_p$.
       Виведіть:
       $ Delta ; emptyset tack.r "formalprf"_6 : a_1 (lambda x : NN . x, 100) = (lambda x : NN . x)^5050 . $
 

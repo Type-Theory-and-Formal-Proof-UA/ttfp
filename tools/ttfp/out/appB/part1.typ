@@ -121,7 +121,7 @@
   (b) $forall x, y, z : ZZ . (x + y = x + z arrow.r.double y = z)$ (left-canc-add, рис. 14.14).
 ]
 
-#lemma(name: "Замкненість ℕ відносно додавання", label: [])[
+#lemma(name: [Замкненість $NN$ відносно додавання], label: [])[
   $forall x, y : ZZ . ((x epsilon NN and y epsilon NN) arrow.r.double x + y epsilon NN)$ (plus-clos-nat, рис. 14.15).
 ]
 

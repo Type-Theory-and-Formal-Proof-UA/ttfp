@@ -796,7 +796,7 @@ $(upright("var"))$ «мовчки». За цією домовленістю на
     [(b)], [#flagpole(1, boxed: true)[$z : alpha$]], [],
     [(1′)], [#flagpole(2)[$y z : beta$]], [$(upright("appl"))$ за $(a)$ і $(b)$],
     [(2′)], [#flagpole(1)[$lambda z : alpha . y z : alpha arrow.r beta$]], [$(upright("abst"))$ за $(1′)$],
-    [(3′)], [#flagpole(0)[$lambda y : alpha arrow.r beta . lambda z : alpha . y : (alpha arrow.r beta) arrow.r alpha arrow.r beta$]], [$(upright("abst"))$ за $(2′)$],
+    [(3′)], [#flagpole(0)[$lambda y : alpha arrow.r beta . lambda z : alpha . y z : (alpha arrow.r beta) arrow.r alpha arrow.r beta$]], [$(upright("abst"))$ за $(2′)$],
   )
 ]
 

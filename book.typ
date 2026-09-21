@@ -84,8 +84,14 @@
 //   #rule(label: "appl", prem: $Gamma tack.r M : Pi x : A . B$,
 //         conc: $Gamma tack.r M N : B[x := N]$)
 //
-// Use `#stack` for a multi-premiss rule and `prem: none` for an axiom.
-#let stack(..rules) = {
+// For a multi-premiss rule, join the premisses in one math string with
+// `quad` (see e.g. ch05's (weak)/(conv) rules); use `prem: none` for an
+// axiom. `side-by-side` below is a helper for that same horizontal joining
+// when the premisses are built up as separate content blocks rather than
+// written inline — deliberately NOT named `stack`, which would silently
+// shadow Typst's built-in block-stacking function for anyone who imports
+// this file with `*` and calls `stack(dir: ttb, ..)` expecting the builtin.
+#let side-by-side(..rules) = {
   let r = rules.pos()
   math.display($#r.join($space space space space$)$)
 }

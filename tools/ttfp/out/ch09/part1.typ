@@ -858,10 +858,9 @@ A : B$. Але так само, як у вихідному правилі кон
     #stack(
       dir: ttb,
       spacing: 0.35em,
-      [#grid(columns: (1fr, 1fr, auto),
+      [#grid(columns: (1fr, 1fr),
         [$Delta ; Gamma tack.r A : B$],
         [$Delta ; Gamma tack.r B' : s$],
-        [],
       )],
       [#line(length: 100%, stroke: 0.5pt)],
       [$Delta ; Gamma tack.r A : B'$],

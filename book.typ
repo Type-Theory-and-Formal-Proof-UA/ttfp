@@ -104,6 +104,7 @@
     columns: (4.5em, 1fr, auto),
     align: (left + horizon, center + horizon, right + horizon),
     column-gutter: 0.6em,
+    row-gutter: 0.35em,
     text(size: 9pt, if label == none { [~] } else { label }),
     if prem == none { [#none] } else { prem },
     if side == none { [#none] } else { text(size: 9pt, side) },

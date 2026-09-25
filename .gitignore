@@ -34,3 +34,7 @@ tools/ttfp/out/*/*.bak
 tools/ttfp/review/
 tools/ttfp/review.zip
 tools/ttfp/ocr/
+
+# HTML build output (make html)
+/build/
+/site/

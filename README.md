@@ -89,6 +89,16 @@ make build   # compiles main.typ -> ttfp-uk.pdf
 make watch   # recompiles on save
 ```
 
+## Publishing
+
+`.github/workflows/deploy-pages.yml` builds on every push to `master`: the HTML
+edition (`typst compile --features html --format html`, still experimental in
+Typst; math is emitted as MathML), which `tools/split_html.py` cuts into one
+page per chapter (`index.html` = contents, `ch01.html`…, `appA.html`…), and the
+PDF (`ttfp-uk.pdf`); both are deployed to GitHub Pages. One-time setup:
+repository **Settings → Pages → Source: GitHub Actions**. The Typst version is
+pinned in the workflow's `TYPST_VERSION`. Locally: `make html` → `site/`.
+
 ## Writing a chapter
 
 Import the template helpers at the top of a chapter file (already done in

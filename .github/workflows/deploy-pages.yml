@@ -1,0 +1,68 @@
+# Builds the HTML edition (and the PDF) of the book with Typst and publishes
+# them on GitHub Pages.
+#
+# One-time setup in the repository:
+#   Settings > Pages > Build and deployment > Source: "GitHub Actions"
+name: Deploy book to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+# only the newest run may deploy
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  TYPST_VERSION: v0.15.0
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Typst
+        run: |
+          set -euxo pipefail
+          curl -fsSL -o "$RUNNER_TEMP/typst.tar.xz" \
+            "https://github.com/typst/typst/releases/download/${TYPST_VERSION}/typst-x86_64-unknown-linux-musl.tar.xz"
+          mkdir -p "$RUNNER_TEMP/typst"
+          tar -xJf "$RUNNER_TEMP/typst.tar.xz" --strip-components=1 -C "$RUNNER_TEMP/typst"
+          echo "$RUNNER_TEMP/typst" >> "$GITHUB_PATH"
+          "$RUNNER_TEMP/typst/typst" --version
+      - name: Build
+        run: |
+          set -euxo pipefail
+          mkdir -p build site
+          # HTML export is still experimental in Typst, hence the feature flag.
+          typst compile --features html --format html main.typ build/book.html
+          # Typst emits one long page; cut it into one page per chapter.
+          python3 tools/split_html.py build/book.html site
+          typst compile main.typ site/ttfp-uk.pdf
+          touch site/.nojekyll
+          test -s site/index.html
+          test -s site/ch01.html
+          test -s site/ttfp-uk.pdf
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

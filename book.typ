@@ -184,6 +184,14 @@
   show box: it => context if target() == "html" and (it.width != auto or it.height != auto) {
     html.frame(it)
   } else { it }
+  show align: it => context if target() == "html" {
+    let x = it.alignment.x
+    let css = if x == center { "center" } else if x == right or x == end { "right" } else { "left" }
+    html.elem("div", attrs: (style: "text-align: " + css), it.body)
+  } else { it }
+  show line: it => context if target() == "html" {
+    html.elem("div", attrs: (style: "border-top: 0.5pt solid currentColor; margin: 0.2em auto; width: calc(" + repr(it.length.ratio) + " + " + repr(it.length.length) + ")"))
+  } else { it }
   show pad: it => context if target() == "html" {
     html.elem("blockquote", it.body)
   } else { it }

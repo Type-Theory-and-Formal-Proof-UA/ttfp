@@ -169,5 +169,27 @@
   }
   show heading.where(level: 3): set text(size: 12.5pt)
 
+  // HTML export (experimental) has no layout engine: grids, stacks and
+  // absolutely positioned boxes would come out empty. Typeset those through
+  // `html.frame`, which lays the content out as usual and embeds it as an
+  // inline SVG. (Inside a frame `target()` is "paged", so this cannot recurse.)
+  // A frame has no page to take a width from, so `1fr` columns would collapse;
+  // give them the width of the PDF's text block (a4 minus margins ≈ 39em).
+  show grid: it => context if target() == "html" {
+    html.elem("div", attrs: (style: "margin: 1.1em 0"), html.frame(block(width: 39em, it)))
+  } else { it }
+  show stack: it => context if target() == "html" {
+    html.elem("div", attrs: (style: "margin: 1.1em 0"), html.frame(block(width: 39em, it)))
+  } else { it }
+  show box: it => context if target() == "html" and (it.width != auto or it.height != auto) {
+    html.frame(it)
+  } else { it }
+  show pad: it => context if target() == "html" {
+    html.elem("blockquote", it.body)
+  } else { it }
+  show math.overline: it => context if target() == "html" {
+    math.accent(it.body, math.macron)
+  } else { it }
+
   body
 }

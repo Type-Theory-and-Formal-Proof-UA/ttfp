@@ -33,6 +33,7 @@ table { border-collapse: collapse; margin: 1rem auto; }
 td, th { padding: .2rem .7rem; }
 math[display] { overflow-x: auto; max-width: 100%; }
 figure { margin: 1rem 0; }
+svg { max-width: 100%; }
 nav.pager { display: flex; justify-content: space-between; gap: 1rem;
             font-family: system-ui, sans-serif; font-size: .9rem; margin: 1rem 0; }
 nav.pager span { flex: 1; }
@@ -44,9 +45,6 @@ section[role=doc-endnotes] { border-top: 1px solid #999; margin-top: 3rem;
                              font-size: .9rem; }
 h1.title { font-size: 2.3rem; margin-bottom: .3rem; }
 p.authors { font-size: 1.2rem; margin-top: 0; }
-@media (prefers-color-scheme: dark) {
-  body { background: #16181c; color: #e4e4e4; } a { color: #8ab4f8; }
-}
 """
 
 
@@ -77,6 +75,12 @@ def main(src, out):
     authors = html.unescape(authors.group(1)) if authors else ""
     head = head.replace("<style>", f"<style>{CSS}\n", 1)  # ours first, Typst's math CSS after
     body = doc[doc.index("<body>") + 6 : doc.rindex("</body>")]
+
+    # html.frame figures are inline SVGs whose glyph <symbol>s are defined once
+    # in whichever SVG comes first and reused by <use> everywhere after it.
+    # Every page needs its own copy of the symbols it references.
+    symbols = {m.group(1): m.group(0)
+               for m in re.finditer(r'<symbol id="([^"]+)".*?</symbol>', body, re.S)}
 
     toc = re.search(r'<nav role="doc-toc">.*?</nav>', body, re.S)
     toc_html = toc.group(0)
@@ -123,7 +127,23 @@ def main(src, out):
                 return m.group(0)
             return f'href="{"" if target == current else target}#{m.group(1)}"'
 
-        return re.sub(r'href="#([^"]+)"', sub, fragment)
+        return re.sub(r'(?<=\s)href="#([^"]+)"', sub, fragment)
+
+    def with_symbols(fragment):
+        defined = set(re.findall(r'<symbol id="([^"]+)"', fragment))
+        missing = []
+        todo = re.findall(r'xlink:href="#([^"]+)"', fragment)
+        while todo:
+            sid = todo.pop()
+            if sid in defined or sid not in symbols:
+                continue
+            defined.add(sid)
+            missing.append(symbols[sid])
+            todo += re.findall(r'xlink:href="#([^"]+)"', symbols[sid])
+        if not missing:
+            return fragment
+        return ('<svg width="0" height="0" style="position:absolute" aria-hidden="true">'
+                f'<defs>{"".join(missing)}</defs></svg>{fragment}')
 
     def pager(i):
         def link(j, fmt):
@@ -146,7 +166,7 @@ def main(src, out):
         if f"{slug}.html" in by_page:
             content += '<section role="doc-endnotes"><ol style="list-style-type: none">' + "".join(
                 by_page[f"{slug}.html"]) + "</ol></section>"
-        content = rewrite(content, f"{slug}.html")
+        content = with_symbols(rewrite(content, f"{slug}.html"))
         (out / f"{slug}.html").write_text(
             page(text_of(h), content, pager(i)), encoding="utf-8")
 

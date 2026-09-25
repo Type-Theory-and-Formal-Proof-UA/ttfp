@@ -30,7 +30,11 @@ h3 { font-size: 1.4rem; margin-top: 2rem; }
 h4 { font-size: 1.15rem; }
 a { color: #1a5fb4; }
 table { border-collapse: collapse; margin: 1rem auto; }
-div.scroll { overflow-x: auto; max-width: 100%; }
+/* long inline formulas cannot wrap: scroll them instead of widening the page;
+   the vertical padding keeps tall math from triggering a vertical scrollbar */
+div.scroll, div.al, p { overflow-x: auto; overflow-y: hidden; }
+p, div.al { padding: .35em 0; }
+p { margin: .65em 0; }
 td, th { padding: .2rem .7rem; }
 math[display] { overflow-x: auto; max-width: 100%; }
 figure { margin: 1rem 0; }

@@ -178,6 +178,12 @@
   show grid: it => context if target() == "html" {
     html.elem("div", attrs: (style: "margin: 1.1em 0"), html.frame(block(width: 39em, it)))
   } else { it }
+  // Tables here are almost all layout (rules, flag proofs, side-by-side
+  // figures) with cell borders and nested grids that native <table> cannot
+  // express, so they get the same treatment, centred like the book's own.
+  show table: it => context if target() == "html" {
+    html.elem("div", attrs: (style: "margin: 1.1em 0"), html.frame(block(width: 39em, align(center, it))))
+  } else { it }
   show stack: it => context if target() == "html" {
     html.elem("div", attrs: (style: "margin: 1.1em 0"), html.frame(block(width: 39em, it)))
   } else { it }
@@ -193,7 +199,7 @@
   show align: it => context if target() == "html" {
     let x = it.alignment.x
     let css = if x == center { "center" } else if x == right or x == end { "right" } else { "left" }
-    html.elem("div", attrs: (style: "text-align: " + css), it.body)
+    html.elem("div", attrs: (class: "al", style: "text-align: " + css), it.body)
   } else { it }
   show line: it => context if target() == "html" {
     html.elem("div", attrs: (style: "border-top: 0.5pt solid currentColor; margin: 0.2em auto; width: calc(" + repr(it.length.ratio) + " + " + repr(it.length.length) + ")"))

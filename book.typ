@@ -181,8 +181,14 @@
   show stack: it => context if target() == "html" {
     html.elem("div", attrs: (style: "margin: 1.1em 0"), html.frame(block(width: 39em, it)))
   } else { it }
+  // Boxes that take a percentage of the available width (the flag-style
+  // proofs' nested poles) need a concrete width to be a percentage of.
   show box: it => context if target() == "html" and (it.width != auto or it.height != auto) {
-    html.frame(it)
+    if type(it.width) in (ratio, relative) {
+      html.frame(block(width: 33em, it))
+    } else {
+      html.frame(it)
+    }
   } else { it }
   show align: it => context if target() == "html" {
     let x = it.alignment.x

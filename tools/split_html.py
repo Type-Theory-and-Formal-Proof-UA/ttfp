@@ -30,6 +30,7 @@ h3 { font-size: 1.4rem; margin-top: 2rem; }
 h4 { font-size: 1.15rem; }
 a { color: #1a5fb4; }
 table { border-collapse: collapse; margin: 1rem auto; }
+div.scroll { overflow-x: auto; max-width: 100%; }
 td, th { padding: .2rem .7rem; }
 math[display] { overflow-x: auto; max-width: 100%; }
 figure { margin: 1rem 0; }
@@ -50,6 +51,25 @@ p.authors { font-size: 1.2rem; margin-top: 0; }
 
 def text_of(fragment):
     return html.unescape(re.sub(r"<[^>]+>", "", fragment)).strip()
+
+
+def wrap_tables(fragment):
+    """Put every outermost <table> in a horizontally scrollable div (long
+    formulas in table cells cannot wrap)."""
+    out, depth, last = [], 0, 0
+    for m in re.finditer(r"<table[ >]|</table>", fragment):
+        if m.group(0).startswith("</"):
+            depth -= 1
+            if depth == 0:
+                out += [fragment[last : m.end()], "</div>"]
+                last = m.end()
+        else:
+            if depth == 0:
+                out += [fragment[last : m.start()], '<div class="scroll">']
+                last = m.start()
+            depth += 1
+    out.append(fragment[last:])
+    return "".join(out)
 
 
 def slug_for(heading, seen_toc):
@@ -166,7 +186,7 @@ def main(src, out):
         if f"{slug}.html" in by_page:
             content += '<section role="doc-endnotes"><ol style="list-style-type: none">' + "".join(
                 by_page[f"{slug}.html"]) + "</ol></section>"
-        content = with_symbols(rewrite(content, f"{slug}.html"))
+        content = with_symbols(wrap_tables(rewrite(content, f"{slug}.html")))
         (out / f"{slug}.html").write_text(
             page(text_of(h), content, pager(i)), encoding="utf-8")
 

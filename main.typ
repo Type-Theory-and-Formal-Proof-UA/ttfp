@@ -13,6 +13,9 @@
 
 #include "src/front/titlepage.typ"
 
+// Front matter is not numbered (chapters restart at 1 below).
+#set heading(numbering: none)
+
 #set page(numbering: "i")
 #counter(page).update(1)
 
@@ -25,6 +28,7 @@
 
 #set page(numbering: "1")
 #counter(page).update(1)
+#set heading(numbering: "1.1")
 #counter(heading).update(0)
 
 #include "src/chapters/ch01-untyped-lambda-calculus.typ"

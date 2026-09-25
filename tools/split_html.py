@@ -76,12 +76,13 @@ def wrap_tables(fragment):
     return "".join(out)
 
 
-def slug_for(heading, seen_toc):
-    """Page file name from the heading's numbering prefix."""
+def slug_for(heading, seen_toc, front_index):
+    """Page file name: front matter is numbered by position (its headings are
+    unnumbered), chapters and appendices by their numbering prefix."""
     m = re.match(r"\s*(?:<span class=\"prefix\">)?([0-9]+|[A-Z])\b", heading)
     label = m.group(1) if m else None
     if not seen_toc:
-        return f"front-{label}" if label else None
+        return f"front-{front_index}"
     if label is None:
         return "references"
     return f"ch{int(label):02d}" if label.isdigit() else f"app{label}"
@@ -122,6 +123,7 @@ def main(src, out):
     starts = [m.start() for m in re.finditer(r"<h2[ >]", body)]
     toc_marker = body.index("<!--TOC-->")
     pages = []  # [slug, title, html]
+    front = 0
     for i, s in enumerate(starts):
         e = starts[i + 1] if i + 1 < len(starts) else len(body)
         chunk = body[s:e]
@@ -129,7 +131,8 @@ def main(src, out):
         h = re.match(r"<h2[^>]*>(.*?)</h2>", chunk, re.S).group(1)
         if "<!--TOC-->" in chunk:  # the TOC sits at the tail of the last front-matter page
             chunk = chunk.replace("<!--TOC-->", "")
-        slug = slug_for(h, after_toc)
+        front += not after_toc
+        slug = slug_for(h, after_toc, front)
         pages.append([slug, h, chunk])
 
     # ids -> page file

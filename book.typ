@@ -149,6 +149,9 @@
   )
   set par(justify: true, leading: 0.65em)
   set heading(numbering: "1.1")
+  // Captions carry their own "Рисунок N.M" text; without this Typst prepends
+  // an automatic "Таблиця N:" / "Рисунок N:" to those that wrap a table.
+  set figure(numbering: none)
   set math.equation(numbering: n => context {
     numbering("(1.1)", chapter-num(), n)
   })

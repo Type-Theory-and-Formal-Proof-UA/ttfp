@@ -40,7 +40,7 @@
 
 #exercise[
   Розгляньте таке середовище $Delta$ із шести означень, у якому ми задля зручності
-  вживаємо деякі добре знані формати, як-от $Sigma$- та інфіксні позначення:
+  вживаємо деякі добре відомі формати, як-от $Sigma$- та інфіксні позначення:
 
   $ D_1 equiv f : NN -> RR, n : NN triangle.r a_1 (f, n) := sum_(i=0)^n (f i) : RR, $
 
@@ -66,7 +66,7 @@
   (b) Яку назву вживають для $a_2$ у стандартній літературі?
 
   (c) Знайдіть δ-нормальну форму щодо $Delta$ виразу
-      $a_5 (lambda x : NN . 2x, 2, u, 100)$, де $u$ — мешканець
+      $a_5 (lambda x : NN . 2x, 2, u, 100)$, де $u$ — елемент
       $a_2 (lambda x : NN . 2x, 2)$.
 ]
 
@@ -87,9 +87,9 @@
 
   (a) Нехай $Delta equiv D_1, dots.h.c, D_5$. Припустімо, що $D_6$ правильне в
       середовищі $Delta$ і що
-      $Delta ; emptyset tack.r (a_1 (lambda x : NN . x, 100) = (lambda x : NN . x)^5050) : ast_p$.
+      $Delta ; emptyset tack.r (a_1 (lambda x : NN . x, 100) = (lambda x : NN . x) 5050) : ast_p$.
       Виведіть:
-      $ Delta ; emptyset tack.r "formalprf"_6 : a_1 (lambda x : NN . x, 100) = (lambda x : NN . x)^5050 . $
+      $ Delta, D_6 ; emptyset tack.r "formalprf"_6 : a_1 (lambda x : NN . x, 100) = (lambda x : NN . x) 5050 . $
 
   (b) Припустімо, що умови, згадані у вправі 9.7(a), виконано. Який
       найшвидший спосіб довести

@@ -67,7 +67,7 @@
           $p_4(V, u, v, w) := dots.h.c : exists_1 s : RR . ("least-upper-bound"(V, u, s)$
         ],
         [$(5)$], flagcol(1)[
-          $S := {x : RR | exists n : RR . (n in NN and x = frac(n, n+1))} : ast_s$
+          $S := {x : RR | exists n : RR . (n in NN and x = frac(n+1, n))} : ast_s$
         ],
         [$(6)$], flagcol(1)[$p_6 := dots.h.c : S subset.eq RR$],
         [$(7)$], flagcol(1)[$p_7 := dots.h.c : "bounded-from-above"(S, p_6)$],

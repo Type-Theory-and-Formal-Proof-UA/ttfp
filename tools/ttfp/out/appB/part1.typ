@@ -70,7 +70,7 @@
 #definition(label: [])[
   Для $x : ZZ$: \
   (a) $upright("pos")(x) := p x epsilon NN$, \
-  (b) $upright("neg")(x) := not (x in NN)$.
+  (b) $upright("neg")(x) := not (x epsilon NN)$.
 ]
 
 #lemma(label: [])[
@@ -116,24 +116,24 @@
   $forall x, y, z : ZZ . (x + (y + z) = (x + y) + z)$ (assoc-add, рис. 14.14).
 ]
 
-#lemma(name: "Закони скорочення для додавання", label: [])[
+#lemma(name: "Закони скорочення для додавання", label: "14.6.5")[
   (a) $forall x, y, z : ZZ . (x + z = y + z arrow.r.double x = y)$ (right-canc-add, рис. 14.14), \
   (b) $forall x, y, z : ZZ . (x + y = x + z arrow.r.double y = z)$ (left-canc-add, рис. 14.14).
 ]
 
-#lemma(name: [Замкненість $NN$ відносно додавання], label: [])[
+#lemma(name: [Замкненість $NN$ відносно додавання], label: "14.7.1")[
   $forall x, y : ZZ . ((x epsilon NN and y epsilon NN) arrow.r.double x + y epsilon NN)$ (plus-clos-nat, рис. 14.15).
 ]
 
-#lemma(name: "Характеризація від'ємних чисел", label: [])[
+#lemma(name: "Характеризація від'ємних чисел", label: "14.7.2")[
   $forall x : ZZ . (upright("neg")(x) arrow.l.r.double exists y : ZZ . (upright("pos")(y) and x + y = 0))$.
 ]
 
-#lemma(name: "Замкненість для від'ємних цілих чисел", label: [])[
+#lemma(name: "Замкненість для від'ємних цілих чисел", label: "14.7.3")[
   $forall x, y : ZZ . (upright("neg")(x) and upright("neg")(y) arrow.r.double upright("neg")(x + y))$.
 ]
 
-#lemma(name: "Єдиність різниці", label: [])[
+#lemma(name: "Єдиність різниці", label: "14.8.1")[
   $forall x, y : ZZ . exists_1 z : ZZ . (z + y = x)$ (uni-dif, рис. 14.16).
 ]
 
@@ -168,7 +168,7 @@
   (b) $forall x : ZZ . (x - 1 = p x)$.
 ]
 
-#lemma(name: "Закони скорочення для віднімання", label: [])[
+#lemma(name: "Закони скорочення для віднімання", label: "14.8.9")[
   (a) $forall x, y, z : ZZ . (x - z = y - z arrow.r.double x = y)$, \
   (b) $forall x, y, z : ZZ . (x - y = x - z arrow.r.double y = z)$.
 ]

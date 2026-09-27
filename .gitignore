@@ -38,3 +38,6 @@ tools/ttfp/ocr/
 # HTML build output (make html)
 /build/
 /site/
+
+# ChatGPT review reports (quote the copyrighted original) — local-only.
+tools/ttfp/gpt-review/
